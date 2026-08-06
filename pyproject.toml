@@ -1,0 +1,15 @@
+[project]
+name = "mass-ontology"
+version = "0.1.0"
+description = "Modular ontology stack for Maritime Autonomous Surface Ships as System of Systems"
+requires-python = ">=3.12"
+dependencies = [
+  "rdflib",
+  "pyshacl",
+  "owlready2",
+  "pytest",
+  "requests"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

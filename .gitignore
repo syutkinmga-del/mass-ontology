@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.fuseki/
+target/
+*.log
+*.tmp
+.idea/
+.vscode/settings.json

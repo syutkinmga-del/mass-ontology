@@ -1,0 +1,37 @@
+@prefix ex:   <https://w3id.org/mass-ontology/example#> .
+@prefix mass: <https://w3id.org/mass-ontology/core#> .
+@prefix nav:  <https://w3id.org/mass-ontology/navigation#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex:own_ship_001
+    a nav:OwnShip ;
+    mass:hasOperationalMode ex:autonomous_mode ;
+    mass:hasRemoteOperationsCentre ex:roc_001 ;
+    mass:hasCommunicationLink ex:link_001 .
+
+ex:target_ship_001
+    a nav:TargetShip .
+
+ex:autonomous_mode
+    a mass:OperationalMode .
+
+ex:roc_001
+    a mass:RemoteOperationsCentre .
+
+ex:link_001
+    a mass:CommunicationLink .
+
+ex:colreg_rule_15
+    a nav:COLREGRule .
+
+ex:alter_course_to_starboard
+    a nav:Maneuver .
+
+ex:encounter_001
+    a nav:Crossing ;
+    nav:hasOwnShip ex:own_ship_001 ;
+    nav:hasTargetShip ex:target_ship_001 ;
+    nav:hasCPA 0.4 ;
+    nav:hasTCPA 12.0 ;
+    nav:appliesCOLREGRule ex:colreg_rule_15 ;
+    nav:requiresManeuver ex:alter_course_to_starboard .

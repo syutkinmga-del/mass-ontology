@@ -1,0 +1,54 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix mass: <https://w3id.org/mass-ontology/core#> .
+@prefix nav:  <https://w3id.org/mass-ontology/navigation#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+mass:MASSVesselShape
+    a sh:NodeShape ;
+    sh:targetClass mass:MASSVessel ;
+    sh:property [
+        sh:path mass:hasOperationalMode ;
+        sh:minCount 1 ;
+        sh:message "Every MASS vessel must have at least one operational mode." ;
+    ] ;
+    sh:property [
+        sh:path mass:hasCommunicationLink ;
+        sh:minCount 1 ;
+        sh:message "Every MASS vessel must have at least one communication link." ;
+    ] .
+
+nav:EncounterSituationShape
+    a sh:NodeShape ;
+    sh:targetClass nav:EncounterSituation ;
+    sh:property [
+        sh:path nav:hasOwnShip ;
+        sh:minCount 1 ;
+        sh:message "Every encounter situation must have own ship." ;
+    ] ;
+    sh:property [
+        sh:path nav:hasTargetShip ;
+        sh:minCount 1 ;
+        sh:message "Every encounter situation must have target ship." ;
+    ] ;
+    sh:property [
+        sh:path nav:hasCPA ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message "Every encounter situation must have CPA value." ;
+    ] ;
+    sh:property [
+        sh:path nav:hasTCPA ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message "Every encounter situation must have TCPA value." ;
+    ] ;
+    sh:property [
+        sh:path nav:appliesCOLREGRule ;
+        sh:minCount 1 ;
+        sh:message "Every encounter situation must reference an applicable COLREG rule." ;
+    ] ;
+    sh:property [
+        sh:path nav:requiresManeuver ;
+        sh:minCount 1 ;
+        sh:message "Every encounter situation must reference a required maneuver." ;
+    ] .

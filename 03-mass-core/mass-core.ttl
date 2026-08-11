@@ -1,0 +1,64 @@
+@prefix mass: <https://w3id.org/mass-ontology/core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/mass-ontology/core>
+    a owl:Ontology ;
+    rdfs:label "MASS Core Ontology"@en ;
+    rdfs:comment "Core ontology for Maritime Autonomous Surface Ships as System of Systems."@en ;
+    owl:versionInfo "0.1.0" .
+
+mass:MASSVessel
+    a owl:Class ;
+    rdfs:label "MASS vessel"@en ;
+    rdfs:comment "A maritime vessel capable of operating with autonomous or remotely supervised functions."@en .
+
+mass:AutonomousNavigationSystem
+    a owl:Class ;
+    rdfs:label "Autonomous Navigation System"@en .
+
+mass:RemoteOperationsCentre
+    a owl:Class ;
+    rdfs:label "Remote Operations Centre"@en .
+
+mass:OperationalMode
+    a owl:Class ;
+    rdfs:label "Operational Mode"@en .
+
+mass:CommunicationLink
+    a owl:Class ;
+    rdfs:label "Communication Link"@en .
+
+mass:SafetyRequirement
+    a owl:Class ;
+    rdfs:label "Safety Requirement"@en .
+
+mass:VerificationEvidence
+    a owl:Class ;
+    rdfs:label "Verification Evidence"@en .
+
+mass:hasOperationalMode
+    a owl:ObjectProperty ;
+    rdfs:domain mass:MASSVessel ;
+    rdfs:range mass:OperationalMode ;
+    rdfs:label "has operational mode"@en .
+
+mass:hasRemoteOperationsCentre
+    a owl:ObjectProperty ;
+    rdfs:domain mass:MASSVessel ;
+    rdfs:range mass:RemoteOperationsCentre ;
+    rdfs:label "has remote operations centre"@en .
+
+mass:hasCommunicationLink
+    a owl:ObjectProperty ;
+    rdfs:domain mass:MASSVessel ;
+    rdfs:range mass:CommunicationLink ;
+    rdfs:label "has communication link"@en .
+
+mass:hasVerificationEvidence
+    a owl:ObjectProperty ;
+    rdfs:domain mass:SafetyRequirement ;
+    rdfs:range mass:VerificationEvidence ;
+    rdfs:label "has verification evidence"@en .

@@ -1,0 +1,94 @@
+@prefix nav:  <https://w3id.org/mass-ontology/navigation#> .
+@prefix mass: <https://w3id.org/mass-ontology/core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/mass-ontology/navigation>
+    a owl:Ontology ;
+    rdfs:label "MASS Navigation Ontology"@en ;
+    rdfs:comment "Navigation ontology module for MASS encounter situations, own ship, target ship, CPA and TCPA."@en ;
+    owl:imports <https://w3id.org/mass-ontology/core> ;
+    owl:versionInfo "0.1.0" .
+
+nav:EncounterSituation
+    a owl:Class ;
+    rdfs:label "Encounter Situation"@en ;
+    rdfs:comment "A navigation situation involving own ship and one or more target ships."@en .
+
+nav:HeadOn
+    a owl:Class ;
+    rdfs:subClassOf nav:EncounterSituation ;
+    rdfs:label "Head-on encounter"@en .
+
+nav:Crossing
+    a owl:Class ;
+    rdfs:subClassOf nav:EncounterSituation ;
+    rdfs:label "Crossing encounter"@en .
+
+nav:Overtaking
+    a owl:Class ;
+    rdfs:subClassOf nav:EncounterSituation ;
+    rdfs:label "Overtaking encounter"@en .
+
+nav:OwnShip
+    a owl:Class ;
+    rdfs:subClassOf mass:MASSVessel ;
+    rdfs:label "Own ship"@en ;
+    rdfs:comment "The vessel from whose perspective the navigation situation is assessed."@en .
+
+nav:TargetShip
+    a owl:Class ;
+    rdfs:label "Target ship"@en ;
+    rdfs:comment "Another vessel participating in an encounter situation."@en .
+
+nav:CollisionAvoidanceDecision
+    a owl:Class ;
+    rdfs:label "Collision Avoidance Decision"@en .
+
+nav:COLREGRule
+    a owl:Class ;
+    rdfs:label "COLREG rule"@en .
+
+nav:Maneuver
+    a owl:Class ;
+    rdfs:label "Maneuver"@en .
+
+nav:hasOwnShip
+    a owl:ObjectProperty ;
+    rdfs:domain nav:EncounterSituation ;
+    rdfs:range nav:OwnShip ;
+    rdfs:label "has own ship"@en .
+
+nav:hasTargetShip
+    a owl:ObjectProperty ;
+    rdfs:domain nav:EncounterSituation ;
+    rdfs:range nav:TargetShip ;
+    rdfs:label "has target ship"@en .
+
+nav:hasCPA
+    a owl:DatatypeProperty ;
+    rdfs:domain nav:EncounterSituation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "has CPA"@en ;
+    rdfs:comment "Closest Point of Approach value. Unit will be specified in a later QUDT-based module."@en .
+
+nav:hasTCPA
+    a owl:DatatypeProperty ;
+    rdfs:domain nav:EncounterSituation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "has TCPA"@en ;
+    rdfs:comment "Time to Closest Point of Approach value. Unit will be specified in a later QUDT-based module."@en .
+
+nav:appliesCOLREGRule
+    a owl:ObjectProperty ;
+    rdfs:domain nav:EncounterSituation ;
+    rdfs:range nav:COLREGRule ;
+    rdfs:label "applies COLREG rule"@en .
+
+nav:requiresManeuver
+    a owl:ObjectProperty ;
+    rdfs:domain nav:EncounterSituation ;
+    rdfs:range nav:Maneuver ;
+    rdfs:label "requires maneuver"@en .

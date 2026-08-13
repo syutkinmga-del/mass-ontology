@@ -9,3 +9,6 @@ target/
 .idea/
 .vscode/settings.json
 run/
+run/
+.fuseki/
+mass-demo.ttl

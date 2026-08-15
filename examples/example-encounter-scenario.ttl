@@ -35,3 +35,9 @@ ex:encounter_001
     nav:hasTCPA 12.0 ;
     nav:appliesCOLREGRule ex:colreg_rule_15 ;
     nav:requiresManeuver ex:alter_course_to_starboard .
+ex:safety_requirement_001
+    a mass:SafetyRequirement ;
+    mass:hasVerificationEvidence ex:verification_evidence_001 .
+
+ex:verification_evidence_001
+    a mass:VerificationEvidence .

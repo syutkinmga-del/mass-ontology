@@ -52,3 +52,12 @@ nav:EncounterSituationShape
         sh:minCount 1 ;
         sh:message "Every encounter situation must reference a required maneuver." ;
     ] .
+mass:SafetyRequirementShape
+    a sh:NodeShape ;
+    sh:targetClass mass:SafetyRequirement ;
+    sh:property [
+        sh:path mass:hasVerificationEvidence ;
+        sh:minCount 1 ;
+        sh:class mass:VerificationEvidence ;
+        sh:message "Every safety requirement must have at least one verification evidence." ;
+    ] .

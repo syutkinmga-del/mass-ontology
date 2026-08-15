@@ -1,0 +1,10 @@
+PREFIX mass: <https://w3id.org/mass-ontology/core#>
+
+SELECT ?safetyRequirement ?verificationEvidence
+WHERE {
+  ?safetyRequirement a mass:SafetyRequirement ;
+                     mass:hasVerificationEvidence ?verificationEvidence .
+
+  ?verificationEvidence a mass:VerificationEvidence .
+}
+ORDER BY ?safetyRequirement ?verificationEvidence

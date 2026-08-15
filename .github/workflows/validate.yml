@@ -29,3 +29,7 @@ jobs:
       - name: Run SHACL validation
         run: |
           python scripts/run_shacl.py
+          
+      - name: Run competency question SPARQL queries
+        run: |
+          python scripts/run_cq_queries.py

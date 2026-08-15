@@ -44,3 +44,12 @@ pytest
 ## Working rule
 
 Git is the source of truth. Protégé is an ontology editor. VS Code is used for TTL, SHACL, SPARQL and code. pySHACL validates constraints. Fuseki demonstrates SPARQL queries.
+
+## Competency questions
+
+The first competency questions are stored in:
+
+```text
+
+competency-questions/mass-cq-v0.1.md
+

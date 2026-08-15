@@ -1,0 +1,8 @@
+PREFIX mass: <https://w3id.org/mass-ontology/core#>
+
+SELECT ?vessel ?mode
+WHERE {
+  ?vessel a mass:MASSVessel ;
+          mass:hasOperationalMode ?mode .
+}
+ORDER BY ?vessel ?mode

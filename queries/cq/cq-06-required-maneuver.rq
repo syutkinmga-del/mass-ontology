@@ -1,0 +1,7 @@
+PREFIX nav: <https://w3id.org/mass-ontology/navigation#>
+
+SELECT ?encounter ?maneuver
+WHERE {
+  ?encounter nav:requiresManeuver ?maneuver .
+}
+ORDER BY ?encounter

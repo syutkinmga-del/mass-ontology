@@ -1,0 +1,8 @@
+PREFIX nav: <https://w3id.org/mass-ontology/navigation#>
+
+SELECT ?encounter ?ownShip ?targetShip
+WHERE {
+  ?encounter nav:hasOwnShip ?ownShip ;
+             nav:hasTargetShip ?targetShip .
+}
+ORDER BY ?encounter

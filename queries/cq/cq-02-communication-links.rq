@@ -1,0 +1,8 @@
+PREFIX mass: <https://w3id.org/mass-ontology/core#>
+
+SELECT ?vessel ?communicationLink
+WHERE {
+  ?vessel a mass:MASSVessel ;
+          mass:hasCommunicationLink ?communicationLink .
+}
+ORDER BY ?vessel ?communicationLink

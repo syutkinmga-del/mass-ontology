@@ -1,0 +1,7 @@
+PREFIX nav: <https://w3id.org/mass-ontology/navigation#>
+
+SELECT ?encounter ?colregRule
+WHERE {
+  ?encounter nav:appliesCOLREGRule ?colregRule .
+}
+ORDER BY ?encounter

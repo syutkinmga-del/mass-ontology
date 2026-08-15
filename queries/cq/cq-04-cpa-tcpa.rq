@@ -1,0 +1,8 @@
+PREFIX nav: <https://w3id.org/mass-ontology/navigation#>
+
+SELECT ?encounter ?cpa ?tcpa
+WHERE {
+  ?encounter nav:hasCPA ?cpa ;
+             nav:hasTCPA ?tcpa .
+}
+ORDER BY ?encounter

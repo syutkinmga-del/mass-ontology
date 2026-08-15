@@ -1,0 +1,15 @@
+PREFIX nav: <https://w3id.org/mass-ontology/navigation#>
+
+SELECT ?encounter ?encounterType ?ownShip ?targetShip ?cpa ?tcpa ?colregRule ?maneuver
+WHERE {
+  ?encounter a ?encounterType ;
+             nav:hasOwnShip ?ownShip ;
+             nav:hasTargetShip ?targetShip ;
+             nav:hasCPA ?cpa ;
+             nav:hasTCPA ?tcpa ;
+             nav:appliesCOLREGRule ?colregRule ;
+             nav:requiresManeuver ?maneuver .
+
+  FILTER(?encounterType IN (nav:HeadOn, nav:Crossing, nav:Overtaking))
+}
+ORDER BY ?encounter

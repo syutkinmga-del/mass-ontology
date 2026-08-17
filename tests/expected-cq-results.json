@@ -1,0 +1,10 @@
+{
+  "cq-01-operational-modes.rq": 1,
+  "cq-02-communication-links.rq": 1,
+  "cq-03-encounter-participants.rq": 1,
+  "cq-04-cpa-tcpa.rq": 1,
+  "cq-05-colreg-rule.rq": 1,
+  "cq-06-required-maneuver.rq": 1,
+  "cq-07-safety-verification-evidence.rq": 1,
+  "cq-08-encounter-scenarios.rq": 1
+}

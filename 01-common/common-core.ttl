@@ -1,0 +1,61 @@
+@prefix common: <https://w3id.org/mass-ontology/common#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/mass-ontology/common>
+    a owl:Ontology ;
+    rdfs:label "MASS Common Ontology"@en ;
+    rdfs:comment "Lightweight common vocabulary for MASS ontology modules. This module will later be aligned with BFO and CCO."@en ;
+    owl:versionInfo "0.3.0-dev" .
+
+common:System
+    a owl:Class ;
+    rdfs:label "System"@en .
+
+common:EngineeredSystem
+    a owl:Class ;
+    rdfs:subClassOf common:System ;
+    rdfs:label "Engineered System"@en .
+
+common:PhysicalArtifact
+    a owl:Class ;
+    rdfs:label "Physical Artifact"@en .
+
+common:InformationArtifact
+    a owl:Class ;
+    rdfs:label "Information Artifact"@en .
+
+common:Requirement
+    a owl:Class ;
+    rdfs:subClassOf common:InformationArtifact ;
+    rdfs:label "Requirement"@en .
+
+common:Rule
+    a owl:Class ;
+    rdfs:subClassOf common:InformationArtifact ;
+    rdfs:label "Rule"@en .
+
+common:VerificationArtifact
+    a owl:Class ;
+    rdfs:subClassOf common:InformationArtifact ;
+    rdfs:label "Verification Artifact"@en .
+
+common:OperationalSituation
+    a owl:Class ;
+    rdfs:label "Operational Situation"@en .
+
+common:OperationalState
+    a owl:Class ;
+    rdfs:label "Operational State"@en .
+
+common:Process
+    a owl:Class ;
+    rdfs:label "Process"@en .
+
+common:Decision
+    a owl:Class ;
+    rdfs:label "Decision"@en .
+
+common:CommunicationChannel
+    a owl:Class ;
+    rdfs:label "Communication Channel"@en .

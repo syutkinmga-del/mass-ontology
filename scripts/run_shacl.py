@@ -5,6 +5,8 @@ from pyshacl import validate
 ROOT = Path(__file__).resolve().parents[1]
 
 data_files = [
+    ROOT / "01-common" / "common-core.ttl",
+    ROOT / "00-foundation" / "foundation-alignment.ttl",
     ROOT / "03-mass-core" / "mass-core.ttl",
     ROOT / "04-navigation" / "navigation-situation.ttl",
     ROOT / "examples" / "example-encounter-scenario.ttl",

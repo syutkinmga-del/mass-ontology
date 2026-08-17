@@ -3,12 +3,14 @@
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix common: <https://w3id.org/mass-ontology/common#> .
 
 <https://w3id.org/mass-ontology/core>
     a owl:Ontology ;
     rdfs:label "MASS Core Ontology"@en ;
     rdfs:comment "Core ontology for Maritime Autonomous Surface Ships as System of Systems."@en ;
-    owl:versionInfo "0.1.0" .
+    owl:versionInfo "0.1.0" ;
+    owl:imports <https://w3id.org/mass-ontology/common> .
 
 mass:MASSVessel
     a owl:Class ;
@@ -62,3 +64,27 @@ mass:hasVerificationEvidence
     rdfs:domain mass:SafetyRequirement ;
     rdfs:range mass:VerificationEvidence ;
     rdfs:label "has verification evidence"@en .
+
+# Foundation/common-layer alignment
+
+mass:MASSVessel
+    rdfs:subClassOf common:EngineeredSystem .
+
+mass:AutonomousNavigationSystem
+    rdfs:subClassOf common:EngineeredSystem .
+
+mass:RemoteOperationsCentre
+    rdfs:subClassOf common:EngineeredSystem .
+
+mass:OperationalMode
+    rdfs:subClassOf common:OperationalState .
+
+mass:CommunicationLink
+    rdfs:subClassOf common:CommunicationChannel .
+
+mass:SafetyRequirement
+    rdfs:subClassOf common:Requirement .
+
+mass:VerificationEvidence
+    rdfs:subClassOf common:VerificationArtifact .
+

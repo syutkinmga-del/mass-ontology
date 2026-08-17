@@ -4,12 +4,14 @@
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix common: <https://w3id.org/mass-ontology/common#> .
 
 <https://w3id.org/mass-ontology/navigation>
     a owl:Ontology ;
     rdfs:label "MASS Navigation Ontology"@en ;
     rdfs:comment "Navigation ontology module for MASS encounter situations, own ship, target ship, CPA and TCPA."@en ;
-    owl:imports <https://w3id.org/mass-ontology/core> ;
+    owl:imports <https://w3id.org/mass-ontology/core> ,
+                   <https://w3id.org/mass-ontology/common> ;
     owl:versionInfo "0.1.0" .
 
 nav:EncounterSituation
@@ -92,3 +94,18 @@ nav:requiresManeuver
     rdfs:domain nav:EncounterSituation ;
     rdfs:range nav:Maneuver ;
     rdfs:label "requires maneuver"@en .
+
+# Foundation/common-layer alignment
+
+nav:EncounterSituation
+    rdfs:subClassOf common:OperationalSituation .
+
+nav:CollisionAvoidanceDecision
+    rdfs:subClassOf common:Decision .
+
+nav:COLREGRule
+    rdfs:subClassOf common:Rule .
+
+nav:Maneuver
+    rdfs:subClassOf common:Process .
+

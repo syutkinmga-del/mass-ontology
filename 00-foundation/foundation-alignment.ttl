@@ -1,0 +1,99 @@
+@prefix foundation: <https://w3id.org/mass-ontology/foundation#> .
+@prefix common:     <https://w3id.org/mass-ontology/common#> .
+@prefix mass:       <https://w3id.org/mass-ontology/core#> .
+@prefix nav:        <https://w3id.org/mass-ontology/navigation#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/mass-ontology/foundation-alignment>
+    a owl:Ontology ;
+    rdfs:label "MASS Foundation Alignment"@en ;
+    rdfs:comment "Draft alignment decisions for connecting MASS ontology modules with upper and common ontologies such as BFO and CCO."@en ;
+    owl:imports <https://w3id.org/mass-ontology/common> ;
+    owl:versionInfo "0.3.0-dev" .
+
+foundation:AlignmentDecision
+    a owl:Class ;
+    rdfs:label "Alignment Decision"@en .
+
+foundation:alignsLocalEntity
+    a owl:ObjectProperty ;
+    rdfs:domain foundation:AlignmentDecision ;
+    rdfs:range owl:Class ;
+    rdfs:label "aligns local entity"@en .
+
+foundation:proposedFoundationTarget
+    a owl:DatatypeProperty ;
+    rdfs:domain foundation:AlignmentDecision ;
+    rdfs:range xsd:string ;
+    rdfs:label "proposed foundation target"@en .
+
+foundation:alignmentStatus
+    a owl:DatatypeProperty ;
+    rdfs:domain foundation:AlignmentDecision ;
+    rdfs:range xsd:string ;
+    rdfs:label "alignment status"@en .
+
+foundation:AD-001-MASSVessel
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity mass:MASSVessel ;
+    foundation:proposedFoundationTarget "BFO material entity / CCO artifact or system candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "A MASS vessel should be treated as an engineered physical system, but the exact BFO/CCO target remains open."@en .
+
+foundation:AD-002-AutonomousNavigationSystem
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity mass:AutonomousNavigationSystem ;
+    foundation:proposedFoundationTarget "Engineered system / artifact function bearer candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "The autonomous navigation system may be modelled as a system that bears navigation and decision-making functions."@en .
+
+foundation:AD-003-OperationalMode
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity mass:OperationalMode ;
+    foundation:proposedFoundationTarget "Operational state or process profile candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "Operational mode is not yet fixed as a state, disposition, role, or process profile."@en .
+
+foundation:AD-004-CommunicationLink
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity mass:CommunicationLink ;
+    foundation:proposedFoundationTarget "Communication channel or communication process candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "A communication link may represent an information channel, physical infrastructure, or a communication process depending on modelling scope."@en .
+
+foundation:AD-005-SafetyRequirement
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity mass:SafetyRequirement ;
+    foundation:proposedFoundationTarget "Information content entity / directive information artifact candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "Safety requirements are treated as information artifacts that constrain acceptable system behaviour."@en .
+
+foundation:AD-006-VerificationEvidence
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity mass:VerificationEvidence ;
+    foundation:proposedFoundationTarget "Information content entity / evidence artifact candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "Verification evidence is treated as an information artifact produced by test, analysis, simulation, review, or inspection."@en .
+
+foundation:AD-007-EncounterSituation
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity nav:EncounterSituation ;
+    foundation:proposedFoundationTarget "Operational situation / process aggregate candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "Encounter situation may be represented as a temporally extended operational situation involving own ship and target ship."@en .
+
+foundation:AD-008-Maneuver
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity nav:Maneuver ;
+    foundation:proposedFoundationTarget "Process candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "A maneuver is likely to be represented as a process performed by a vessel."@en .
+
+foundation:AD-009-COLREGRule
+    a foundation:AlignmentDecision ;
+    foundation:alignsLocalEntity nav:COLREGRule ;
+    foundation:proposedFoundationTarget "Rule / directive information artifact candidate" ;
+    foundation:alignmentStatus "draft" ;
+    rdfs:comment "A COLREG rule is treated as an information artifact that constrains navigation decisions."@en .

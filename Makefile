@@ -1,4 +1,4 @@
-.PHONY: validate test tree status
+.PHONY: validate test tree status cq
 
 PYTHON := .venv/bin/python
 
@@ -13,3 +13,6 @@ tree:
 
 status:
 	git status
+
+cq:
+	$(PYTHON) scripts/run_cq_queries.py

@@ -13,6 +13,25 @@ This repository is the source of truth for a research ontology stack supporting:
 - ROC / VTS interaction modeling
 - safety, risk, V&V and assurance traceability
 
+## Current status: MVP v0.2.0
+
+The current version of the MASS Ontology repository is an early but testable ontology engineering 
+MVP.
+
+It includes:
+
+- MASS Core ontology draft;
+- Navigation ontology draft;
+- example encounter scenario;
+- SHACL validation rules;
+- competency questions;
+- SPARQL queries for competency questions;
+- automated CQ query runner;
+- GitHub Actions validation pipeline.
+
+The project is not yet a complete MASS ontology stack. It is a working research sandbox for 
+developing and validating a modular ontology architecture for Maritime Autonomous Surface Ships.
+
 ## Structure
 
 ```text
@@ -33,12 +52,14 @@ docs/                   documentation
 
 ```
 
-## Validation
+## Validation workflow
+
+The repository supports two local validation commands.
+
+Run SHACL validation:
 
 ```bash
-source .venv/bin/activate
-make validate
-pytest
+make validatpytest
 ```
 
 ## Working rule
@@ -53,3 +74,19 @@ The first competency questions are stored in:
 
 competency-questions/mass-cq-v0.1.md
 
+## Releases
+
+### v0.2.0 — Competency Questions MVP
+
+This release adds competency questions, SPARQL CQ queries, the automated CQ runner, expected CQ 
+result checks, and CI execution of CQ queries.
+
+### v0.1.0 — Initial MASS Ontology MVP
+
+This release established the initial MASS Core draft, Navigation draft, example encounter 
+scenario, SHACL validation, basic SPARQL query and GitHub Actions SHACL validation.
+
+See:
+
+```text
+CHANGELOG.md

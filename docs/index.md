@@ -38,3 +38,50 @@ mass-ontology/
 ├── docs/
 │   └── index.md
 └── Makefile
+
+## MVP v0.2.0
+
+The current MVP demonstrates a minimal ontology engineering pipeline for MASS-oriented MBSE and 
+digital engineering workflows.
+
+The pipeline includes:
+
+```text
+MASS Core ontology
+→ Navigation ontology
+→ example encounter scenario
+→ SHACL validation
+→ competency questions
+→ SPARQL queries
+→ automated expected-result checks
+→ GitHub Actions
+
+Добавь раздел:
+
+```markdown
+## Competency Questions
+
+The MVP uses competency questions to define what the ontology should be able to answer.
+
+The current competency questions cover:
+
+- operational modes of a MASS vessel;
+- communication links of a MASS vessel;
+- own ship and target ship in an encounter;
+- CPA and TCPA values;
+- applicable COLREG rule;
+- required maneuver;
+- safety requirement verification evidence;
+- retrieval of represented encounter scenarios.
+
+The CQ definitions are stored in:
+
+```text
+competency-questions/mass-cq-v0.1.md
+
+## Local validation
+
+Run structural validation:
+
+```bash
+make validate

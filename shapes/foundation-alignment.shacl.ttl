@@ -1,0 +1,30 @@
+@prefix sh:         <http://www.w3.org/ns/shacl#> .
+@prefix foundation: <https://w3id.org/mass-ontology/foundation#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+foundation:AlignmentDecisionShape
+    a sh:NodeShape ;
+    sh:targetClass foundation:AlignmentDecision ;
+    sh:property [
+        sh:path foundation:alignsLocalEntity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class owl:Class ;
+        sh:message "Every alignment decision must reference exactly one local ontology class." ;
+    ] ;
+    sh:property [
+        sh:path foundation:proposedFoundationTarget ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Every alignment decision must have exactly one proposed foundation target." ;
+    ] ;
+    sh:property [
+        sh:path foundation:alignmentStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "draft" "accepted" "rejected" "superseded" ) ;
+        sh:message "Every alignment decision must have one valid alignment status." ;
+    ] .

@@ -14,6 +14,7 @@ data_files = [
 
 shape_files = [
     ROOT / "shapes" / "mass-core.shacl.ttl",
+    ROOT / "shapes" / "foundation-alignment.shacl.ttl",
 ]
 
 data_graph = Graph()

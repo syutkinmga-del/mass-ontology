@@ -26,6 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install rdflib pyshacl owlready2 pytest requests
 
+      - name: Check ontology catalog
+        run: |
+          python scripts/check_catalog.py
+
       - name: Run SHACL validation
         run: |
           python scripts/run_shacl.py

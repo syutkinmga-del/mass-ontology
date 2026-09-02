@@ -20,6 +20,12 @@
 - Expected CQ result checks for foundation alignment queries.
 - Architecture Decision Record for foundation alignment strategy:
   - `docs/adr/ADR-001-foundation-alignment-strategy.md`.
+- Local ontology catalog mapping:
+  - `catalog-v001.xml`.
+- Catalog validation script:
+  - `scripts/check_catalog.py`.
+- `make catalog` command for checking local ontology IRI mappings.
+- GitHub Actions step for catalog validation.
 
 ### Changed
 

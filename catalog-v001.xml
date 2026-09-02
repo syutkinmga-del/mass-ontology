@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="https://w3id.org/mass-ontology/common" uri="01-common/common-core.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/foundation-alignment" uri="00-foundation/foundation-alignment.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/core" uri="03-mass-core/mass-core.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/navigation" uri="04-navigation/navigation-situation.ttl"/>
+</catalog>

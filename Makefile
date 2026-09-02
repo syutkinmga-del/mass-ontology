@@ -1,4 +1,4 @@
-.PHONY: validate test tree status cq
+.PHONY: catalog validate test tree status cq
 
 PYTHON := .venv/bin/python
 
@@ -16,3 +16,6 @@ status:
 
 cq:
 	$(PYTHON) scripts/run_cq_queries.py
+
+catalog:
+	$(PYTHON) scripts/check_catalog.py

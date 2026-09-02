@@ -1,0 +1,11 @@
+PREFIX foundation: <https://w3id.org/mass-ontology/foundation#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?externalOntology ?label ?role ?status
+WHERE {
+  ?externalOntology a foundation:ExternalOntology ;
+                    rdfs:label ?label ;
+                    foundation:externalOntologyRole ?role ;
+                    foundation:externalOntologyStatus ?status .
+}
+ORDER BY ?externalOntology

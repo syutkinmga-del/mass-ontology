@@ -4,4 +4,5 @@
     <uri name="https://w3id.org/mass-ontology/foundation-alignment" uri="00-foundation/foundation-alignment.ttl"/>
     <uri name="https://w3id.org/mass-ontology/core" uri="03-mass-core/mass-core.ttl"/>
     <uri name="https://w3id.org/mass-ontology/navigation" uri="04-navigation/navigation-situation.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/external-ontology-registry" uri="00-foundation/external-ontology-registry.ttl"/>
 </catalog>

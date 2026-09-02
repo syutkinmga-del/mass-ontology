@@ -9,6 +9,7 @@ CATALOG_NS = {"cat": "urn:oasis:names:tc:entity:xmlns:xml:catalog"}
 
 EXPECTED_ENTRIES = {
     "https://w3id.org/mass-ontology/common",
+    "https://w3id.org/mass-ontology/external-ontology-registry",
     "https://w3id.org/mass-ontology/foundation-alignment",
     "https://w3id.org/mass-ontology/core",
     "https://w3id.org/mass-ontology/navigation",

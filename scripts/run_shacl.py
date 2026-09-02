@@ -10,6 +10,7 @@ data_files = [
     ROOT / "03-mass-core" / "mass-core.ttl",
     ROOT / "04-navigation" / "navigation-situation.ttl",
     ROOT / "examples" / "example-encounter-scenario.ttl",
+    ROOT / "00-foundation" / "external-ontology-registry.ttl",
 ]
 
 shape_files = [

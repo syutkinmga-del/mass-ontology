@@ -1,0 +1,60 @@
+@prefix foundation: <https://w3id.org/mass-ontology/foundation#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/mass-ontology/external-ontology-registry>
+    a owl:Ontology ;
+    rdfs:label "MASS External Ontology Registry"@en ;
+    rdfs:comment "Registry of external ontologies considered for controlled alignment with the MASS Ontology."@en ;
+    owl:versionInfo "0.3.0-dev" .
+
+foundation:ExternalOntology
+    a owl:Class ;
+    rdfs:label "External Ontology"@en .
+
+foundation:externalOntologyIRI
+    a owl:DatatypeProperty ;
+    rdfs:domain foundation:ExternalOntology ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "external ontology IRI"@en .
+
+foundation:externalOntologyRepository
+    a owl:DatatypeProperty ;
+    rdfs:domain foundation:ExternalOntology ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "external ontology repository"@en .
+
+foundation:externalOntologyRole
+    a owl:DatatypeProperty ;
+    rdfs:domain foundation:ExternalOntology ;
+    rdfs:range xsd:string ;
+    rdfs:label "external ontology role"@en .
+
+foundation:externalOntologyStatus
+    a owl:DatatypeProperty ;
+    rdfs:domain foundation:ExternalOntology ;
+    rdfs:range xsd:string ;
+    rdfs:label "external ontology status"@en .
+
+foundation:alignmentCandidateOntology
+    a owl:ObjectProperty ;
+    rdfs:domain foundation:AlignmentDecision ;
+    rdfs:range foundation:ExternalOntology ;
+    rdfs:label "alignment candidate ontology"@en .
+
+foundation:BFO2020
+    a foundation:ExternalOntology ;
+    rdfs:label "Basic Formal Ontology 2020"@en ;
+    foundation:externalOntologyIRI "https://github.com/BFO-ontology/BFO-2020"^^xsd:anyURI ;
+    foundation:externalOntologyRepository "https://github.com/BFO-ontology/BFO-2020"^^xsd:anyURI ;
+    foundation:externalOntologyRole "Top-level ontology candidate for MASS foundation alignment." ;
+    foundation:externalOntologyStatus "candidate" .
+
+foundation:CCO
+    a foundation:ExternalOntology ;
+    rdfs:label "Common Core Ontologies"@en ;
+    foundation:externalOntologyIRI "https://github.com/CommonCoreOntology/CommonCoreOntologies"^^xsd:anyURI ;
+    foundation:externalOntologyRepository "https://github.com/CommonCoreOntology/CommonCoreOntologies"^^xsd:anyURI ;
+    foundation:externalOntologyRole "Mid-level ontology suite candidate for MASS common and domain alignment." ;
+    foundation:externalOntologyStatus "candidate" .

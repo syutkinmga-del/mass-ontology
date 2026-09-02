@@ -1,0 +1,9 @@
+PREFIX foundation: <https://w3id.org/mass-ontology/foundation#>
+
+SELECT ?alignmentDecision ?localEntity ?candidateOntology
+WHERE {
+  ?alignmentDecision a foundation:AlignmentDecision ;
+                     foundation:alignsLocalEntity ?localEntity ;
+                     foundation:alignmentCandidateOntology ?candidateOntology .
+}
+ORDER BY ?alignmentDecision ?candidateOntology

@@ -10,5 +10,7 @@
   "cq-09-foundation-alignment-decisions.rq": 9,
   "cq-10-mass-vessel-foundation-target.rq": 1,
   "cq-11-draft-alignment-decisions.rq": 9,
-  "cq-12-navigation-alignment-decisions.rq": 3
+  "cq-12-navigation-alignment-decisions.rq": 3,
+  "cq-13-external-ontology-candidates.rq": 2,
+  "cq-14-alignment-candidate-ontologies.rq": 18
 }

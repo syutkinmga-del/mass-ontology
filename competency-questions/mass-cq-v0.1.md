@@ -198,3 +198,35 @@ Supported by the current navigation module and example scenario.
 
 **SPARQL query:**  
 `queries/list-encounter-scenarios.rq`.
+---
+
+## CQ-13 — External ontology candidates
+
+**Question:**  
+Which external ontologies are currently considered as candidates for controlled alignment?
+
+**Expected answer pattern:**  
+External ontology → label → role → status
+
+**Current ontology support:**  
+Supported by `foundation:ExternalOntology`, `foundation:externalOntologyRole` and 
+`foundation:externalOntologyStatus`.
+
+**SPARQL query:**  
+`queries/cq/cq-13-external-ontology-candidates.rq`.
+
+---
+
+## CQ-14 — Alignment candidate ontologies
+
+**Question:**  
+Which alignment decisions are connected to candidate external ontologies?
+
+**Expected answer pattern:**  
+Alignment decision → local entity → candidate ontology
+
+**Current ontology support:**  
+Supported by `foundation:alignmentCandidateOntology`.
+
+**SPARQL query:**  
+`queries/cq/cq-14-alignment-candidate-ontologies.rq`.

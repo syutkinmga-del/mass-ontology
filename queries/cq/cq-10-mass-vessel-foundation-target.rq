@@ -1,0 +1,11 @@
+PREFIX foundation: <https://w3id.org/mass-ontology/foundation#>
+PREFIX mass:       <https://w3id.org/mass-ontology/core#>
+
+SELECT ?alignmentDecision ?proposedTarget ?status
+WHERE {
+  ?alignmentDecision a foundation:AlignmentDecision ;
+                     foundation:alignsLocalEntity mass:MASSVessel ;
+                     foundation:proposedFoundationTarget ?proposedTarget ;
+                     foundation:alignmentStatus ?status .
+}
+ORDER BY ?alignmentDecision

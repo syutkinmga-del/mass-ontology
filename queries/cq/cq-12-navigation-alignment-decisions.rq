@@ -1,0 +1,17 @@
+PREFIX foundation: <https://w3id.org/mass-ontology/foundation#>
+PREFIX nav:        <https://w3id.org/mass-ontology/navigation#>
+
+SELECT ?alignmentDecision ?navigationClass ?proposedTarget ?status
+WHERE {
+  VALUES ?navigationClass {
+    nav:EncounterSituation
+    nav:Maneuver
+    nav:COLREGRule
+  }
+
+  ?alignmentDecision a foundation:AlignmentDecision ;
+                     foundation:alignsLocalEntity ?navigationClass ;
+                     foundation:proposedFoundationTarget ?proposedTarget ;
+                     foundation:alignmentStatus ?status .
+}
+ORDER BY ?alignmentDecision

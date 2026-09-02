@@ -6,5 +6,9 @@
   "cq-05-colreg-rule.rq": 1,
   "cq-06-required-maneuver.rq": 1,
   "cq-07-safety-verification-evidence.rq": 1,
-  "cq-08-encounter-scenarios.rq": 1
+  "cq-08-encounter-scenarios.rq": 1,
+  "cq-09-foundation-alignment-decisions.rq": 9,
+  "cq-10-mass-vessel-foundation-target.rq": 1,
+  "cq-11-draft-alignment-decisions.rq": 9,
+  "cq-12-navigation-alignment-decisions.rq": 3
 }

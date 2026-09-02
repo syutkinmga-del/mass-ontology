@@ -28,7 +28,70 @@ Which communication links are assigned to a MASS vessel?
 
 **Expected answer pattern:**  
 MASS vessel → communication link
+---
 
+## CQ-09 — Foundation alignment decisions
+
+**Question:**  
+Which local ontology entities have foundation alignment decisions?
+
+**Expected answer pattern:**  
+Alignment decision → local entity → proposed foundation target → status
+
+**Current ontology support:**  
+Supported by `foundation:AlignmentDecision`, `foundation:alignsLocalEntity`, 
+`foundation:proposedFoundationTarget` and `foundation:alignmentStatus`.
+
+**SPARQL query:**  
+`queries/cq/cq-09-foundation-alignment-decisions.rq`.
+
+---
+
+## CQ-10 — MASS vessel foundation target
+
+**Question:**  
+Which foundation target is proposed for `mass:MASSVessel`?
+
+**Expected answer pattern:**  
+Alignment decision → proposed foundation target → status
+
+**Current ontology support:**  
+Supported by the foundation alignment module.
+
+**SPARQL query:**  
+`queries/cq/cq-10-mass-vessel-foundation-target.rq`.
+
+---
+
+## CQ-11 — Draft alignment decisions
+
+**Question:**  
+Which alignment decisions currently have draft status?
+
+**Expected answer pattern:**  
+Alignment decision → local entity → proposed foundation target
+
+**Current ontology support:**  
+Supported by `foundation:alignmentStatus`.
+
+**SPARQL query:**  
+`queries/cq/cq-11-draft-alignment-decisions.rq`.
+
+---
+
+## CQ-12 — Navigation alignment decisions
+
+**Question:**  
+Which navigation ontology classes already have foundation alignment decisions?
+
+**Expected answer pattern:**  
+Alignment decision → navigation class → proposed foundation target → status
+
+**Current ontology support:**  
+Supported by foundation alignment decisions for selected `nav:` classes.
+
+**SPARQL query:**  
+`queries/cq/cq-12-navigation-alignment-decisions.rq`.
 **Current ontology support:**  
 Supported by `mass:MASSVessel` and `mass:hasCommunicationLink`.
 

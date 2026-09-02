@@ -18,6 +18,8 @@
   - CQ-12 — navigation alignment decisions.
 - SPARQL queries for CQ-09 ... CQ-12.
 - Expected CQ result checks for foundation alignment queries.
+- Architecture Decision Record for foundation alignment strategy:
+  - `docs/adr/ADR-001-foundation-alignment-strategy.md`.
 
 ### Changed
 

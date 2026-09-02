@@ -1,5 +1,36 @@
 # Changelog
 
+## Unreleased — v0.3.0-dev
+
+### Added
+
+- MASS Common ontology draft:
+  - `01-common/common-core.ttl`.
+- Foundation alignment draft:
+  - `00-foundation/foundation-alignment.ttl`.
+- Draft alignment decisions for selected MASS Core and Navigation classes.
+- Common-layer superclass links for MASS Core classes.
+- Common-layer superclass links for Navigation classes.
+- Foundation alignment competency questions:
+  - CQ-09 — foundation alignment decisions;
+  - CQ-10 — MASS vessel foundation target;
+  - CQ-11 — draft alignment decisions;
+  - CQ-12 — navigation alignment decisions.
+- SPARQL queries for CQ-09 ... CQ-12.
+- Expected CQ result checks for foundation alignment queries.
+
+### Changed
+
+- SHACL and CQ runner input data now include the common and foundation alignment modules.
+- The project has moved from a navigation-focused MVP toward a foundation-aligned ontology architecture.
+
+### Meaning
+
+This development line prepares the MASS Ontology for controlled future alignment with BFO and CCO.
+
+The current status is still exploratory. The repository records draft alignment decisions, but does not 
+yet claim full BFO/CCO compliance.
+
 All notable changes to the MASS Ontology project will be documented in this file.
 
 The project follows an iterative research-oriented versioning approach:

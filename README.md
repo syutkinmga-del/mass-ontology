@@ -13,21 +13,27 @@ This repository is the source of truth for a research ontology stack supporting:
 - ROC / VTS interaction modeling
 - safety, risk, V&V and assurance traceability
 
-## Current status: MVP v0.2.0
+## Current development status: v0.3.0-dev
 
-The current version of the MASS Ontology repository is an early but testable ontology engineering 
-MVP.
+The current development line extends the MASS Ontology MVP beyond the `v0.2.0` competency questions 
+release.
 
-It includes:
+The main focus of `v0.3.0-dev` is foundation alignment.
 
-- MASS Core ontology draft;
-- Navigation ontology draft;
-- example encounter scenario;
-- SHACL validation rules;
-- competency questions;
-- SPARQL queries for competency questions;
-- automated CQ query runner;
-- GitHub Actions validation pipeline.
+This means that the project now includes an explicit draft layer for connecting MASS ontology modules 
+with upper and common ontologies such as BFO and CCO.
+
+Current `v0.3.0-dev` additions include:
+
+- `01-common/common-core.ttl` — lightweight MASS common vocabulary;
+- `00-foundation/foundation-alignment.ttl` — draft alignment decisions;
+- foundation alignment links from MASS Core to the common layer;
+- foundation alignment links from Navigation to the common layer;
+- CQ-09 ... CQ-12 for checking foundation alignment decisions;
+- expected result checks for the new foundation alignment competency questions.
+
+The project still does not claim to be fully aligned with BFO or CCO. The current layer records draft 
+alignment decisions and prepares the ontology for controlled future imports.
 
 The project is not yet a complete MASS ontology stack. It is a working research sandbox for 
 developing and validating a modular ontology architecture for Maritime Autonomous Surface Ships.
@@ -51,6 +57,20 @@ tests/                  automated tests
 docs/                   documentation
 
 ```
+## Architecture direction
+
+The intended ontology stack is:
+
+```text
+BFO / CCO
+→ MASS Common
+→ MASS Core
+→ Navigation
+→ Sensor observations
+→ Quantities and units
+→ Geospatial representation
+→ COLREGs extension
+→ Safety / V&V evidence
 
 ## Validation workflow
 
@@ -66,13 +86,18 @@ make validatpytest
 
 Git is the source of truth. Protégé is an ontology editor. VS Code is used for TTL, SHACL, SPARQL and code. pySHACL validates constraints. Fuseki demonstrates SPARQL queries.
 
-## Competency questions
+## Competency Questions
 
-The first competency questions are stored in:
+The ontology is checked through competency questions and SPARQL queries.
+
+Current competency question groups:
 
 ```text
+CQ-01 ... CQ-08
+→ MASS Core and navigation encounter scenario
 
-competency-questions/mass-cq-v0.1.md
+CQ-09 ... CQ-12
+→ foundation alignment decisions
 
 ## Releases
 

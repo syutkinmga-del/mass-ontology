@@ -7,6 +7,38 @@ The current repository is an early research MVP. It demonstrates how RDF/OWL, SH
 be used to represent and check basic MASS concepts, navigation encounter scenarios, COLREG-related 
 references and verification-oriented model data.
 
+## Development line: v0.3.0-dev
+
+After the `v0.2.0` competency questions release, the project entered the `v0.3.0-dev` development line.
+
+The purpose of this development line is to introduce foundation alignment.
+
+The current draft foundation layer includes:
+
+```text
+00-foundation/foundation-alignment.ttl
+01-common/common-core.ttl
+
+Добавь раздел:
+
+```markdown
+
+## Foundation alignment competency questions
+
+The foundation alignment layer is checked by CQ-09 ... CQ-12.
+
+These competency questions answer:
+
+- which local ontology entities have foundation alignment decisions;
+- which foundation target is proposed for `mass:MASSVessel`;
+- which alignment decisions currently have draft status;
+- which navigation classes already have foundation alignment decisions.
+
+The corresponding SPARQL queries are stored in:
+
+```text
+queries/cq/
+
 ## Current scope
 
 The current MVP includes:

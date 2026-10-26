@@ -138,3 +138,23 @@ make validate
 
 **Document:**
 [Open DCCR-01](reviews/DCCR-01-xiong-ship-behavior-review.md)
+
+### DCCR-02 — Semantic Design Review
+
+**Status:** APPROVED
+
+**Approval date:** 2026-10-26
+
+**Scope:**
+- Trajectory
+- TemporalUnit
+- PhysicalBehavior
+- InteractionBehavior
+- SemanticBehavior
+- Semantic boundaries and validation principles
+
+**Next:** DCCR-03 — Ontology Alignment Specification
+
+**Document:**
+[Open DCCR-02](reviews/DCCR-02-semantic-design-review.md)
+

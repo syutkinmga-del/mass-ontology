@@ -117,3 +117,24 @@ Run structural validation:
 
 ```bash
 make validate
+
+---
+
+## Domain Concept Completeness Reviews
+
+### DCCR-01 — Xiong Ship Behavior Review
+
+**Status:** APPROVED
+
+**Source:** Xiong et al. (2026)
+
+**Scope:**
+- 13 core ontology classes
+- 9 ontology relations
+- 5 experimental behavior classes
+- semantic properties and constraints
+
+**Next:** DCCR-02 — Semantic Design Review
+
+**Document:**
+[Open DCCR-01](reviews/DCCR-01-xiong-ship-behavior-review.md)

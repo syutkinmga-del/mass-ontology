@@ -19,9 +19,9 @@ The current draft foundation layer includes:
 00-foundation/foundation-alignment.ttl
 01-common/common-core.ttl
 
-Добавь раздел:
 
-```markdown
+
+```
 
 ## Foundation alignment competency questions
 
@@ -38,6 +38,8 @@ The corresponding SPARQL queries are stored in:
 
 ```text
 queries/cq/
+
+```
 
 ## Current scope
 
@@ -71,6 +73,8 @@ mass-ontology/
 │   └── index.md
 └── Makefile
 
+```
+
 ## MVP v0.2.0
 
 The current MVP demonstrates a minimal ontology engineering pipeline for MASS-oriented MBSE and 
@@ -88,9 +92,9 @@ MASS Core ontology
 → automated expected-result checks
 → GitHub Actions
 
-Добавь раздел:
 
-```markdown
+```
+
 ## Competency Questions
 
 The MVP uses competency questions to define what the ontology should be able to answer.
@@ -111,12 +115,16 @@ The CQ definitions are stored in:
 ```text
 competency-questions/mass-cq-v0.1.md
 
+```
+
 ## Local validation
 
 Run structural validation:
 
 ```bash
 make validate
+
+```
 
 ---
 

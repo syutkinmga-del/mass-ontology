@@ -158,3 +158,20 @@ make validate
 **Document:**
 [Open DCCR-02](reviews/DCCR-02-semantic-design-review.md)
 
+### DCCR-03 — Ontology Alignment Specification
+
+**Status:** APPROVED
+
+**Approval date:** 2026-10-27
+
+**Scope:**
+- OWL class and property specifications
+- IRI and namespace policy
+- SOSA/SSN, QUDT, OWL-Time, GeoSPARQL and PROV-O alignment
+- BFO/CCO candidate mappings
+- Semantic constraints and validation requirements
+
+**Next:** DCCR-04 — Validation Contract
+
+**Document:**
+[Open DCCR-03](reviews/DCCR-03-ontology-alignment-specification.md)

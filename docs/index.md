@@ -201,3 +201,17 @@ make validate
 
 **Document:**
 [Open DCCR-04](reviews/DCCR-04-validation-contract.md)
+
+## Project Methodology and Roadmap
+
+**Methodology:** MASS-OEF — ADOPTED (2026-10-27)
+
+[Open MASS-OEF](architecture/mass-oef-methodology.md)
+
+**Roadmap:** MASS Ontology v1.1 — APPROVED (2026-10-27)
+
+[Open Roadmap v1.1](roadmap.md)
+
+**Governance decision:**
+
+[Open Approval Record](governance/DEC-2026-10-27-mass-oef-roadmap-v1.1.md)

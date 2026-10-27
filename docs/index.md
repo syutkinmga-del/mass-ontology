@@ -175,3 +175,21 @@ make validate
 
 **Document:**
 [Open DCCR-03](reviews/DCCR-03-ontology-alignment-specification.md)
+
+### DCCR-04 — Validation Contract
+
+**Status:** APPROVED
+
+**Approval date:** 2026-10-27
+
+**Scope:**
+- 12 validation rules (BH-V01–BH-V12)
+- 10 competency questions (BH-CQ-01–BH-CQ-10)
+- SHACL and semantic validation
+- Positive and negative RDF test fixtures
+- Regression tests and CI acceptance gates
+
+**Next:** BH-P04 — Observation Core Implementation
+
+**Document:**
+[Open DCCR-04](reviews/DCCR-04-validation-contract.md)

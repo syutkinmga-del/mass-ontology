@@ -1,0 +1,119 @@
+{
+  "profile": "BH-P04",
+  "governance_decision": "DEC-2026-10-28-P04-00-SR",
+  "status": "PREPARATORY_NOT_PINNED",
+  "date_reviewed": "2026-10-28",
+  "policy": {
+    "network_fetch_in_ci": false,
+    "owl_imports_approved": false,
+    "all_artifact_checksums_pending": true,
+    "loading_strategy": "PENDING_EXPLICIT_PROFILE",
+    "inference_profile": "PENDING",
+    "description": "This is a manifest skeleton, not evidence that an artifact is present or checked."
+  },
+  "dependencies": [
+    {
+      "registry_id": "O-01",
+      "source": "SOSA/SSN",
+      "candidate_release": "W3C 2017 Recommendation (proposed, not selected)",
+      "namespace_iris": [
+        "http://www.w3.org/ns/sosa/",
+        "http://www.w3.org/ns/ssn/"
+      ],
+      "selection_status": "PENDING",
+      "ontology_iri": null,
+      "version_iri": null,
+      "artifact_url": null,
+      "local_artifact_path": null,
+      "sha256": null,
+      "license_review": "PENDING",
+      "import_policy": "NO_IMPORT_APPROVED",
+      "notes": "Do not mark dependency resolved until local bytes are pinned and verified."
+    },
+    {
+      "registry_id": "O-02",
+      "source": "QUDT schema",
+      "candidate_release": "3.5.3 (candidate)",
+      "namespace_iris": [
+        "http://qudt.org/schema/qudt/"
+      ],
+      "selection_status": "PENDING",
+      "ontology_iri": null,
+      "version_iri": null,
+      "artifact_url": null,
+      "local_artifact_path": null,
+      "sha256": null,
+      "license_review": "PENDING",
+      "import_policy": "NO_IMPORT_APPROVED",
+      "notes": "Do not mark dependency resolved until local bytes are pinned and verified."
+    },
+    {
+      "registry_id": "O-02",
+      "source": "QUDT units",
+      "candidate_release": "3.5.3 (candidate)",
+      "namespace_iris": [
+        "http://qudt.org/vocab/unit/"
+      ],
+      "selection_status": "PENDING",
+      "ontology_iri": null,
+      "version_iri": null,
+      "artifact_url": null,
+      "local_artifact_path": null,
+      "sha256": null,
+      "license_review": "PENDING",
+      "import_policy": "NO_IMPORT_APPROVED",
+      "notes": "Do not mark dependency resolved until local bytes are pinned and verified."
+    },
+    {
+      "registry_id": "O-02",
+      "source": "QUDT quantity kinds and dimension vectors",
+      "candidate_release": "3.5.3 (candidate)",
+      "namespace_iris": [
+        "http://qudt.org/vocab/quantitykind/"
+      ],
+      "selection_status": "PENDING",
+      "ontology_iri": null,
+      "version_iri": null,
+      "artifact_url": null,
+      "local_artifact_path": null,
+      "sha256": null,
+      "license_review": "PENDING",
+      "import_policy": "NO_IMPORT_APPROVED",
+      "notes": "Do not mark dependency resolved until local bytes are pinned and verified."
+    },
+    {
+      "registry_id": "O-03",
+      "source": "OWL-Time",
+      "candidate_release": "W3C 2017 Recommendation (proposed, not selected)",
+      "namespace_iris": [
+        "http://www.w3.org/2006/time#"
+      ],
+      "selection_status": "PENDING",
+      "ontology_iri": null,
+      "version_iri": null,
+      "artifact_url": null,
+      "local_artifact_path": null,
+      "sha256": null,
+      "license_review": "PENDING",
+      "import_policy": "NO_IMPORT_APPROVED",
+      "notes": "Do not mark dependency resolved until local bytes are pinned and verified."
+    },
+    {
+      "registry_id": "O-04",
+      "source": "PROV-O",
+      "candidate_release": "W3C 2013 Recommendation; RDF artifact pending",
+      "namespace_iris": [
+        "http://www.w3.org/ns/prov#"
+      ],
+      "selection_status": "PENDING",
+      "ontology_iri": null,
+      "version_iri": null,
+      "artifact_url": null,
+      "local_artifact_path": null,
+      "sha256": null,
+      "license_review": "PENDING",
+      "import_policy": "NO_IMPORT_APPROVED",
+      "notes": "Do not mark dependency resolved until local bytes are pinned and verified."
+    }
+  ]
+}

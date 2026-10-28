@@ -58,7 +58,7 @@ The script does not install dependencies, commit files, change ontology definiti
 | P04-00-D02 | `Trajectory` / `TemporalUnit` | Both information representations; a time interval is a distinct OWL-Time object | APPROVED IN DCCR-02/03 |
 | P04-00-D03 | Time | UTC ISO 8601 with explicit offset; separate observed/event, AIS reception, result/processing times | PROPOSED IMPLEMENTATION POLICY |
 | P04-00-D04 | Segmentation | Manual/algorithm-versioned *explicit* segments for P04 synthetic fixture; no universal gap threshold chosen | PROPOSED |
-| P04-00-D05 | Standards | Metadata-only registry with publication-status/IRI/edition and license/import decision | PROPOSED |
+| P04-00-D05 | Standards | Metadata-only registry with publication-status/IRI/edition and license/import decision | APPROVED 2026-10-28 — SR-01…SR-07; RDF artifact pinning PENDING |
 | P04-00-D06 | `OperationalConfiguration` | Document future role as temporally scoped integration context at v0.6; do not implement in P04 | DEFERRED |
 | P04-00-D07 | BFO/CCO | Candidate mapping only; exact superclass and normative ontology IRI not yet accepted | OPEN |
 
@@ -75,3 +75,7 @@ See `docs/architecture/P04-00-terminology-time-policy.md`, `docs/standards/norma
 - [ ] P04-01 may start with a reviewed general-vessel migration proposal.
 
 **Current verdict:** P04-00 STARTED; cannot mark COMPLETE until local command evidence and decision review are available.
+
+## 6. Source registry approval follow-up (2026-10-28)
+
+The P04-00 [Normative & Ontology Source Registry](../standards/normative-source-registry.md) was **APPROVED** with SR-01…SR-07, as recorded in [the governance decision](../governance/DEC-2026-10-28-P04-00-source-registry-SR01-SR07.md). The metadata architecture is approved, while dependency artifacts, licenses, checksums and BH-V11 execution remain pending before P04-03. Existing P04-00 exit criteria and kernel/test evidence requirements remain open.

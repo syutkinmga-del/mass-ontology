@@ -1,7 +1,7 @@
 # P04-00 — Terminology, IRI, Time and Segmentation Policy
 
 **Date:** 2026-10-28
-**Status:** PROPOSED FOR P04-00 ACCEPTANCE (not a change to DCCR-01…04)
+**Status:** APPROVED — 2026-10-28, with clarifications T-01…T-04 (DCCR-01…04 unchanged)
 
 ## 1. Scope
 
@@ -18,7 +18,7 @@ This policy prepares v0.4.0 Observation Core. It does not authorize `v0.5` Inter
 - `Trajectory` is an information record, NOT a vessel motion process or route plan. `TemporalUnit` is an information segment, NOT `time:ProperInterval`. `PositionState`, `SpeedState`, `CourseState` are concurrent descriptive dimensions and may coexist.
 - No production `owl:equivalentClass`, `owl:disjointWith` or BFO/CCO equivalence without ADR + reasoner and regression evidence.
 
-## 3. Temporal data conventions (P04 proposal)
+## 3. Temporal data conventions (approved P04 fixture policy)
 
 | Aspect | Proposed rule |
 |---|---|
@@ -37,7 +37,7 @@ This policy prepares v0.4.0 Observation Core. It does not authorize `v0.5` Inter
 
 **Required design decision before P04-03:** confirm whether incoming AIS records include a trusted complete UTC time. If only the AIS second field is present, record a separate receiver timestamp and reconstruct event time only with an explicitly documented source/rule and uncertainty. Also define whether the fixture demonstrates multiple non-overlapping units or a single unit; prefer 2-3 for BH-V03.
 
-## 4. Segmentation policy (P04 synthetic dataset only)
+## 4. Segmentation policy (approved for P04 synthetic dataset only)
 
 - Segmentation is **not** equivalent to classification of real-world behavior or COLREG situations.
 - The P04 fixture will use predetermined non-overlapping segments with a segmentation identifier, index and derivation/source metadata. Segmentation algorithm/version are recorded explicitly.
@@ -52,6 +52,40 @@ This policy prepares v0.4.0 Observation Core. It does not authorize `v0.5` Inter
 - Distinguish Course Over Ground (COG) from true heading or compass bearing; state the frame/reference (true/geodetic) in fixture metadata.
 - If using positions, store latitude/longitude with a known WGS84/CRS convention, but **do not** infer GeoSPARQL geometry / spatial topological relations in P04 (reserved v0.5).
 
-## 6. Decision to be recorded
+## 6. Approved clarifications — T-01…T-04
 
-**Proposed acceptance:** P04-00 adopts these conventions for v0.4 synthetic fixture; exact imports/releases, AIS timestamp recovery, real-data segmentation thresholds, operational configurations and behavior taxonomies remain separate later decisions. Acceptance requires a reviewer and a dated commit/decision record.
+### T-01 — AIS event-time quality
+
+- Distinguish `sosa:phenomenonTime`, `sosa:resultTime`, and the receiver/ingestion timestamp; record source and quality of each.
+- The AIS second-of-minute field alone is not a complete UTC timestamp. Do not fabricate full event time or silently equate it with reception time.
+- Treat reserved, missing and unavailable timestamp codes according to the selected AIS message specification.
+- Reconstructed event time requires a documented algorithm/version, supporting sources, original raw values and uncertainty/quality metadata. Production reconstruction remains open.
+- The P04 synthetic fixture uses explicitly supplied full UTC instants with known provenance.
+
+### T-02 — AIS unavailable/sentinel values
+
+- Validate AIS payloads using message-type-specific code tables, including reserved/unavailable indicators, before creating QUDT values.
+- Never interpret missing SOG/COG/latitude/longitude as valid zero or as a valid physical quantity.
+- Preserve raw source codes and quality/missingness evidence separately; do not fabricate derived values.
+- Add negative fixture(s) for unavailable measurement and invalid speed/course units. Pin the AIS specification before relying on numerical sentinel codes.
+
+### T-03 — Deterministic segmentation and gaps
+
+- For P04 synthetic data, record per unit: trajectory, segment index, distinct `time:ProperInterval`, segmentation method identifier/version and source/provenance.
+- Sample assignment is `[start,end)` in the ingestion pipeline, not an OWL-Time endpoint axiom. Samples exactly on a boundary belong to the next segment.
+- Use at least 2–3 non-overlapping predetermined units; include a visible observation-coverage gap to test temporal integrity.
+- `bh:nextTemporalUnit` signifies sequence, not necessarily `time:intervalMeets`. No continuity inferred across missing observations.
+- Real-data gap thresholds, SOG/COG segmentation thresholds and behavior-driven segmentation are not approved here.
+
+### T-04 — Pinned standard-vocabulary artifacts
+
+- Before P04-03 and BH-V11 PASS, record for SOSA/SSN, QUDT, OWL-Time and PROV-O: canonical ontology IRI, namespace, selected edition/release or immutable snapshot, local artifact/checksum (SHA-256), access/license status and approved import/usage profile.
+- Citing a vocabulary namespace does not establish a pinned RDF import; avoid unreviewed `owl:imports` and mutable live fetches during CI.
+- BFO/CCO remain candidates, not accepted OWL mappings; GitHub repository URLs are not canonical ontology IRI evidence.
+- GeoSPARQL and semantic behavior taxonomy remain deferred to v0.5+.
+
+## 7. Approval and non-goals
+
+**Decision:** APPROVED on 2026-10-28 for v0.4.0-dev synthetic Observation Core fixture, including T-01…T-04. See [governance decision](../governance/DEC-2026-10-28-P04-00-terminology-time-policy.md).
+
+This decision does not approve production AIS time reconstruction, thresholds for real AIS segmentation, imported RDF artifacts not yet pinned, changes to DCCR-01…04, the immutable SysML Kernel, or implementation of `OperationalConfiguration` (v0.6). It does not close the full P04-00 work package.

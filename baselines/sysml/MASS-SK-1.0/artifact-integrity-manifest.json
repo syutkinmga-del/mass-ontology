@@ -1,0 +1,48 @@
+{
+  "manifest_schema": "MASS P04 source archive integrity manifest v1",
+  "baseline_id": "MASS-SK-1.0",
+  "baseline_name": "MASS Semantic Kernel v1.0",
+  "source_language": "SysML v2",
+  "source_package": "MASSKernel",
+  "provenance": "Files provided within MASS project conversation as MASSKernel_v1.0.* artifacts; prior external canonical source location not independently established",
+  "archival_role": "read-only evidence snapshot in MASS Ontology repository, NOT runtime import into OWL stack",
+  "record_date": "2026-10-28",
+  "released_source_sha256": "1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788",
+  "previous_candidate_sha256": "0a9a2440c490daf23dce0735f61a3383b85e3280bf0c72626979522e56eb6d81",
+  "candidate_vs_release_note": "Only introductory comments/status metadata differ; released file alone is the pinned reference.",
+  "integrity_validation": "SHA-256 verified against accompanying .sha256 and original release manifest on 2026-10-28",
+  "sysml_semantic_validation": "HISTORICAL DOCUMENTARY EVIDENCE ONLY: separate Pilot Implementation rerun on exact archived bytes not performed",
+  "source_issue": "Line 1: Skip to main panel; line 7: /; preserve bytes, investigate standalone parsability without editing the released artifact",
+  "files": [
+    {
+      "path": "MASSKernel_v1.0.sysml",
+      "bytes": 18796,
+      "sha256": "1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788"
+    },
+    {
+      "path": "MASSKernel_v1.0.sha256",
+      "bytes": 88,
+      "sha256": "e8be91e5026d64870bd0d52f2a581271920674ea10254babc9d1efc17bed6f30"
+    },
+    {
+      "path": "MASSKernel_v1.0_manifest.md",
+      "bytes": 4928,
+      "sha256": "606ebe5b26db2615af74a2b34b7d8d34a88b0bf594f7f90f4c4e86c3d2e271e7"
+    },
+    {
+      "path": "MASSKernel_v1.0_validation_record.md",
+      "bytes": 12956,
+      "sha256": "be5326fd4f84755ae6b687872cf62561e509e0cd27f70a7181d97589879e04c0"
+    },
+    {
+      "path": "MASSKernel_v1.0_scope_boundary.md",
+      "bytes": 12539,
+      "sha256": "8c64fcd9988a3c392b8031cb299f9eecce4e2ad68d10b0c072bee3cbac33422e"
+    },
+    {
+      "path": "MASSKernel_v1.0_change_control.md",
+      "bytes": 10138,
+      "sha256": "ca6cdfee5794ab9b0fb8422e703ed3005e90ee783dbb3af28ffa5a492b346ff2"
+    }
+  ]
+}

@@ -7,4 +7,5 @@
     <uri name="https://w3id.org/mass-ontology/external-ontology-registry" uri="00-foundation/external-ontology-registry.ttl"/>
     <uri name="https://w3id.org/mass-ontology/maritime" uri="02-maritime/maritime-core.ttl"/>
     <uri name="https://w3id.org/mass-ontology/maritime-compatibility" uri="02-maritime/vessel-compatibility.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/behavior" uri="07-behavior/ship-behavior.ttl"/>
 </catalog>

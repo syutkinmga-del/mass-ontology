@@ -1,0 +1,65 @@
+@prefix ex:       <https://w3id.org/mass-ontology/p04-02/example#> .
+@prefix bh:       <https://w3id.org/mass-ontology/behavior#> .
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# SYNTHETIC, NOT AIS. Three non-overlapping segments; a deliberate coverage gap
+# between segment 1 (ending 12:02) and segment 2 (starting 12:04).
+# Segment indices and explicit next links denote sequence order, NOT continuity.
+ex:vessel_001 a maritime:Vessel ; bh:hasTrajectory ex:trajectory_001 .
+
+ex:trajectory_001 a bh:Trajectory ;
+    bh:ofVessel ex:vessel_001 ;
+    bh:hasTemporalUnit ex:unit_000, ex:unit_001, ex:unit_002 .
+
+ex:unit_000 a bh:TemporalUnit ;
+    bh:partOfTrajectory ex:trajectory_001 ;
+    bh:segmentIndex "0"^^xsd:nonNegativeInteger ;
+    bh:hasTemporalExtent ex:interval_000 ;
+    bh:hasPhysicalBehavior ex:position_000, ex:speed_000, ex:course_000 ;
+    bh:nextTemporalUnit ex:unit_001 .
+
+ex:unit_001 a bh:TemporalUnit ;
+    bh:partOfTrajectory ex:trajectory_001 ;
+    bh:segmentIndex "1"^^xsd:nonNegativeInteger ;
+    bh:hasTemporalExtent ex:interval_001 ;
+    bh:hasPhysicalBehavior ex:position_001, ex:speed_001, ex:course_001 ;
+    bh:nextTemporalUnit ex:unit_002 .
+
+ex:unit_002 a bh:TemporalUnit ;
+    bh:partOfTrajectory ex:trajectory_001 ;
+    bh:segmentIndex "2"^^xsd:nonNegativeInteger ;
+    bh:hasTemporalExtent ex:interval_002 ;
+    bh:hasPhysicalBehavior ex:position_002, ex:speed_002, ex:course_002 .
+
+ex:position_000 a bh:PositionState .
+ex:speed_000 a bh:SpeedState .
+ex:course_000 a bh:CourseState .
+ex:position_001 a bh:PositionState .
+ex:speed_001 a bh:SpeedState .
+ex:course_001 a bh:CourseState .
+ex:position_002 a bh:PositionState .
+ex:speed_002 a bh:SpeedState .
+ex:course_002 a bh:CourseState .
+
+ex:interval_000 a time:ProperInterval ;
+    time:hasBeginning ex:begin_000 ; time:hasEnd ex:end_000 .
+ex:begin_000 a time:Instant ;
+    time:inXSDDateTimeStamp "2026-10-28T12:00:00Z"^^xsd:dateTimeStamp .
+ex:end_000 a time:Instant ;
+    time:inXSDDateTimeStamp "2026-10-28T12:01:00Z"^^xsd:dateTimeStamp .
+
+ex:interval_001 a time:ProperInterval ;
+    time:hasBeginning ex:begin_001 ; time:hasEnd ex:end_001 .
+ex:begin_001 a time:Instant ;
+    time:inXSDDateTimeStamp "2026-10-28T12:01:00Z"^^xsd:dateTimeStamp .
+ex:end_001 a time:Instant ;
+    time:inXSDDateTimeStamp "2026-10-28T12:02:00Z"^^xsd:dateTimeStamp .
+
+ex:interval_002 a time:ProperInterval ;
+    time:hasBeginning ex:begin_002 ; time:hasEnd ex:end_002 .
+ex:begin_002 a time:Instant ;
+    time:inXSDDateTimeStamp "2026-10-28T12:04:00Z"^^xsd:dateTimeStamp .
+ex:end_002 a time:Instant ;
+    time:inXSDDateTimeStamp "2026-10-28T12:05:00Z"^^xsd:dateTimeStamp .

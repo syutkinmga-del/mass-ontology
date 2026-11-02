@@ -1,0 +1,122 @@
+@prefix bh:       <https://w3id.org/mass-ontology/behavior#> .
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix common:   <https://w3id.org/mass-ontology/common#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/mass-ontology/behavior>
+    a owl:Ontology ;
+    rdfs:label "MASS Ship Behavior Core"@en ;
+    rdfs:comment "P04-02 information representations of observed maritime vessel movement. Temporal and physical quantities are completed in P04-03; full P04 validation follows in P04-04."@en ;
+    owl:imports <https://w3id.org/mass-ontology/common> ,
+                <https://w3id.org/mass-ontology/maritime> ;
+    owl:versionInfo "0.4.0-dev/P04-02" .
+
+# LOCAL information layer: no external BFO/CCO subclass or equivalence is asserted.
+bh:BehaviorInformationEntity
+    a owl:Class ;
+    rdfs:subClassOf common:InformationArtifact ;
+    rdfs:label "Behavior information entity"@en ;
+    rdfs:comment "A locally modeled information artifact recording or describing observed or derived vessel movement; not a physical vessel motion occurrence."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/behavior> .
+
+bh:Trajectory
+    a owl:Class ;
+    rdfs:subClassOf bh:BehaviorInformationEntity ;
+    rdfs:label "Trajectory"@en ;
+    rdfs:comment "A versionable information record of one vessel's temporally ordered location/movement history; neither a physical motion process, planned route nor geometry."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/behavior> .
+
+bh:TemporalUnit
+    a owl:Class ;
+    rdfs:subClassOf bh:BehaviorInformationEntity ;
+    rdfs:label "Temporal unit"@en ;
+    rdfs:comment "An information segment of a trajectory with an independently identified temporal extent. The segment is NOT a time:ProperInterval or time:Instant."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/behavior> .
+
+bh:BehaviorDescription
+    a owl:Class ;
+    rdfs:subClassOf bh:BehaviorInformationEntity ;
+    rdfs:label "Behavior description"@en ;
+    rdfs:comment "An information description of observed or derived movement; not an operational state, vessel movement process or a COLREG conclusion."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/behavior> .
+
+bh:PhysicalBehavior
+    a owl:Class ;
+    rdfs:subClassOf bh:BehaviorDescription ;
+    rdfs:label "Physical behavior description"@en ;
+    rdfs:comment "An evidence-oriented description of one observed/derived physical-motion dimension for a temporal unit; its quantity and observation provenance are introduced in P04-03."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/behavior> .
+
+bh:PositionState
+    a owl:Class ;
+    rdfs:subClassOf bh:PhysicalBehavior ;
+    rdfs:label "Position state description"@en ;
+    rdfs:comment "Information about position of a vessel, not a physical location individual or geometry."@en .
+
+bh:SpeedState
+    a owl:Class ;
+    rdfs:subClassOf bh:PhysicalBehavior ;
+    rdfs:label "Speed state description"@en ;
+    rdfs:comment "Information about a vessel speed dimension; no speed unit or SOG value is implied without a measurement record."@en .
+
+bh:CourseState
+    a owl:Class ;
+    rdfs:subClassOf bh:PhysicalBehavior ;
+    rdfs:label "Course state description"@en ;
+    rdfs:comment "Information about course-over-ground; not equivalent to heading or an operational mode."@en .
+
+# Directional associations. Reciprocal presence is checked on curated data
+# rather than assumed by owl:inverseOf or OWL open-world cardinalities.
+bh:hasTrajectory
+    a owl:ObjectProperty ;
+    rdfs:domain maritime:Vessel ;
+    rdfs:range bh:Trajectory ;
+    rdfs:label "has trajectory"@en .
+
+bh:ofVessel
+    a owl:ObjectProperty ;
+    rdfs:domain bh:Trajectory ;
+    rdfs:range maritime:Vessel ;
+    rdfs:label "of vessel"@en .
+
+bh:hasTemporalUnit
+    a owl:ObjectProperty ;
+    rdfs:domain bh:Trajectory ;
+    rdfs:range bh:TemporalUnit ;
+    rdfs:label "has temporal unit"@en .
+
+bh:partOfTrajectory
+    a owl:ObjectProperty ;
+    rdfs:domain bh:TemporalUnit ;
+    rdfs:range bh:Trajectory ;
+    rdfs:label "part of trajectory"@en .
+
+bh:hasTemporalExtent
+    a owl:ObjectProperty ;
+    rdfs:domain bh:TemporalUnit ;
+    rdfs:range time:TemporalEntity ;
+    rdfs:label "has temporal extent"@en ;
+    rdfs:comment "Links a segment record to a distinct OWL-Time temporal entity. P04 curated segment data requires a typed time:ProperInterval."@en .
+
+bh:hasPhysicalBehavior
+    a owl:ObjectProperty ;
+    rdfs:domain bh:TemporalUnit ;
+    rdfs:range bh:PhysicalBehavior ;
+    rdfs:label "has physical behavior description"@en .
+
+bh:nextTemporalUnit
+    a owl:ObjectProperty ;
+    rdfs:domain bh:TemporalUnit ;
+    rdfs:range bh:TemporalUnit ;
+    rdfs:label "next temporal unit"@en ;
+    rdfs:comment "Adjacency in a segmentation sequence; does not imply continuous temporal coverage or time:intervalMeets."@en .
+
+bh:segmentIndex
+    a owl:DatatypeProperty ;
+    rdfs:domain bh:TemporalUnit ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "segment index"@en ;
+    rdfs:comment "Zero-based ordering index local to the trajectory/segmentation run. Index uniqueness is a closed-world validation obligation."@en .

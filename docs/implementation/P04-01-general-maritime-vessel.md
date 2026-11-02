@@ -1,7 +1,7 @@
 # P04-01 — General Maritime Vessel: Implementation and Compatibility Contract
 
 **Implementation stage:** v0.4.0-dev / BH-P04
-**Status:** IMPLEMENTATION CANDIDATE — local test evidence must be collected; not yet a release
+**Status:** P04-01 VALIDATED — local checks PASS; architecture acceptance pending; not a BH-P04 release
 **Sources:** approved `docs/roadmap.md` section C, DCCR-03 C01 and General-vessel migration hazard; DCCR-04 BH-V01/BH-V12; approved P04-00 Terminology & Time Policy.
 **Baseline:** immutable `MASS-SK-1.0`, existing MASS OWL legacy modules and CQ-01…14.
 
@@ -39,3 +39,15 @@ Then execute `make catalog && make validate && make cq && make test` and `python
 **Not included:** `bh:Trajectory`, observation profiles, BFO/CCO alignment, degree-of-autonomy model, role reification, COLREG inference, `OperationalConfiguration`, or production `v0.4.0` release approval.
 
 **Review decisions to record:** (1) `maritime:Vessel` local subclass of `common:EngineeredSystem`; (2) compatibility bridge separate from legacy source; (3) contextual role vs intrinsic vessel identity; (4) catalog registration and explicit data loading; (5) test results and repository commit. The two modules establish intended IRI identifiers, but do not prove w3id.org URL dereferencing is configured.
+
+## P04-01 Validation Evidence Record
+
+- **Implementation commit:** `18f1dc21e786368a2bf0156961610e6c892e646a`.
+- **Tested HEAD:** `18f1dc21e786368a2bf0156961610e6c892e646a`.
+- **Verification UTC:** `2026-11-02T09:34:12.395401+00:00`.
+- **Executed P04-01 tests:** `8 passed` (see evidence logs).
+- **Legacy regression:** `make catalog`, `make validate`, `make cq` (14 CQ), `make test`: **PASS**.
+- **MASS-SK-1.0:** byte integrity **PASS**; SHA-256 `1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788`.
+- **Evidence report:** [validation-report.md](../evidence/P04-01/20261102T093406Z/validation-report.md).
+- **Machine report:** [validation-results.json](../evidence/P04-01/20261102T093406Z/validation-results.json).
+- **Not tested:** full BH-V01/BH-CQ-01..03, future P04 profile, fresh SysML Pilot validation.

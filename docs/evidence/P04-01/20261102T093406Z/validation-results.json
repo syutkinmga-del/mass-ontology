@@ -1,0 +1,124 @@
+{
+  "work_package": "P04-01",
+  "profile": "BH-P04 (partial P04-01 checks)",
+  "status": "PASS",
+  "implementation_commit_sha": "18f1dc21e786368a2bf0156961610e6c892e646a",
+  "tested_head_sha": "18f1dc21e786368a2bf0156961610e6c892e646a",
+  "captured_at_utc": "2026-11-02T09:34:12.395401+00:00",
+  "host_python_version": "3.12.6",
+  "platform": "macOS-13.7.8-x86_64-i386-64bit",
+  "kernel_expected_sha256": "1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788",
+  "kernel_observed_sha256": "1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788",
+  "tracked_changes_before_execution": false,
+  "untracked_during_capture": [
+    "?? scripts/capture_p04_01_evidence.py"
+  ],
+  "checks": [
+    {
+      "id": "P04-01-8-tests",
+      "status": "PASS",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-v",
+        "tests/test_p04_01_maritime.py"
+      ],
+      "exit_code": 0,
+      "started_at_utc": "2026-11-02T09:34:06.902866+00:00",
+      "finished_at_utc": "2026-11-02T09:34:07.984600+00:00",
+      "log_file": "docs/evidence/P04-01/20261102T093406Z/P04-01-8-tests.log",
+      "log_sha256": "d9285c2a7172a9d0b2170f08fb036c87b9d8d4665464b4133922bea3720d4e09",
+      "facts": {
+        "passed_count": 8
+      },
+      "error": null
+    },
+    {
+      "id": "LEGACY-catalog",
+      "status": "PASS",
+      "command": [
+        "make",
+        "catalog"
+      ],
+      "exit_code": 0,
+      "started_at_utc": "2026-11-02T09:34:07.990604+00:00",
+      "finished_at_utc": "2026-11-02T09:34:08.311663+00:00",
+      "log_file": "docs/evidence/P04-01/20261102T093406Z/LEGACY-catalog.log",
+      "log_sha256": "74998233bb407d3428c866912137d6822001b705a1f86976d0632be71933a59a",
+      "facts": {},
+      "error": null
+    },
+    {
+      "id": "LEGACY-validate",
+      "status": "PASS",
+      "command": [
+        "make",
+        "validate"
+      ],
+      "exit_code": 0,
+      "started_at_utc": "2026-11-02T09:34:08.312149+00:00",
+      "finished_at_utc": "2026-11-02T09:34:09.249606+00:00",
+      "log_file": "docs/evidence/P04-01/20261102T093406Z/LEGACY-validate.log",
+      "log_sha256": "dbf68799bf2f52001c7146f20487f0aec93a582561421dfaf09e60cc96578314",
+      "facts": {},
+      "error": null
+    },
+    {
+      "id": "LEGACY-cq14",
+      "status": "PASS",
+      "command": [
+        "make",
+        "cq"
+      ],
+      "exit_code": 0,
+      "started_at_utc": "2026-11-02T09:34:09.251185+00:00",
+      "finished_at_utc": "2026-11-02T09:34:09.893242+00:00",
+      "log_file": "docs/evidence/P04-01/20261102T093406Z/LEGACY-cq14.log",
+      "log_sha256": "b5ef26262e430f8e804a4821f0e2dc5d7ac138ee813345afdc3c0a6594828224",
+      "facts": {
+        "expected_cq_files": 14,
+        "actual_cq_files": 14,
+        "executed_cq_blocks": 14
+      },
+      "error": null
+    },
+    {
+      "id": "FULL-pytest",
+      "status": "PASS",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exit_code": 0,
+      "started_at_utc": "2026-11-02T09:34:09.893598+00:00",
+      "finished_at_utc": "2026-11-02T09:34:12.238826+00:00",
+      "log_file": "docs/evidence/P04-01/20261102T093406Z/FULL-pytest.log",
+      "log_sha256": "fe464cfd6a38b075ff46cd8661800e89e47cafdef47df4581b09ebea1957687d",
+      "facts": {},
+      "error": null
+    },
+    {
+      "id": "KERNEL-integrity",
+      "status": "PASS",
+      "command": [
+        "/usr/local/bin/python3",
+        "scripts/verify_sysml_kernel_integrity.py"
+      ],
+      "exit_code": 0,
+      "started_at_utc": "2026-11-02T09:34:12.239284+00:00",
+      "finished_at_utc": "2026-11-02T09:34:12.332356+00:00",
+      "log_file": "docs/evidence/P04-01/20261102T093406Z/KERNEL-integrity.log",
+      "log_sha256": "065671f59f0468052025ab0c794edeb3692f085bbeb2bdaef1f8e1320798e2a0",
+      "facts": {},
+      "error": null
+    }
+  ],
+  "not_claimed": [
+    "Full BH-V01 validation",
+    "BH-CQ-01..03",
+    "Full BH-P04 gate",
+    "Current SysML v2 Pilot parser/semantic validation",
+    "External BFO/CCO equivalence"
+  ]
+}

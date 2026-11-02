@@ -1,0 +1,24 @@
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix mass:     <https://w3id.org/mass-ontology/core#> .
+@prefix nav:      <https://w3id.org/mass-ontology/navigation#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/mass-ontology/maritime-compatibility>
+    a owl:Ontology ;
+    rdfs:label "MASS General Vessel Compatibility Bridge"@en ;
+    rdfs:comment "Non-equivalent subclass links from existing MASS and Navigation terminology to general maritime vessel identity. Legacy ontology files are unchanged."@en ;
+    owl:imports <https://w3id.org/mass-ontology/maritime> ,
+                <https://w3id.org/mass-ontology/core> ,
+                <https://w3id.org/mass-ontology/navigation> ;
+    owl:versionInfo "0.4.0-dev" .
+
+# A MASS vessel is a maritime vessel; the reverse does not follow.
+mass:MASSVessel rdfs:subClassOf maritime:Vessel .
+
+# A target ship is a role/contextual participant class in the existing model.
+# This does not imply that the target has MASS autonomous capabilities.
+nav:TargetShip rdfs:subClassOf maritime:Vessel .
+
+# Preserve nav:OwnShip rdfs:subClassOf mass:MASSVessel from the legacy ontology.
+# Do not introduce owl:equivalentClass, owl:disjointWith, or inverse subclasses.

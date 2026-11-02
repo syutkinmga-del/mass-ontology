@@ -1,0 +1,18 @@
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix common:   <https://w3id.org/mass-ontology/common#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/mass-ontology/maritime>
+    a owl:Ontology ;
+    rdfs:label "MASS General Maritime Ontology"@en ;
+    rdfs:comment "Generic maritime vessel identity, independent of autonomous capability and navigation-participant role. P04-01 implementation."@en ;
+    owl:imports <https://w3id.org/mass-ontology/common> ;
+    owl:versionInfo "0.4.0-dev" .
+
+maritime:Vessel
+    a owl:Class ;
+    rdfs:subClassOf common:EngineeredSystem ;
+    rdfs:label "Maritime vessel"@en ;
+    rdfs:comment "A physical engineered maritime vessel, irrespective of its degree of autonomy, current navigation role, or operational configuration. This local model does not assert a definitive BFO/CCO alignment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/maritime> .

@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.6, pytest-9.1.1, pluggy-1.6.0 -- /Users/andrejsutkin/Projects/mass-ontology/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/andrejsutkin/Projects/mass-ontology
+configfile: pyproject.toml
+collecting ... collected 20 items
+
+tests/test_p04_03_observation.py::test_local_ontology_modules_and_import_boundary PASSED [  5%]
+tests/test_p04_03_observation.py::test_catalog_has_three_new_mappings PASSED [ 10%]
+tests/test_p04_03_observation.py::test_reproducible_bytes_and_graph PASSED [ 15%]
+tests/test_p04_03_observation.py::test_vessel_trajectory_and_three_temporal_units PASSED [ 20%]
+tests/test_p04_03_observation.py::test_separate_time_instances_and_known_gap PASSED [ 25%]
+tests/test_p04_03_observation.py::test_sosa_observations_and_qudt_values PASSED [ 30%]
+tests/test_p04_03_observation.py::test_sample_at_boundary_assigned_to_next_segment PASSED [ 35%]
+tests/test_p04_03_observation.py::test_observation_event_result_receipt_are_distinct PASSED [ 40%]
+tests/test_p04_03_observation.py::test_provenance_and_segmentation_identity PASSED [ 45%]
+tests/test_p04_03_observation.py::test_position_named_crs_no_geosparql PASSED [ 50%]
+tests/test_p04_03_observation.py::test_unavailable_measurement_not_made_into_quantity PASSED [ 55%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-full-utc-second-timestamp-required] PASSED [ 60%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-untrusted-or-reconstructed-event-time] PASSED [ 65%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-sog_kn-invalid-unit-policy] PASSED [ 70%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-invalid-sog_kn] PASSED [ 75%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-sog_kn-sentinel-cannot-be-valid-numeric] PASSED [ 80%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-invalid-cog] PASSED [ 85%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-invalid-coordinate] PASSED [ 90%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-sample-outside-segment-or-overlap] PASSED [ 95%]
+tests/test_p04_03_observation.py::test_reject_invalid_input[<lambda>-unapproved-segmentation-policy] PASSED [100%]
+
+============================== 20 passed in 0.27s ==============================

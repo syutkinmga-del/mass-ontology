@@ -1,0 +1,16 @@
+.venv/bin/python scripts/run_shacl.py
+Loading data: 01-common/common-core.ttl
+Loading data: 00-foundation/foundation-alignment.ttl
+Loading data: 03-mass-core/mass-core.ttl
+Loading data: 04-navigation/navigation-situation.ttl
+Loading data: examples/example-encounter-scenario.ttl
+Loading data: 00-foundation/external-ontology-registry.ttl
+Loading shapes: shapes/mass-core.shacl.ttl
+Loading shapes: shapes/foundation-alignment.shacl.ttl
+
+SHACL validation report
+=======================
+Validation Report
+Conforms: True
+
+Validation OK: data conforms to SHACL shapes.

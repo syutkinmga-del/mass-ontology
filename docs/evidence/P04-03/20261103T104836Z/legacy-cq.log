@@ -1,0 +1,136 @@
+.venv/bin/python scripts/run_cq_queries.py
+Loading RDF data
+================
+Loading: 01-common/common-core.ttl
+Loading: 00-foundation/foundation-alignment.ttl
+Loading: 03-mass-core/mass-core.ttl
+Loading: 04-navigation/navigation-situation.ttl
+Loading: examples/example-encounter-scenario.ttl
+Loading: 00-foundation/external-ontology-registry.ttl
+
+Total triples: 277
+
+Running competency question queries
+===================================
+
+Query: queries/cq/cq-01-operational-modes.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+own_ship_001 | autonomous_mode
+
+Query: queries/cq/cq-02-communication-links.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+own_ship_001 | link_001
+
+Query: queries/cq/cq-03-encounter-participants.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+encounter_001 | own_ship_001 | target_ship_001
+
+Query: queries/cq/cq-04-cpa-tcpa.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+encounter_001 | 0.4 | 12.0
+
+Query: queries/cq/cq-05-colreg-rule.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+encounter_001 | colreg_rule_15
+
+Query: queries/cq/cq-06-required-maneuver.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+encounter_001 | alter_course_to_starboard
+
+Query: queries/cq/cq-07-safety-verification-evidence.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+safety_requirement_001 | verification_evidence_001
+
+Query: queries/cq/cq-08-encounter-scenarios.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+encounter_001 | Crossing | own_ship_001 | target_ship_001 | 0.4 | 12.0 | colreg_rule_15 | alter_course_to_starboard
+
+Query: queries/cq/cq-09-foundation-alignment-decisions.rq
+--------------------------------------------------------------------------------
+Rows: 9
+Expected rows: 9
+AD-001-MASSVessel | MASSVessel |  CCO artifact or system candidate | draft
+AD-002-AutonomousNavigationSystem | AutonomousNavigationSystem |  artifact function bearer candidate | draft
+AD-003-OperationalMode | OperationalMode | Operational state or process profile candidate | draft
+AD-004-CommunicationLink | CommunicationLink | Communication channel or communication process candidate | draft
+AD-005-SafetyRequirement | SafetyRequirement |  directive information artifact candidate | draft
+AD-006-VerificationEvidence | VerificationEvidence |  evidence artifact candidate | draft
+AD-007-EncounterSituation | EncounterSituation |  process aggregate candidate | draft
+AD-008-Maneuver | Maneuver | Process candidate | draft
+AD-009-COLREGRule | COLREGRule |  directive information artifact candidate | draft
+
+Query: queries/cq/cq-10-mass-vessel-foundation-target.rq
+--------------------------------------------------------------------------------
+Rows: 1
+Expected rows: 1
+AD-001-MASSVessel |  CCO artifact or system candidate | draft
+
+Query: queries/cq/cq-11-draft-alignment-decisions.rq
+--------------------------------------------------------------------------------
+Rows: 9
+Expected rows: 9
+AD-001-MASSVessel | MASSVessel |  CCO artifact or system candidate
+AD-002-AutonomousNavigationSystem | AutonomousNavigationSystem |  artifact function bearer candidate
+AD-003-OperationalMode | OperationalMode | Operational state or process profile candidate
+AD-004-CommunicationLink | CommunicationLink | Communication channel or communication process candidate
+AD-005-SafetyRequirement | SafetyRequirement |  directive information artifact candidate
+AD-006-VerificationEvidence | VerificationEvidence |  evidence artifact candidate
+AD-007-EncounterSituation | EncounterSituation |  process aggregate candidate
+AD-008-Maneuver | Maneuver | Process candidate
+AD-009-COLREGRule | COLREGRule |  directive information artifact candidate
+
+Query: queries/cq/cq-12-navigation-alignment-decisions.rq
+--------------------------------------------------------------------------------
+Rows: 3
+Expected rows: 3
+AD-007-EncounterSituation | EncounterSituation |  process aggregate candidate | draft
+AD-008-Maneuver | Maneuver | Process candidate | draft
+AD-009-COLREGRule | COLREGRule |  directive information artifact candidate | draft
+
+Query: queries/cq/cq-13-external-ontology-candidates.rq
+--------------------------------------------------------------------------------
+Rows: 2
+Expected rows: 2
+BFO2020 | Basic Formal Ontology 2020 | Top-level ontology candidate for MASS foundation alignment. | candidate
+CCO | Common Core Ontologies | Mid-level ontology suite candidate for MASS common and domain alignment. | candidate
+
+Query: queries/cq/cq-14-alignment-candidate-ontologies.rq
+--------------------------------------------------------------------------------
+Rows: 18
+Expected rows: 18
+AD-001-MASSVessel | MASSVessel | BFO2020
+AD-001-MASSVessel | MASSVessel | CCO
+AD-002-AutonomousNavigationSystem | AutonomousNavigationSystem | BFO2020
+AD-002-AutonomousNavigationSystem | AutonomousNavigationSystem | CCO
+AD-003-OperationalMode | OperationalMode | BFO2020
+AD-003-OperationalMode | OperationalMode | CCO
+AD-004-CommunicationLink | CommunicationLink | BFO2020
+AD-004-CommunicationLink | CommunicationLink | CCO
+AD-005-SafetyRequirement | SafetyRequirement | BFO2020
+AD-005-SafetyRequirement | SafetyRequirement | CCO
+AD-006-VerificationEvidence | VerificationEvidence | BFO2020
+AD-006-VerificationEvidence | VerificationEvidence | CCO
+AD-007-EncounterSituation | EncounterSituation | BFO2020
+AD-007-EncounterSituation | EncounterSituation | CCO
+AD-008-Maneuver | Maneuver | BFO2020
+AD-008-Maneuver | Maneuver | CCO
+AD-009-COLREGRule | COLREGRule | BFO2020
+AD-009-COLREGRule | COLREGRule | CCO
+
+All competency question queries returned expected results.

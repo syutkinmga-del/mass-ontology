@@ -1,0 +1,7 @@
+fixture 0
+p04-03-tests 0
+legacy-catalog 0
+legacy-shacl 0
+legacy-cq 0
+full-pytest 0
+kernel-integrity 0

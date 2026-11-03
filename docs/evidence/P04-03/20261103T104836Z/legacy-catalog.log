@@ -1,0 +1,38 @@
+.venv/bin/python scripts/check_catalog.py
+Checking catalog-v001.xml
+=========================
+https://w3id.org/mass-ontology/behavior
+  -> 07-behavior/ship-behavior.ttl
+  OK, triples: 78
+https://w3id.org/mass-ontology/behavior-observation-bridge
+  -> 07-behavior/behavior-observation-bridge.ttl
+  OK, triples: 15
+https://w3id.org/mass-ontology/common
+  -> 01-common/common-core.ttl
+  OK, triples: 32
+https://w3id.org/mass-ontology/core
+  -> 03-mass-core/mass-core.ttl
+  OK, triples: 43
+https://w3id.org/mass-ontology/external-ontology-registry
+  -> 00-foundation/external-ontology-registry.ttl
+  OK, triples: 38
+https://w3id.org/mass-ontology/foundation-alignment
+  -> 00-foundation/foundation-alignment.ttl
+  OK, triples: 83
+https://w3id.org/mass-ontology/maritime
+  -> 02-maritime/maritime-core.ttl
+  OK, triples: 10
+https://w3id.org/mass-ontology/maritime-compatibility
+  -> 02-maritime/vessel-compatibility.ttl
+  OK, triples: 9
+https://w3id.org/mass-ontology/measurement
+  -> 06-quantities/mass-measurement-policy.ttl
+  OK, triples: 17
+https://w3id.org/mass-ontology/navigation
+  -> 04-navigation/navigation-situation.ttl
+  OK, triples: 61
+https://w3id.org/mass-ontology/observation
+  -> 05-observation/mass-observation.ttl
+  OK, triples: 60
+
+Catalog OK: all mapped ontology files exist and parse as Turtle.

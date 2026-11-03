@@ -1,0 +1,15 @@
+.venv/bin/python -m pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.12.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/andrejsutkin/Projects/mass-ontology
+configfile: pyproject.toml
+testpaths: tests
+collected 50 items
+
+tests/test_legacy_pipeline.py ...                                        [  6%]
+tests/test_p04_01_maritime.py ........                                   [ 22%]
+tests/test_p04_02_behavior_core.py .................                     [ 56%]
+tests/test_p04_03_observation.py ....................                    [ 96%]
+tests/test_sysml_kernel_integrity.py ..                                  [100%]
+
+============================== 50 passed in 2.52s ==============================

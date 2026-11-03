@@ -1,0 +1,26 @@
+# BH-CQ-01 — For each observation, show its vessel, trajectory, segment,
+# source AIS record, property and time/provenance. No inferred triples.
+PREFIX bh:   <https://w3id.org/mass-ontology/behavior#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX maritime: <https://w3id.org/mass-ontology/maritime#>
+SELECT ?vessel ?trajectory ?unit ?observation ?observedProperty
+       ?phenomenonTime ?resultTime ?rawRecord ?activity
+WHERE {
+  ?trajectory a bh:Trajectory ;
+              bh:ofVessel ?vessel ;
+              bh:hasTemporalUnit ?unit .
+  ?vessel a maritime:Vessel .
+  ?unit a bh:TemporalUnit ;
+        bh:hasPhysicalBehavior ?state .
+  ?state bh:supportedByObservation ?observation .
+  ?observation a sosa:Observation ;
+               sosa:hasFeatureOfInterest ?vessel ;
+               sosa:observedProperty ?observedProperty ;
+               sosa:phenomenonTime / time:inXSDDateTimeStamp ?phenomenonTime ;
+               sosa:resultTime ?resultTime ;
+               prov:wasDerivedFrom ?rawRecord ;
+               prov:wasGeneratedBy ?activity .
+}
+ORDER BY ?unit ?observation

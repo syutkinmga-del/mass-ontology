@@ -1,0 +1,37 @@
+{
+  "schema_version": "P04-05-BH-CQ-lock-v1",
+  "profile": "p04",
+  "status": "IMPLEMENTATION_CANDIDATE_VALIDATION_PENDING",
+  "baseline_commit": "f70a120e78b99808b8d1340b08e652ff33313dab",
+  "fixture": {
+    "path": "examples/p04-04-synthetic-ais-qudt353.ttl",
+    "sha256": "2f73990cd4dc88fd4e21c4694d35c6628d0afac613080434d33deed3f41cf301",
+    "triples": 370
+  },
+  "compare_policy": "Full SPARQL SELECT variable order and RDF terms (IRI, literal lexical form/datatype/lang, unbound omitted); exact multiset of rows; row order irrelevant; duplicates counted; no cardinality-only PASS",
+  "cqs": {
+    "BH-CQ-01": {
+      "query_path": "queries/behavior/bh-cq-01.rq",
+      "query_sha256": "1b22d21ea97fc8b66942e359873bf1601604db74335239c2e4aac57ae4f77385",
+      "expected_path": "tests/behavior/expected/bh-cq-01.json",
+      "expected_sha256": "a2acb19226aeb5702f20e15bb72b1d84d23890b5c1a50d366f38c6005f6e159e",
+      "rows": 18
+    },
+    "BH-CQ-02": {
+      "query_path": "queries/behavior/bh-cq-02.rq",
+      "query_sha256": "99e22e294fd8ebd86ee33dc0172f1a7a22158a9779bd9ded750b10d777aaedfe",
+      "expected_path": "tests/behavior/expected/bh-cq-02.json",
+      "expected_sha256": "00eb6400b820149b767ce8d2a789b0b324cac235836912ba1082691d7eeac0ac",
+      "rows": 9
+    },
+    "BH-CQ-03": {
+      "query_path": "queries/behavior/bh-cq-03.rq",
+      "query_sha256": "bd3799d5983c2eaedb78c7df9af726ce81576945aada35a5b3b2dac1889c3568",
+      "expected_path": "tests/behavior/expected/bh-cq-03.json",
+      "expected_sha256": "bf18516f4b19ce47490c82315ca317211dfb83ccde360a2b4b13b88a1c247d14",
+      "rows": 18
+    }
+  },
+  "p05_p09": "DEFERRED",
+  "legacy_cq": "UNMODIFIED"
+}

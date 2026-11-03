@@ -1,0 +1,34 @@
+# BH-CQ-03 — Typed physical-state evidence. PositionResult exposes WGS84
+# lat/lon and CRS; Speed/Course use QUDT 3.5.3 numericValue + hasUnit.
+# OPTIONAL fields are deliberately unbound, never fabricated zero values.
+PREFIX bh:   <https://w3id.org/mass-ontology/behavior#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX ob:   <https://w3id.org/mass-ontology/observation#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT ?trajectory ?unit ?state ?stateClass ?observation ?observedProperty
+       ?result ?phenomenonTime ?resultTime ?latitude ?longitude ?crs
+       ?numericValue ?quantityUnit
+WHERE {
+  ?trajectory a bh:Trajectory ; bh:hasTemporalUnit ?unit .
+  ?unit bh:hasPhysicalBehavior ?state .
+  VALUES ?stateClass { bh:PositionState bh:SpeedState bh:CourseState }
+  ?state a ?stateClass ; bh:supportedByObservation ?observation .
+  ?observation a sosa:Observation ;
+               sosa:observedProperty ?observedProperty ;
+               sosa:hasResult ?result ;
+               sosa:phenomenonTime / time:inXSDDateTimeStamp ?phenomenonTime ;
+               sosa:resultTime ?resultTime .
+  OPTIONAL {
+    ?result a ob:PositionResult ;
+            ob:latitudeDegrees ?latitude ;
+            ob:longitudeDegrees ?longitude ;
+            ob:coordinateReferenceSystem ?crs .
+  }
+  OPTIONAL {
+    ?result a qudt:QuantityValue ;
+            qudt:numericValue ?numericValue ;
+            qudt:hasUnit ?quantityUnit .
+  }
+}
+ORDER BY ?unit ?observation

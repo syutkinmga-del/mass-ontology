@@ -1,0 +1,739 @@
+{
+  "schema_version": "BH-CQ-exact-bindings-v1",
+  "cq_id": "BH-CQ-01",
+  "profile": "p04",
+  "expected_row_count": 18,
+  "variables": [
+    "vessel",
+    "trajectory",
+    "unit",
+    "observation",
+    "observedProperty",
+    "phenomenonTime",
+    "resultTime",
+    "rawRecord",
+    "activity"
+  ],
+  "rows": [
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_000"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_000"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_001"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_001"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_002"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_002"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_003"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_003"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_004"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_004"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_005"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_005"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_000"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_000"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_001"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_001"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_002"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_002"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_003"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_003"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_004"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_004"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_005"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_005"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_000"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_000"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_001"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_001"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_002"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_002"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_003"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_003"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_004"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_004"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    },
+    {
+      "vessel": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#vessel_001"
+      },
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_005"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "rawRecord": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#raw_005"
+      },
+      "activity": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#processing_run"
+      }
+    }
+  ]
+}

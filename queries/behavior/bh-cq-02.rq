@@ -1,0 +1,20 @@
+# BH-CQ-02 — Full TemporalUnit × physical-state membership with typed
+# segment index and OWL-Time interval bounds, preserving intentional AIS gap.
+PREFIX bh:   <https://w3id.org/mass-ontology/behavior#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT ?trajectory ?unit ?segmentIndex ?interval ?start ?end ?state ?stateClass
+WHERE {
+  ?trajectory a bh:Trajectory ;
+              bh:hasTemporalUnit ?unit .
+  ?unit a bh:TemporalUnit ;
+        bh:partOfTrajectory ?trajectory ;
+        bh:segmentIndex ?segmentIndex ;
+        bh:hasTemporalExtent ?interval ;
+        bh:hasPhysicalBehavior ?state .
+  ?interval a time:ProperInterval ;
+            time:hasBeginning / time:inXSDDateTimeStamp ?start ;
+            time:hasEnd / time:inXSDDateTimeStamp ?end .
+  VALUES ?stateClass { bh:PositionState bh:SpeedState bh:CourseState }
+  ?state a ?stateClass .
+}
+ORDER BY ?segmentIndex ?stateClass

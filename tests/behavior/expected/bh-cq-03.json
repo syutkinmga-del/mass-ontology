@@ -1,0 +1,936 @@
+{
+  "schema_version": "BH-CQ-exact-bindings-v1",
+  "cq_id": "BH-CQ-03",
+  "profile": "p04",
+  "expected_row_count": 18,
+  "variables": [
+    "trajectory",
+    "unit",
+    "state",
+    "stateClass",
+    "observation",
+    "observedProperty",
+    "result",
+    "phenomenonTime",
+    "resultTime",
+    "latitude",
+    "longitude",
+    "crs",
+    "numericValue",
+    "quantityUnit"
+  ],
+  "rows": [
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_000"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_result_000"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "latitude": {
+        "type": "literal",
+        "value": "59.901",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "longitude": {
+        "type": "literal",
+        "value": "30.100",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "crs": {
+        "type": "uri",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_001"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_result_001"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "latitude": {
+        "type": "literal",
+        "value": "59.902",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "longitude": {
+        "type": "literal",
+        "value": "30.102",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "crs": {
+        "type": "uri",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_002"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_result_002"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "latitude": {
+        "type": "literal",
+        "value": "59.903",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "longitude": {
+        "type": "literal",
+        "value": "30.104",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "crs": {
+        "type": "uri",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_003"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_result_003"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "latitude": {
+        "type": "literal",
+        "value": "59.904",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "longitude": {
+        "type": "literal",
+        "value": "30.106",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "crs": {
+        "type": "uri",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_004"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_result_004"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "latitude": {
+        "type": "literal",
+        "value": "59.908",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "longitude": {
+        "type": "literal",
+        "value": "30.115",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "crs": {
+        "type": "uri",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_position_005"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#GeodeticPosition"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_result_005"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "latitude": {
+        "type": "literal",
+        "value": "59.909",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "longitude": {
+        "type": "literal",
+        "value": "30.117",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "crs": {
+        "type": "uri",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_005"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_sog_005"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "7.70",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/KN"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_004"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_sog_004"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "7.80",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/KN"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_003"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_sog_003"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "7.90",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/KN"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_002"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_sog_002"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "8.00",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/KN"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_001"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_sog_001"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "8.10",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/KN"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_sog_000"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#SpeedOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_sog_000"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "8.20",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/KN"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_000"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_cog_000"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "85.0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/DEG"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_001"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_cog_001"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "85.5",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/DEG"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_002"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_cog_002"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "86.0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/DEG"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_003"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_cog_003"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "87.0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/DEG"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_004"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_cog_004"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:02Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "88.0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/DEG"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      },
+      "observation": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#observation_cog_005"
+      },
+      "observedProperty": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/observation#CourseOverGround"
+      },
+      "result": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#quantity_cog_005"
+      },
+      "phenomenonTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:30Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "resultTime": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:32Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "numericValue": {
+        "type": "literal",
+        "value": "89.0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "quantityUnit": {
+        "type": "uri",
+        "value": "http://qudt.org/vocab/unit/DEG"
+      }
+    }
+  ]
+}

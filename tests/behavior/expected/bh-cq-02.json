@@ -1,0 +1,351 @@
+{
+  "schema_version": "BH-CQ-exact-bindings-v1",
+  "cq_id": "BH-CQ-02",
+  "profile": "p04",
+  "expected_row_count": 9,
+  "variables": [
+    "trajectory",
+    "unit",
+    "segmentIndex",
+    "interval",
+    "start",
+    "end",
+    "state",
+    "stateClass"
+  ],
+  "rows": [
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_000"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_000"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_000"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "0",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_000"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:00:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_000"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "1",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_001"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:02:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "1",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_001"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:02:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_001"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "1",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_001"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:01:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:02:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_001"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "2",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_002"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:05:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#course_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#CourseState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "2",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_002"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:05:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#position_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#PositionState"
+      }
+    },
+    {
+      "trajectory": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#trajectory_001"
+      },
+      "unit": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#unit_002"
+      },
+      "segmentIndex": {
+        "type": "literal",
+        "value": "2",
+        "datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      },
+      "interval": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#interval_002"
+      },
+      "start": {
+        "type": "literal",
+        "value": "2026-10-28T12:04:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "end": {
+        "type": "literal",
+        "value": "2026-10-28T12:05:00Z",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "state": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/p04-03/example#speed_002"
+      },
+      "stateClass": {
+        "type": "uri",
+        "value": "https://w3id.org/mass-ontology/behavior#SpeedState"
+      }
+    }
+  ]
+}

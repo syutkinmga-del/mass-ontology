@@ -1,0 +1,32 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix bh: <https://w3id.org/mass-ontology/behavior#> .
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bh:P04TrajectoryShape a sh:NodeShape ;
+    sh:targetClass bh:Trajectory ;
+    sh:property [ sh:path bh:ofVessel ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:nodeKind sh:IRI ; sh:class maritime:Vessel ;
+                  sh:message "BH-V01: one explicitly identified Vessel is required" ] .
+
+bh:P04TemporalUnitShape a sh:NodeShape ;
+    sh:targetClass bh:TemporalUnit ;
+    sh:property [ sh:path bh:partOfTrajectory ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:nodeKind sh:IRI ; sh:class bh:Trajectory ;
+                  sh:message "BH-V02: one parent Trajectory required" ] ;
+    sh:property [ sh:path bh:hasTemporalExtent ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:nodeKind sh:IRI ; sh:class time:ProperInterval ;
+                  sh:message "BH-V02: one separate ProperInterval required" ] .
+
+bh:P04QuantityShape a sh:NodeShape ;
+    sh:targetClass qudt:QuantityValue ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:datatype xsd:decimal ;
+                  sh:message "BH-V06: one decimal numericValue required" ] ;
+    sh:property [ sh:path qudt:hasUnit ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:nodeKind sh:IRI ;
+                  sh:message "BH-V06: one QUDT 3.5.3 hasUnit required" ] ;
+    sh:property [ sh:path qudt:unit ; sh:maxCount 0 ;
+                  sh:message "BH-V06: obsolete qudt:unit is forbidden in the revised fixture" ] .

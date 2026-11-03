@@ -1,0 +1,5 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+# Must be rejected: a repository homepage is not a controlled ontology IRI.
+<https://w3id.org/mass-ontology/validation-mutant>
+  a owl:Ontology ;
+  owl:imports <https://github.com/BFO-ontology/BFO-2020> .

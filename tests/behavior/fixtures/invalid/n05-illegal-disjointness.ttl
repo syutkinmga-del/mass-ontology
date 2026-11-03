@@ -1,0 +1,5 @@
+@prefix bh: <https://w3id.org/mass-ontology/behavior#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+# Deliberate negative schema mutation; when a control individual is typed as
+# SpeedState and CourseState, HermiT must reject the ontology as inconsistent.
+bh:SpeedState owl:disjointWith bh:CourseState .

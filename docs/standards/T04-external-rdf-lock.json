@@ -1,0 +1,227 @@
+{
+  "schema_version": "T04-2026-v1",
+  "captured_utc": "2026-11-03T11:23:07+00:00",
+  "status": "T04_RDF_AND_LICENSE_CONTROLS_VERIFIED_BH_V11_PENDING",
+  "repository_commit_checked": "4e1894150ced9609937dbf25c398f842289e6392",
+  "import_policy": "REFERENCE_ONLY_NO_LIVE_EXTERNAL_OWL_IMPORTS",
+  "redistribution_policy": "Retain upstream attribution and license notices; consult local review doc.",
+  "license_review": {
+    "status": "APPROVED_BY_PROJECT_OWNER",
+    "approved_utc": "2026-11-03T11:43:41+00:00",
+    "acknowledgment": "Project owner manually confirmed review of docs/standards/T04-source-and-license-review.md and upstream attribution requirements."
+  },
+  "files": [
+    {
+      "id": "SOSA-2017",
+      "filename": "sosa-2017.ttl",
+      "url": "https://www.w3.org/ns/sosa/2017",
+      "standard": "SOSA/SSN W3C Recommendation 19 October 2017",
+      "namespace": "http://www.w3.org/ns/sosa/",
+      "ontology_iri": "http://www.w3.org/ns/sosa/",
+      "version_iri": "http://www.w3.org/ns/sosa/2017",
+      "official_git_fallback": "https://raw.githubusercontent.com/w3c/sdw/f3171647f6437b73e1caf871f056d233feb4a9da/ssn/integrated/sosa.ttl",
+      "official_git_blob_sha1": "ef1319ba171278197bf4735b858eec086f2321a0",
+      "must_have": [
+        "http://www.w3.org/ns/sosa/Observation",
+        "http://www.w3.org/ns/sosa/hasResult",
+        "http://www.w3.org/ns/sosa/phenomenonTime",
+        "http://www.w3.org/ns/sosa/resultTime"
+      ],
+      "license_code": "W3C-OGC-SOSA-SSN-2017",
+      "resolved_url": "https://www.w3.org/ns/sosa/2017",
+      "repo_path": "vendor/external-rdf/T04-2026/sosa-2017.ttl",
+      "sha256": "c70b0d1c843c0047e4c98e0a89392e46a05752ff6365bda7f7f55303905a0392",
+      "file_size_bytes": 27326,
+      "triples": 345,
+      "ontology_iris_found": [
+        "http://www.w3.org/ns/sosa/"
+      ],
+      "owl_version_iris_found": [],
+      "version_iri_declared": false
+    },
+    {
+      "id": "SSN-2017",
+      "filename": "ssn-2017.ttl",
+      "url": "https://www.w3.org/ns/ssn/2017",
+      "standard": "SOSA/SSN W3C Recommendation 19 October 2017",
+      "namespace": "http://www.w3.org/ns/ssn/",
+      "ontology_iri": "http://www.w3.org/ns/ssn/",
+      "version_iri": "http://www.w3.org/ns/ssn/2017",
+      "official_git_fallback": "https://raw.githubusercontent.com/w3c/sdw/f3171647f6437b73e1caf871f056d233feb4a9da/ssn/integrated/ssn.ttl",
+      "official_git_blob_sha1": "0b6a78bae8f90ea6db1d39b49b9c66d164637fff",
+      "must_have": [
+        "http://www.w3.org/ns/ssn/System",
+        "http://www.w3.org/ns/ssn/Deployment"
+      ],
+      "license_code": "W3C-OGC-SOSA-SSN-2017",
+      "resolved_url": "https://www.w3.org/ns/ssn/2017",
+      "repo_path": "vendor/external-rdf/T04-2026/ssn-2017.ttl",
+      "sha256": "184d86189191146e314cc52b1bceb96fca11e70aacbc160d71588102a5153eb9",
+      "file_size_bytes": 22714,
+      "triples": 520,
+      "ontology_iris_found": [
+        "http://www.w3.org/ns/ssn/"
+      ],
+      "owl_version_iris_found": [],
+      "version_iri_declared": false
+    },
+    {
+      "id": "QUDT-SCHEMA-3.5.3",
+      "filename": "qudt-schema-3.5.3.ttl",
+      "url": "https://qudt.org/3.5.3/schema/qudt",
+      "standard": "QUDT 3.5.3, 2026-10-20",
+      "namespace": "http://qudt.org/schema/qudt/",
+      "ontology_iri": "http://qudt.org/3.5.3/schema/qudt",
+      "version_iri": "http://qudt.org/3.5.3/schema/qudt",
+      "must_have": [
+        "http://qudt.org/schema/qudt/QuantityValue",
+        "http://qudt.org/schema/qudt/numericValue",
+        "http://qudt.org/schema/qudt/hasUnit"
+      ],
+      "license_code": "QUDT-CC-BY-4.0",
+      "resolved_url": "https://qudt.org/3.5.3/schema/qudt/",
+      "repo_path": "vendor/external-rdf/T04-2026/qudt-schema-3.5.3.ttl",
+      "sha256": "807b5b03a8759670a6412822c7624cc6180c5e80ff7b9b3b8e4bee98e1c1c882",
+      "file_size_bytes": 117006,
+      "triples": 2150,
+      "ontology_iris_found": [
+        "http://qudt.org/3.5.3/schema/qudt"
+      ],
+      "owl_version_iris_found": [
+        "http://qudt.org/3.5.3/schema/qudt"
+      ],
+      "version_iri_declared": true
+    },
+    {
+      "id": "QUDT-UNITS-3.5.3",
+      "filename": "qudt-unit-3.5.3.ttl",
+      "url": "https://qudt.org/3.5.3/vocab/unit",
+      "standard": "QUDT 3.5.3, 2026-10-20",
+      "namespace": "http://qudt.org/vocab/unit/",
+      "ontology_iri": "http://qudt.org/3.5.3/vocab/unit",
+      "version_iri": "http://qudt.org/3.5.3/vocab/unit",
+      "must_have": [
+        "http://qudt.org/vocab/unit/KN",
+        "http://qudt.org/vocab/unit/DEG"
+      ],
+      "license_code": "QUDT-CC-BY-4.0",
+      "resolved_url": "https://qudt.org/3.5.3/vocab/unit",
+      "repo_path": "vendor/external-rdf/T04-2026/qudt-unit-3.5.3.ttl",
+      "sha256": "89df26d7f8ebb54a80d6bd4e03f3268b16a7acdc7b90490346273c03817971d4",
+      "file_size_bytes": 4106443,
+      "triples": 86924,
+      "ontology_iris_found": [
+        "http://qudt.org/3.5.3/vocab/unit"
+      ],
+      "owl_version_iris_found": [
+        "http://qudt.org/3.5.3/vocab/unit"
+      ],
+      "version_iri_declared": true
+    },
+    {
+      "id": "QUDT-QUANTITYKIND-3.5.3",
+      "filename": "qudt-quantitykind-3.5.3.ttl",
+      "url": "https://qudt.org/3.5.3/vocab/quantitykind",
+      "standard": "QUDT 3.5.3, 2026-10-20",
+      "namespace": "http://qudt.org/vocab/quantitykind/",
+      "ontology_iri": "http://qudt.org/3.5.3/vocab/quantitykind",
+      "version_iri": "http://qudt.org/3.5.3/vocab/quantitykind",
+      "must_have": [
+        "http://qudt.org/vocab/quantitykind/Speed"
+      ],
+      "license_code": "QUDT-CC-BY-4.0",
+      "resolved_url": "https://qudt.org/3.5.3/vocab/quantitykind",
+      "repo_path": "vendor/external-rdf/T04-2026/qudt-quantitykind-3.5.3.ttl",
+      "sha256": "730052a9a760f0f70ac389e8d7e493a729bc8ea2e5f226af68a4b279e7232d81",
+      "file_size_bytes": 1865621,
+      "triples": 29045,
+      "ontology_iris_found": [
+        "http://qudt.org/3.5.3/vocab/quantitykind"
+      ],
+      "owl_version_iris_found": [
+        "http://qudt.org/3.5.3/vocab/quantitykind"
+      ],
+      "version_iri_declared": true
+    },
+    {
+      "id": "QUDT-DIMENSIONVECTOR-3.5.3",
+      "filename": "qudt-dimensionvector-3.5.3.ttl",
+      "url": "https://qudt.org/3.5.3/vocab/dimensionvector",
+      "standard": "QUDT 3.5.3, 2026-10-20",
+      "namespace": "http://qudt.org/vocab/dimensionvector/",
+      "ontology_iri": "http://qudt.org/3.5.3/vocab/dimensionvector",
+      "version_iri": "http://qudt.org/3.5.3/vocab/dimensionvector",
+      "must_have": [],
+      "license_code": "QUDT-CC-BY-4.0",
+      "resolved_url": "https://qudt.org/3.5.3/vocab/dimensionvector",
+      "repo_path": "vendor/external-rdf/T04-2026/qudt-dimensionvector-3.5.3.ttl",
+      "sha256": "eaa321908ce06afa5176c5cbdf375aef4e3176390f18db663a628a96aa9678a3",
+      "file_size_bytes": 202780,
+      "triples": 4274,
+      "ontology_iris_found": [
+        "http://qudt.org/3.5.3/vocab/dimensionvector"
+      ],
+      "owl_version_iris_found": [
+        "http://qudt.org/3.5.3/vocab/dimensionvector"
+      ],
+      "version_iri_declared": true
+    },
+    {
+      "id": "OWL-TIME",
+      "filename": "owl-time.ttl",
+      "url": "https://www.w3.org/2006/time",
+      "standard": "W3C OWL-Time Recommendation 2017; RDF may contain subsequent maintenance updates",
+      "namespace": "http://www.w3.org/2006/time#",
+      "ontology_iri": "http://www.w3.org/2006/time",
+      "version_iri": null,
+      "must_have": [
+        "http://www.w3.org/2006/time#ProperInterval",
+        "http://www.w3.org/2006/time#Instant",
+        "http://www.w3.org/2006/time#inXSDDateTimeStamp"
+      ],
+      "license_code": "W3C-SOFTWARE-AND-DOCUMENT",
+      "resolved_url": "https://www.w3.org/2006/time",
+      "repo_path": "vendor/external-rdf/T04-2026/owl-time.ttl",
+      "sha256": "251bd6970b0d7a5efa97ff681afe81a297df85deab3d860fa4f8eeba72d8f16c",
+      "file_size_bytes": 101486,
+      "triples": 1296,
+      "ontology_iris_found": [
+        "http://www.w3.org/2006/time"
+      ],
+      "owl_version_iris_found": [
+        "http://www.w3.org/2006/time#2016"
+      ],
+      "version_iri_declared": null
+    },
+    {
+      "id": "PROV-O",
+      "filename": "prov-o.ttl",
+      "url": "https://www.w3.org/ns/prov-o.ttl",
+      "standard": "W3C PROV-O Recommendation 2013-04-30",
+      "namespace": "http://www.w3.org/ns/prov#",
+      "ontology_iri": "http://www.w3.org/ns/prov#",
+      "version_iri": null,
+      "must_have": [
+        "http://www.w3.org/ns/prov#Entity",
+        "http://www.w3.org/ns/prov#Activity",
+        "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "http://www.w3.org/ns/prov#wasGeneratedBy"
+      ],
+      "license_code": "W3C-SOFTWARE-AND-DOCUMENT",
+      "resolved_url": "https://www.w3.org/ns/prov-o.ttl",
+      "repo_path": "vendor/external-rdf/T04-2026/prov-o.ttl",
+      "sha256": "7d203989f67b38bca572253942acc5a1bf24ce3ccfece16f072dcb4be2b79a96",
+      "file_size_bytes": 68795,
+      "triples": 1146,
+      "ontology_iris_found": [
+        "http://www.w3.org/ns/prov#",
+        "http://www.w3.org/ns/prov-o#"
+      ],
+      "owl_version_iris_found": [
+        "http://www.w3.org/ns/prov-o-20130430"
+      ],
+      "version_iri_declared": null
+    }
+  ],
+  "p04_03_local_profiles_checked": 5
+}

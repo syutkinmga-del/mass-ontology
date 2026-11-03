@@ -1,0 +1,29 @@
+{
+  "profile": "p04",
+  "baseline_commit": "f70a120e78b99808b8d1340b08e652ff33313dab",
+  "fixture_sha256": "2f73990cd4dc88fd4e21c4694d35c6628d0afac613080434d33deed3f41cf301",
+  "manifest_sha256": "8e4bc2f0be4f2a2aa40756427c93dff050eec36b4035c2bc6e324d8d52333db3",
+  "rdf_triples": 370,
+  "status": "PASS",
+  "checks": {
+    "BH-CQ-01": {
+      "status": "PASS",
+      "actual_rows": 18,
+      "expected_rows": 18,
+      "exact_bindings": true
+    },
+    "BH-CQ-02": {
+      "status": "PASS",
+      "actual_rows": 9,
+      "expected_rows": 9,
+      "exact_bindings": true
+    },
+    "BH-CQ-03": {
+      "status": "PASS",
+      "actual_rows": 18,
+      "expected_rows": 18,
+      "exact_bindings": true
+    }
+  },
+  "executed_utc": "2026-11-03T17:11:46+00:00"
+}

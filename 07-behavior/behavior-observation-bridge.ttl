@@ -1,0 +1,21 @@
+@prefix bh: <https://w3id.org/mass-ontology/behavior#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/mass-ontology/behavior-observation-bridge>
+    a owl:Ontology ;
+    rdfs:label "MASS behavior observation bridge"@en ;
+    rdfs:comment "Local P04-03 terms referencing SOSA and QUDT; no external owl:imports until authoritative RDF artifacts are version-pinned."@en ;
+    owl:imports <https://w3id.org/mass-ontology/behavior> ,
+                <https://w3id.org/mass-ontology/observation> ,
+                <https://w3id.org/mass-ontology/measurement> ;
+    owl:versionInfo "0.4.0-dev/P04-03" .
+
+bh:supportedByObservation a owl:ObjectProperty ;
+    rdfs:domain bh:PhysicalBehavior ; rdfs:range sosa:Observation ;
+    rdfs:label "supported by observation"@en .
+bh:hasQuantityValue a owl:ObjectProperty ;
+    rdfs:domain bh:PhysicalBehavior ; rdfs:range qudt:QuantityValue ;
+    rdfs:label "has quantity value"@en .

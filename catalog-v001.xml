@@ -8,4 +8,7 @@
     <uri name="https://w3id.org/mass-ontology/maritime" uri="02-maritime/maritime-core.ttl"/>
     <uri name="https://w3id.org/mass-ontology/maritime-compatibility" uri="02-maritime/vessel-compatibility.ttl"/>
     <uri name="https://w3id.org/mass-ontology/behavior" uri="07-behavior/ship-behavior.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/observation" uri="05-observation/mass-observation.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/measurement" uri="06-quantities/mass-measurement-policy.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/behavior-observation-bridge" uri="07-behavior/behavior-observation-bridge.ttl"/>
 </catalog>

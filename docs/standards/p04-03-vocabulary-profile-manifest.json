@@ -1,0 +1,108 @@
+{
+  "schema_version": "p04-03-vocabulary-profile-1.0",
+  "scope": "v0.4.0-dev/P04-03 synthetic AIS observation fixture",
+  "decisions": [
+    "T-01",
+    "T-02",
+    "T-03",
+    "T-04",
+    "SR-03",
+    "SR-04",
+    "SR-06",
+    "SR-07"
+  ],
+  "status": "EXTERNAL_ARTIFACT_PINNING_BLOCKED",
+  "import_strategy": "LOCAL_IRI_REFERENCES_ONLY_NO_EXTERNAL_OWL_IMPORTS",
+  "warning": "No authoritative external RDF snapshot is bundled. Referenced vocabulary IRIs are NOT pinned RDF imports, and BH-V11 cannot PASS until external artifact/version/IRI/license/checksum review.",
+  "external_dependencies": [
+    {
+      "id": "SOSA-SSN",
+      "specification_edition": "W3C Recommendation 2017 (used-terms baseline); 2026 revision is draft",
+      "documentation_url": "https://www.w3.org/TR/vocab-ssn/",
+      "namespaces": [
+        "http://www.w3.org/ns/sosa/",
+        "http://www.w3.org/ns/ssn/"
+      ],
+      "selected_rdf_artifact_url": null,
+      "ontology_iri_verified": null,
+      "version_iri_verified": null,
+      "local_snapshot_path": null,
+      "snapshot_sha256": null,
+      "license_review": "PENDING",
+      "status": "ARTIFACT_SELECTION_PENDING"
+    },
+    {
+      "id": "QUDT",
+      "specification_edition": "3.5.3 CANDIDATE, not pinned",
+      "documentation_url": "https://www.qudt.org/",
+      "namespaces": [
+        "http://qudt.org/schema/qudt/",
+        "http://qudt.org/vocab/unit/"
+      ],
+      "selected_rdf_artifact_url": null,
+      "ontology_iri_verified": null,
+      "version_iri_verified": null,
+      "local_snapshot_path": null,
+      "snapshot_sha256": null,
+      "license_review": "PENDING",
+      "status": "ARTIFACT_SELECTION_PENDING"
+    },
+    {
+      "id": "OWL-Time",
+      "specification_edition": "W3C Recommendation 2017 (candidate snapshot)",
+      "documentation_url": "https://www.w3.org/TR/owl-time/",
+      "namespaces": [
+        "http://www.w3.org/2006/time#"
+      ],
+      "selected_rdf_artifact_url": null,
+      "ontology_iri_verified": null,
+      "version_iri_verified": null,
+      "local_snapshot_path": null,
+      "snapshot_sha256": null,
+      "license_review": "PENDING",
+      "status": "ARTIFACT_SELECTION_PENDING"
+    },
+    {
+      "id": "PROV-O",
+      "specification_edition": "W3C Recommendation 2013 (candidate snapshot)",
+      "documentation_url": "https://www.w3.org/TR/prov-o/",
+      "namespaces": [
+        "http://www.w3.org/ns/prov#"
+      ],
+      "selected_rdf_artifact_url": null,
+      "ontology_iri_verified": null,
+      "version_iri_verified": null,
+      "local_snapshot_path": null,
+      "snapshot_sha256": null,
+      "license_review": "PENDING",
+      "status": "ARTIFACT_SELECTION_PENDING"
+    }
+  ],
+  "project_authored_local_profiles": [
+    {
+      "path": "05-observation/mass-observation.ttl",
+      "sha256": "3989c1ce0f99b57874b7a99c59fb76f759b2644039c78d64abb81b028e4ba302",
+      "authority": "MASS_PROJECT_AUTHORED_NOT_OFFICIAL_STANDARD_SNAPSHOT"
+    },
+    {
+      "path": "06-quantities/mass-measurement-policy.ttl",
+      "sha256": "736501ddd7e65967427e58dcf76297da1561be83c5be86bfd2a403b831289d9d",
+      "authority": "MASS_PROJECT_AUTHORED_NOT_OFFICIAL_STANDARD_SNAPSHOT"
+    },
+    {
+      "path": "07-behavior/behavior-observation-bridge.ttl",
+      "sha256": "7a0265ecd0362746e6ecc83c342a4527a0398d4e074588f157341868cb728a81",
+      "authority": "MASS_PROJECT_AUTHORED_NOT_OFFICIAL_STANDARD_SNAPSHOT"
+    },
+    {
+      "path": "tests/observation/fixtures/p04-03-synthetic-input.json",
+      "sha256": "79ac84c02aa3657bee1489bbb231ae574ceee6905372cc72e5856c73a251ab8e",
+      "authority": "MASS_PROJECT_AUTHORED_NOT_OFFICIAL_STANDARD_SNAPSHOT"
+    },
+    {
+      "path": "examples/p04-03-synthetic-ais.ttl",
+      "sha256": "e38875638271b85dfd82006d0fea9f9018ca0399f3fad5aba02c8146db9f87e4",
+      "authority": "MASS_PROJECT_AUTHORED_NOT_OFFICIAL_STANDARD_SNAPSHOT"
+    }
+  ]
+}

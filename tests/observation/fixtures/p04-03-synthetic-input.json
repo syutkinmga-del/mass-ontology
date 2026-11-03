@@ -1,0 +1,31 @@
+{
+  "schema_version": "p04-03-synthetic-1.0",
+  "synthetic_only": true,
+  "source_kind": "prevalidated-AIS-like-position-report",
+  "message_type": 1,
+  "source_event_time_quality": "provided-complete-utc",
+  "coordinate_reference_system": "http://www.opengis.net/def/crs/EPSG/0/4326",
+  "coordinate_reference": "WGS84 named geodetic latitude and longitude; no GeoSPARQL",
+  "course_reference": "degrees true, COG, not heading",
+  "segmentation": {
+    "method_id": "fixed-boundary-synthetic",
+    "version": "1.0.0",
+    "sample_assignment": "[start,end)",
+    "thresholds": null,
+    "segments": [
+      {"index": 0, "start": "2026-10-28T12:00:00Z", "end": "2026-10-28T12:01:00Z"},
+      {"index": 1, "start": "2026-10-28T12:01:00Z", "end": "2026-10-28T12:02:00Z"},
+      {"index": 2, "start": "2026-10-28T12:04:00Z", "end": "2026-10-28T12:05:00Z"}
+    ]
+  },
+  "samples": [
+    {"id": "000", "event_time": "2026-10-28T12:00:00Z", "sog_kn": "8.20", "cog_deg": "85.0", "lat_deg": "59.901", "lon_deg": "30.100"},
+    {"id": "001", "event_time": "2026-10-28T12:00:30Z", "sog_kn": "8.10", "cog_deg": "85.5", "lat_deg": "59.902", "lon_deg": "30.102"},
+    {"id": "002", "event_time": "2026-10-28T12:01:00Z", "sog_kn": "8.00", "cog_deg": "86.0", "lat_deg": "59.903", "lon_deg": "30.104"},
+    {"id": "003", "event_time": "2026-10-28T12:01:30Z", "sog_kn": "7.90", "cog_deg": "87.0", "lat_deg": "59.904", "lon_deg": "30.106"},
+    {"id": "004", "event_time": "2026-10-28T12:04:00Z", "sog_kn": "7.80", "cog_deg": "88.0", "lat_deg": "59.908", "lon_deg": "30.115"},
+    {"id": "005", "event_time": "2026-10-28T12:04:30Z", "sog_kn": "7.70", "cog_deg": "89.0", "lat_deg": "59.909", "lon_deg": "30.117"}
+  ],
+  "unit_policy": {"sog": "http://qudt.org/vocab/unit/KN", "cog": "http://qudt.org/vocab/unit/DEG"},
+  "message_time_offsets_seconds": {"received": 1, "result": 2, "ingested": 3}
+}

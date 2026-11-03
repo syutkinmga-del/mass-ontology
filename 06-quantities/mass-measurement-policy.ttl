@@ -1,0 +1,24 @@
+@prefix meas: <https://w3id.org/mass-ontology/measurement#> .
+@prefix obs: <https://w3id.org/mass-ontology/observation#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/mass-ontology/measurement>
+    a owl:Ontology ;
+    rdfs:label "MASS synthetic measurement policy"@en ;
+    rdfs:comment "Local P04-03 unit policy, not full QUDT semantics; uses QUDT term IRIs without external ontology imports."@en ;
+    owl:imports <https://w3id.org/mass-ontology/observation> ;
+    owl:versionInfo "0.4.0-dev/P04-03" .
+
+meas:MeasurementPolicy a owl:Class ; rdfs:label "Local measurement policy"@en .
+meas:forObservedProperty a owl:ObjectProperty .
+meas:acceptedUnit a owl:ObjectProperty .
+meas:SOGPolicy a meas:MeasurementPolicy ;
+    meas:forObservedProperty obs:SpeedOverGround ;
+    meas:acceptedUnit unit:KN ;
+    rdfs:comment "unit:KN denotes knot, not kilonewton. Local synthetic fixture constraint only."@en .
+meas:COGPolicy a meas:MeasurementPolicy ;
+    meas:forObservedProperty obs:CourseOverGround ;
+    meas:acceptedUnit unit:DEG ;
+    rdfs:comment "Course over ground in degrees true, distinct from vessel heading."@en .

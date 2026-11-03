@@ -1,0 +1,37 @@
+@prefix obs: <https://w3id.org/mass-ontology/observation#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://w3id.org/mass-ontology/observation>
+    a owl:Ontology ;
+    rdfs:label "MASS observation and AIS source metadata"@en ;
+    rdfs:comment "Local P04-03 adapter for prevalidated synthetic AIS-like records. Standard SOSA/OWL-Time/PROV IRIs are referenced without unpinned imports. Not an AIS decoder."@en ;
+    owl:imports <https://w3id.org/mass-ontology/maritime> ;
+    owl:versionInfo "0.4.0-dev/P04-03" .
+
+obs:PrevalidatedAISRecord a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "Prevalidated AIS-like source record"@en ;
+    rdfs:comment "Retained source data with known full UTC event time and receiving metadata. Not a sensor."@en .
+obs:PositionResult a owl:Class ; rdfs:label "Geodetic position result"@en ;
+    rdfs:comment "Named WGS84 latitude and longitude values; not a GeoSPARQL geometry."@en .
+obs:CoverageGap a owl:Class ; rdfs:label "Trajectory coverage gap record"@en .
+obs:SpeedOverGround a owl:NamedIndividual ; rdfs:label "Speed over ground"@en .
+obs:CourseOverGround a owl:NamedIndividual ; rdfs:label "Course over ground, true"@en .
+obs:GeodeticPosition a owl:NamedIndividual ; rdfs:label "Geodetic position"@en .
+
+obs:receivedAtTime a owl:DatatypeProperty ; rdfs:domain obs:PrevalidatedAISRecord ; rdfs:range xsd:dateTimeStamp .
+obs:ingestedAtTime a owl:DatatypeProperty ; rdfs:domain obs:PrevalidatedAISRecord ; rdfs:range xsd:dateTimeStamp .
+obs:eventTimeQuality a owl:DatatypeProperty ; rdfs:domain obs:PrevalidatedAISRecord ; rdfs:range xsd:string .
+obs:messageType a owl:DatatypeProperty ; rdfs:domain obs:PrevalidatedAISRecord ; rdfs:range xsd:integer .
+obs:sourceAvailability a owl:DatatypeProperty ; rdfs:domain obs:PrevalidatedAISRecord ; rdfs:range xsd:string .
+obs:latitudeDegrees a owl:DatatypeProperty ; rdfs:domain obs:PositionResult ; rdfs:range xsd:decimal .
+obs:longitudeDegrees a owl:DatatypeProperty ; rdfs:domain obs:PositionResult ; rdfs:range xsd:decimal .
+obs:coordinateReferenceSystem a owl:ObjectProperty ; rdfs:domain obs:PositionResult .
+obs:hasCoverageGap a owl:ObjectProperty ; rdfs:label "has documented coverage gap"@en .
+obs:gapStartsAt a owl:DatatypeProperty ; rdfs:domain obs:CoverageGap ; rdfs:range xsd:dateTimeStamp .
+obs:gapEndsAt a owl:DatatypeProperty ; rdfs:domain obs:CoverageGap ; rdfs:range xsd:dateTimeStamp .
+obs:segmentationMethodId a owl:DatatypeProperty ; rdfs:domain prov:Activity ; rdfs:range xsd:string .
+obs:segmentationVersion a owl:DatatypeProperty ; rdfs:domain prov:Activity ; rdfs:range xsd:string .
+obs:sampleAssignmentPolicy a owl:DatatypeProperty ; rdfs:domain prov:Activity ; rdfs:range xsd:string .

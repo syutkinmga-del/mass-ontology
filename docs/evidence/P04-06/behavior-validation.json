@@ -1,0 +1,74 @@
+{
+  "BH-V01": {
+    "status": "PASS",
+    "issues": []
+  },
+  "BH-V02": {
+    "status": "PASS",
+    "issues": []
+  },
+  "BH-V03": {
+    "status": "PASS",
+    "issues": []
+  },
+  "BH-V05": {
+    "status": "PASS",
+    "issues": []
+  },
+  "BH-V06": {
+    "status": "PASS",
+    "issues": []
+  },
+  "BH-V11": {
+    "status": "PASS",
+    "issues": []
+  },
+  "BH-V12": {
+    "status": "PASS",
+    "issues": []
+  },
+  "legacy_executions": [
+    {
+      "command": "catalog",
+      "status": "PASS",
+      "exit_code": 0,
+      "tail": "make[1]: Entering directory '/home/runner/work/mass-ontology/mass-ontology'\n.venv/bin/python scripts/check_catalog.py\nChecking catalog-v001.xml\n=========================\nhttps://w3id.org/mass-ontology/behavior\n  -> 07-behavior/ship-behavior.ttl\n  OK, triples: 78\nhttps://w3id.org/mass-ontology/behavior-observation-bridge\n  -> 07-behavior/behavior-observation-bridge.ttl\n  OK, triples: 15\nhttps://w3id.org/mass-ontology/common\n  -> 01-common/common-core.ttl\n  OK, triples: 32\nhttps://w3id.org/mass-ontology/core\n  -> 03-mass-core/mass-core.ttl\n  OK, triples: 43\nhttps://w3id.org/mass-ontology/external-ontology-registry\n  -> 00-foundation/external-ontology-registry.ttl\n  OK, triples: 38\nhttps://w3id.org/mass-ontology/foundation-alignment\n  -> 00-foundation/foundation-alignment.ttl\n  OK, triples: 83\nhttps://w3id.org/mass-ontology/maritime\n  -> 02-maritime/maritime-core.ttl\n  OK, triples: 10\nhttps://w3id.org/mass-ontology/maritime-compatibility\n  -> 02-maritime/vessel-compatibility.ttl\n  OK, triples: 9\nhttps://w3id.org/mass-ontology/measurement\n  -> 06-quantities/mass-measurement-policy.ttl\n  OK, triples: 17\nhttps://w3id.org/mass-ontology/navigation\n  -> 04-navigation/navigation-situation.ttl\n  OK, triples: 61\nhttps://w3id.org/mass-ontology/observation\n  -> 05-observation/mass-observation.ttl\n  OK, triples: 60\n\nCatalog OK: all mapped ontology files exist and parse as Turtle.\nmake[1]: Leaving directory '/home/runner/work/mass-ontology/mass-ontology'\n\n"
+    },
+    {
+      "command": "validate",
+      "status": "PASS",
+      "exit_code": 0,
+      "tail": "make[1]: Entering directory '/home/runner/work/mass-ontology/mass-ontology'\n.venv/bin/python scripts/run_shacl.py\nLoading data: 01-common/common-core.ttl\nLoading data: 00-foundation/foundation-alignment.ttl\nLoading data: 03-mass-core/mass-core.ttl\nLoading data: 04-navigation/navigation-situation.ttl\nLoading data: examples/example-encounter-scenario.ttl\nLoading data: 00-foundation/external-ontology-registry.ttl\nLoading shapes: shapes/mass-core.shacl.ttl\nLoading shapes: shapes/foundation-alignment.shacl.ttl\n\nSHACL validation report\n=======================\nValidation Report\nConforms: True\n\nValidation OK: data conforms to SHACL shapes.\nmake[1]: Leaving directory '/home/runner/work/mass-ontology/mass-ontology'\n\n"
+    },
+    {
+      "command": "cq",
+      "status": "PASS",
+      "exit_code": 0,
+      "tail": "\n\nQuery: queries/cq/cq-13-external-ontology-candidates.rq\n--------------------------------------------------------------------------------\nRows: 2\nExpected rows: 2\nBFO2020 | Basic Formal Ontology 2020 | Top-level ontology candidate for MASS foundation alignment. | candidate\nCCO | Common Core Ontologies | Mid-level ontology suite candidate for MASS common and domain alignment. | candidate\n\nQuery: queries/cq/cq-14-alignment-candidate-ontologies.rq\n--------------------------------------------------------------------------------\nRows: 18\nExpected rows: 18\nAD-001-MASSVessel | MASSVessel | BFO2020\nAD-001-MASSVessel | MASSVessel | CCO\nAD-002-AutonomousNavigationSystem | AutonomousNavigationSystem | BFO2020\nAD-002-AutonomousNavigationSystem | AutonomousNavigationSystem | CCO\nAD-003-OperationalMode | OperationalMode | BFO2020\nAD-003-OperationalMode | OperationalMode | CCO\nAD-004-CommunicationLink | CommunicationLink | BFO2020\nAD-004-CommunicationLink | CommunicationLink | CCO\nAD-005-SafetyRequirement | SafetyRequirement | BFO2020\nAD-005-SafetyRequirement | SafetyRequirement | CCO\nAD-006-VerificationEvidence | VerificationEvidence | BFO2020\nAD-006-VerificationEvidence | VerificationEvidence | CCO\nAD-007-EncounterSituation | EncounterSituation | BFO2020\nAD-007-EncounterSituation | EncounterSituation | CCO\nAD-008-Maneuver | Maneuver | BFO2020\nAD-008-Maneuver | Maneuver | CCO\nAD-009-COLREGRule | COLREGRule | BFO2020\nAD-009-COLREGRule | COLREGRule | CCO\n\nAll competency question queries returned expected results.\nmake[1]: Leaving directory '/home/runner/work/mass-ontology/mass-ontology'\n\n"
+    },
+    {
+      "command": "test",
+      "status": "PASS",
+      "exit_code": 0,
+      "tail": "make[1]: Entering directory '/home/runner/work/mass-ontology/mass-ontology'\n.venv/bin/python -m pytest\n============================= test session starts ==============================\nplatform linux -- Python 3.12.15, pytest-9.1.1, pluggy-1.7.0\nrootdir: /home/runner/work/mass-ontology/mass-ontology\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 115 items\n\ntests/test_legacy_pipeline.py ...                                        [  2%]\ntests/test_p04_01_maritime.py ........                                   [  9%]\ntests/test_p04_02_behavior_core.py .................                     [ 24%]\ntests/test_p04_03_observation.py ....................                    [ 41%]\ntests/test_p04_04_validation.py ....................                     [ 59%]\ntests/test_p04_05_behavior_cq.py ...............                         [ 72%]\ntests/test_p04_06_ci.py .........................                        [ 93%]\ntests/test_sysml_kernel_integrity.py ..                                  [ 95%]\ntests/test_t04_source_lock.py .....                                      [100%]\n\n============================= 115 passed in 5.46s ==============================\nmake[1]: Leaving directory '/home/runner/work/mass-ontology/mass-ontology'\n\n"
+    },
+    {
+      "command": "kernel",
+      "status": "PASS",
+      "exit_code": 0,
+      "tail": "MASS-SK-1.0 SOURCE INTEGRITY: PASS\nBaseline: MASS-SK-1.0; SHA-256: 1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788\nChecks: released source bytes, checksum line, archive manifest and companion document hashes\nNote: does not execute a SysML parser or claim current Pilot Implementation validation\n\n"
+    }
+  ],
+  "_meta": {
+    "profile": "p04",
+    "tested_commit": "68e1c4f454caf85958806d761b3a671b51c7803c",
+    "executed_utc": "2026-11-05T08:41:19+00:00",
+    "python_version": "3.12.15",
+    "t04_lock_sha256": "ebacb2bd81ed836df52fb2915a386fb54daef07d479b9f6bbfd9d84f5278f4af",
+    "validated_fixture": "examples/p04-04-synthetic-ais-qudt353.ttl",
+    "fixture_sha256": "2f73990cd4dc88fd4e21c4694d35c6628d0afac613080434d33deed3f41cf301",
+    "source_baseline": "baf84cdbd5732d5f243c0625705fce77f2cb5cc3",
+    "full_pytest_required_when_legacy_false": true,
+    "bh_cq_01_03": "DEFERRED to P04-05"
+  }
+}

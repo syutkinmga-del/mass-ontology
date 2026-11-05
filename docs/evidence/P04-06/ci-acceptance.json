@@ -1,0 +1,182 @@
+{
+  "schema_version": "P04-06-GitHub-Actions-Evidence-v1",
+  "stage": "P04-06",
+  "acceptance_status": "CI_PASS_VERIFIED",
+  "evidence_source": "Downloaded GitHub Actions artifact, original bytes preserved in github-actions-run-41996276523.zip",
+  "implementation_commit": "68e1c4f454caf85958806d761b3a671b51c7803c",
+  "p04_05_evidence_ancestor": "6113ed1581a59602be67227ce3ad3730b4e6563d",
+  "github_actions": {
+    "workflow_name": "BH-P04 Behavior Validation",
+    "workflow_path": ".github/workflows/behavior-validation.yml",
+    "workflow_git_blob_sha1": "3092796b8fc15e358780415cdbacf41a4acfa025",
+    "run_id": 41996276523,
+    "run_number": 1,
+    "run_attempt": 1,
+    "run_url": "https://github.com/syutkinmga-del/mass-ontology/actions/runs/41996276523",
+    "job_id": 127140115198,
+    "status": "completed",
+    "conclusion": "success",
+    "event": "push",
+    "branch": "main",
+    "head_sha": "68e1c4f454caf85958806d761b3a671b51c7803c",
+    "created_at_utc": "2026-11-05T08:40:21Z",
+    "updated_at_utc": "2026-11-05T08:41:25Z"
+  },
+  "artifact": {
+    "id": 13400003022,
+    "name": "bh-p04-ci-evidence-41996276523-1",
+    "url": "https://github.com/syutkinmga-del/mass-ontology/actions/runs/41996276523/artifacts/13400003022",
+    "file": "github-actions-run-41996276523.zip",
+    "sha256": "84ad7fa2fce3f7d9d4817229040e018698ed1fb6bd7262035ec908bd76020649",
+    "size_bytes": 12493,
+    "archive_members": 16,
+    "manifest_checked_files": 15,
+    "manifest_sha256_failures": 0,
+    "provider_retention_expires_utc": "2026-12-05T08:41:20Z",
+    "local_reproduction": "Retained in this Git evidence directory as the original ZIP, independently verified against published GitHub artifact digest."
+  },
+  "execution": {
+    "profile": "p04",
+    "status": "PASS",
+    "executed_utc": "2026-11-05T08:40:39+00:00",
+    "tested_commit": "68e1c4f454caf85958806d761b3a671b51c7803c",
+    "gates": {
+      "preflight": "PASS",
+      "fixture-p04-03": "PASS",
+      "fixture-p04-04": "PASS",
+      "catalog": "PASS",
+      "shacl-legacy": "PASS",
+      "cq-legacy": "PASS",
+      "sysml-kernel": "PASS",
+      "t04-verify": "PASS",
+      "pytest": "PASS",
+      "behavior-validation": "PASS",
+      "behavior-cq": "PASS"
+    },
+    "pytest": {
+      "tests": 115,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bh_rules": {
+      "BH-V01": "PASS",
+      "BH-V02": "PASS",
+      "BH-V03": "PASS",
+      "BH-V05": "PASS",
+      "BH-V06": "PASS",
+      "BH-V11": "PASS",
+      "BH-V12": "PASS"
+    },
+    "bh_cq": {
+      "BH-CQ-01": {
+        "rows": 18,
+        "exact_bindings": true,
+        "status": "PASS"
+      },
+      "BH-CQ-02": {
+        "rows": 9,
+        "exact_bindings": true,
+        "status": "PASS"
+      },
+      "BH-CQ-03": {
+        "rows": 18,
+        "exact_bindings": true,
+        "status": "PASS"
+      }
+    },
+    "legacy_cq_01_14": "PASS",
+    "fixture_type": "synthetic AIS-like data; 370 RDF triples"
+  },
+  "integrity": {
+    "mass_sk_1_0_sha256": "1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788",
+    "mass_sk_1_0_source_integrity": "PASS",
+    "t04_lock_sha256": "ebacb2bd81ed836df52fb2915a386fb54daef07d479b9f6bbfd9d84f5278f4af",
+    "t04_control": "PASS",
+    "p04_04_fixture_sha256": "2f73990cd4dc88fd4e21c4694d35c6628d0afac613080434d33deed3f41cf301",
+    "robot_jar_sha256": "53cd275c8e4c0dad1fc2c1c34174876795cd7d6b6926e1444adcbb0cb3c7ab26",
+    "artifact_original_file_checksums": "artifact-SHA256SUMS",
+    "archive_manifest": [
+      {
+        "path": "behavior-cq.json",
+        "sha256": "4f62a865b094748509de5f22dddf88e0937e9f6d8f022d321d4151ca5c0a8142"
+      },
+      {
+        "path": "behavior-validation.json",
+        "sha256": "cd506c4a766c2d05732b83637635ef41661e680ad8eb57b6061e6fc7a1cfc4a8"
+      },
+      {
+        "path": "logs/01-fixture-p04-03.log",
+        "sha256": "0fef74695b985f921ebb3c9335c1e1d2915f5886cd2be363db04a1c09a45927e"
+      },
+      {
+        "path": "logs/02-fixture-p04-04.log",
+        "sha256": "e5fddf899156611418dde92d872a0a28f189eeee6c2fe744cccf8cb2b2280a85"
+      },
+      {
+        "path": "logs/03-catalog.log",
+        "sha256": "939d7742599426b54ce180772ab0c3edc2fde064b488dbd7febdbecd9ad3c177"
+      },
+      {
+        "path": "logs/04-shacl-legacy.log",
+        "sha256": "98fefe4e79fa39a6010c09d256728eda225f01babeb5b8f2cba018d466af4537"
+      },
+      {
+        "path": "logs/05-cq-legacy.log",
+        "sha256": "c6aacbb6077994e216cd94ef308677b8ceee1b15f6618b5569cfa37f1ab883ef"
+      },
+      {
+        "path": "logs/06-sysml-kernel.log",
+        "sha256": "fe4ec90174961ecb1f521734515a8439281a6c12ae6a59547ebd175f04468d5b"
+      },
+      {
+        "path": "logs/07-t04-verify.log",
+        "sha256": "e248d7007cef077d67b6b4b8391ae385e9563ad1a160975c7c4f8573d7a851d5"
+      },
+      {
+        "path": "logs/08-pytest.log",
+        "sha256": "42992064d06320417fe3063afc3c907558a3f97d4555aef14b0c8c0346d16f24"
+      },
+      {
+        "path": "logs/09-behavior-validation.log",
+        "sha256": "84e2734fa8c62d4ddf7d92eb51cb73653510636cbf6ffe31a8b30f17b08e8c9f"
+      },
+      {
+        "path": "logs/10-behavior-cq.log",
+        "sha256": "80933112df4edf5f3429f6d0814d1b8445f478df0722bb186235e0b6033f35f6"
+      },
+      {
+        "path": "pytest.xml",
+        "sha256": "189ea97206463f6eb584b14a458ff55b3256e118ff2509229924fcfd8f294c83"
+      },
+      {
+        "path": "report.json",
+        "sha256": "0bc41b53bc8dd2fe72ef3296e99f0666888c108c54e0386d07cc54e2a73d7761"
+      },
+      {
+        "path": "summary.md",
+        "sha256": "0f83b8a9c822411c4dc12c347af193a8dc064652752c4b0e75a5c328e7103e69"
+      }
+    ]
+  },
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "runner_image": "ubuntu-24.04",
+    "python": "3.12.15",
+    "java": "Temurin 21.0.13+9",
+    "robot": "1.9.11",
+    "direct_python_dependencies": {
+      "rdflib": "7.6.0",
+      "pyshacl": "0.40.1",
+      "pytest": "9.1.1"
+    },
+    "python_transitive_dependencies_bytewise_pinned": false,
+    "java_binary_bytewise_pinned": false
+  },
+  "limitations": [
+    "P05/P09 BH rules and questions are deferred, not PASS.",
+    "SysML parser/semantic validation was not performed; only MASS-SK-1.0 source byte/manifest integrity is claimed.",
+    "No production release, real AIS accuracy, COLREG or autonomous-navigation safety claims.",
+    "Published evidence commit has a distinct SHA; this report attests the preceding implementation commit. Its newly triggered CI run needs separate confirmation."
+  ]
+}

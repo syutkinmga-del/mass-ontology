@@ -1,0 +1,102 @@
+{
+  "profile": "p04",
+  "status": "PASS",
+  "tested_commit": "68e1c4f454caf85958806d761b3a671b51c7803c",
+  "executed_utc": "2026-11-05T08:40:39+00:00",
+  "policy": "fail-closed; all required gates PASS; zero skipped pytest cases",
+  "gates": {
+    "preflight": {
+      "status": "PASS",
+      "issues": []
+    },
+    "fixture-p04-03": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/01-fixture-p04-03.log"
+    },
+    "fixture-p04-04": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/02-fixture-p04-04.log"
+    },
+    "catalog": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/03-catalog.log"
+    },
+    "shacl-legacy": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/04-shacl-legacy.log"
+    },
+    "cq-legacy": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/05-cq-legacy.log"
+    },
+    "sysml-kernel": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/06-sysml-kernel.log"
+    },
+    "t04-verify": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/07-t04-verify.log"
+    },
+    "pytest": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/08-pytest.log",
+      "junit": {
+        "tests": 115,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      }
+    },
+    "behavior-validation": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/09-behavior-validation.log"
+    },
+    "behavior-cq": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "logs/10-behavior-cq.log"
+    }
+  },
+  "BH_rules": {
+    "BH-V01": "PASS",
+    "BH-V02": "PASS",
+    "BH-V03": "PASS",
+    "BH-V05": "PASS",
+    "BH-V06": "PASS",
+    "BH-V11": "PASS",
+    "BH-V12": "PASS"
+  },
+  "BH_CQ": {
+    "BH-CQ-01": {
+      "rows": 18,
+      "exact_bindings": true
+    },
+    "BH-CQ-02": {
+      "rows": 9,
+      "exact_bindings": true
+    },
+    "BH-CQ-03": {
+      "rows": 18,
+      "exact_bindings": true
+    }
+  },
+  "environment": {
+    "python": "3.12.15",
+    "pinned_python_packages": {
+      "rdflib": "7.6.0",
+      "pyshacl": "0.40.1",
+      "pytest": "9.1.1"
+    },
+    "robot_required": "1.9.11",
+    "robot_jar_sha256": "53cd275c8e4c0dad1fc2c1c34174876795cd7d6b6926e1444adcbb0cb3c7ab26"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "RR05-third-party-v1",
+  "reviewed_date": "2026-11-05",
+  "baseline_commit": "ebd0d54756bd32876ab1aad031170e4278f83580",
+  "t04_lock": "docs/standards/T04-external-rdf-lock.json",
+  "note": "PROV-O license is publisher-policy assessment; not an explicit in-graph license statement. No archived RDF changed.",
+  "files": [
+    {
+      "id": "SOSA-2017",
+      "path": "vendor/external-rdf/T04-2026/sosa-2017.ttl",
+      "sha256": "c70b0d1c843c0047e4c98e0a89392e46a05752ff6365bda7f7f55303905a0392",
+      "license_assessment": "W3C-20150513 + OGC-1.0",
+      "modified": false,
+      "assertion_level": "in_graph_metadata"
+    },
+    {
+      "id": "SSN-2017",
+      "path": "vendor/external-rdf/T04-2026/ssn-2017.ttl",
+      "sha256": "184d86189191146e314cc52b1bceb96fca11e70aacbc160d71588102a5153eb9",
+      "license_assessment": "W3C-20150513 + OGC-1.0",
+      "modified": false,
+      "assertion_level": "in_graph_metadata"
+    },
+    {
+      "id": "QUDT-SCHEMA-3.5.3",
+      "path": "vendor/external-rdf/T04-2026/qudt-schema-3.5.3.ttl",
+      "sha256": "807b5b03a8759670a6412822c7624cc6180c5e80ff7b9b3b8e4bee98e1c1c882",
+      "license_assessment": "CC-BY-4.0",
+      "modified": false,
+      "assertion_level": "publisher_license"
+    },
+    {
+      "id": "QUDT-UNITS-3.5.3",
+      "path": "vendor/external-rdf/T04-2026/qudt-unit-3.5.3.ttl",
+      "sha256": "89df26d7f8ebb54a80d6bd4e03f3268b16a7acdc7b90490346273c03817971d4",
+      "license_assessment": "CC-BY-4.0",
+      "modified": false,
+      "assertion_level": "publisher_license"
+    },
+    {
+      "id": "QUDT-QUANTITYKIND-3.5.3",
+      "path": "vendor/external-rdf/T04-2026/qudt-quantitykind-3.5.3.ttl",
+      "sha256": "730052a9a760f0f70ac389e8d7e493a729bc8ea2e5f226af68a4b279e7232d81",
+      "license_assessment": "CC-BY-4.0",
+      "modified": false,
+      "assertion_level": "publisher_license"
+    },
+    {
+      "id": "QUDT-DIMENSIONVECTOR-3.5.3",
+      "path": "vendor/external-rdf/T04-2026/qudt-dimensionvector-3.5.3.ttl",
+      "sha256": "eaa321908ce06afa5176c5cbdf375aef4e3176390f18db663a628a96aa9678a3",
+      "license_assessment": "CC-BY-4.0",
+      "modified": false,
+      "assertion_level": "publisher_license"
+    },
+    {
+      "id": "OWL-TIME",
+      "path": "vendor/external-rdf/T04-2026/owl-time.ttl",
+      "sha256": "251bd6970b0d7a5efa97ff681afe81a297df85deab3d860fa4f8eeba72d8f16c",
+      "license_assessment": "CC-BY-4.0 (in-graph dct:license)",
+      "modified": false,
+      "assertion_level": "in_graph_metadata"
+    },
+    {
+      "id": "PROV-O",
+      "path": "vendor/external-rdf/T04-2026/prov-o.ttl",
+      "sha256": "7d203989f67b38bca572253942acc5a1bf24ce3ccfece16f072dcb4be2b79a96",
+      "license_assessment": "W3C-20150513 (publisher policy, no in-graph license statement)",
+      "modified": false,
+      "assertion_level": "publisher_policy"
+    }
+  ]
+}

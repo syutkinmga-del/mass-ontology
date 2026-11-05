@@ -1,0 +1,39 @@
+{
+  "schema_version": "P04-07-author-license-decision-registration-v1",
+  "record_type": "AUTHOR_RIGHTS_LICENSE_DECISION",
+  "decision": "APACHE_2_0_APPROVED_FOR_AUTHOR_OWNED_WORKS",
+  "decision_number": "P04-07-RIGHTS-2026-01",
+  "decision_date": "2026-11-05",
+  "rights_holder": "Сюткин Андрей Вениаминович",
+  "approved_by": "Сюткин Андрей Вениаминович",
+  "approval_basis": "Scanned document showing handwritten signature; author asserts exclusive rights over original self-authored MASS Ontology materials. Signature authentication and chain-of-title not independently established.",
+  "project": "MASS Ontology Stack",
+  "repository": "https://github.com/syutkinmga-del/mass-ontology",
+  "release_candidate": "v0.4.0 / BH-P04 Observation Core",
+  "project_license": {
+    "spdx": "Apache-2.0",
+    "path": "LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "scope": "Only original project materials for which the author actually owns exclusive rights, including OWL, SHACL, SPARQL, software, tests, examples and documentation."
+  },
+  "third_party": {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "sha256": "c908a4adedc9a1fbe70f9df27dfcbdf361d82a2795658f7c08089da62d384d6f",
+    "excluded_directory": "vendor/external-rdf/T04-2026/",
+    "excluded_from_author_apache_2_0": true,
+    "rights_review": "PENDING: review and documentation of specific pinned PROV-O RDF redistribution terms and final confirmation of 8 publisher notices"
+  },
+  "signed_source": {
+    "document": "РЕШЕНИЕ ПРАВООБЛАДАТЕЛЯ, P04-07-RIGHTS-2026-01",
+    "file_name_in_private_archive": "Отсканированный документ 3.pdf",
+    "sha256": "fdc68b4e393b03535be896c4d3ebd0357d9aba64ca1aa03d48283d7f0e68e19e",
+    "pages": 2,
+    "handwritten_signature_visible": true,
+    "qualified_digital_signature_verified": false,
+    "repository_storage": "NOT_COMMITTED: retains handwritten signature in private archive; only SHA-256 is public"
+  },
+  "baseline_commit": "9ad621c575a8dc2fce0841885d79c4e00929cd92",
+  "p04_r08_status": "BLOCKED_PENDING_THIRD_PARTY_APPROVAL",
+  "release_go_status": "NOT_AUTHORIZED",
+  "notes": "Record only the author-owned licensing decision. Do not treat as combined rights-approval DEC-P04-07-rights-approval.json or v0.4.0 release authorization. The P04-07 R08 gate remains BLOCKED."
+}

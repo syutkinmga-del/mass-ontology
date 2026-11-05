@@ -76,12 +76,41 @@ def test_changelog_requires_released_section_and_closed_fences(tmp_path):
     assert r.changelog(tmp_path)['status']=='PASS'
 
 
-def test_license_empty_and_notices_absent_fail(tmp_path):
-    write(tmp_path,'LICENSE','')
-    assert r.license_notices(tmp_path)['status']=='FAIL'
-    write(tmp_path,'LICENSE','Permissive license text needs to be authorized by owner. '+'A'*100)
-    write(tmp_path,'THIRD_PARTY_NOTICES.md','QUDT CC BY 4.0 — W3C OGC\n')
+def test_license_and_notices_require_explicit_rights_approval(tmp_path):
+    assert r.license_notices(tmp_path)['status']=='BLOCKED'
+    lic='Apache License\nVersion 2.0, January 2004\n'+'A'*120
+    write(tmp_path,'LICENSE',lic)
+    notice='\n'.join([
+        'QUDT CC BY 4.0 W3C OGC',
+        'sosa-2017.ttl','ssn-2017.ttl','qudt-schema-3.5.3.ttl',
+        'qudt-unit-3.5.3.ttl','qudt-quantitykind-3.5.3.ttl',
+        'qudt-dimensionvector-3.5.3.ttl','owl-time.ttl','prov-o.ttl'
+    ])
+    write(tmp_path,'THIRD_PARTY_NOTICES.md',notice)
+    assert r.license_notices(tmp_path)['status']=='BLOCKED'
+    approval={
+        'schema_version':'P04-07-rights-approval-v1',
+        'decision':'APPROVED',
+        'approved_by':'Actual Authorized Reviewer',
+        'approval_date':'2026-11-05',
+        'project_license_spdx':'Apache-2.0',
+        'project_rights_holder':'Actual Rights Holder',
+        'project_license_sha256':r.h(tmp_path/'LICENSE'),
+        'third_party_notices_sha256':r.h(tmp_path/'THIRD_PARTY_NOTICES.md'),
+        'third_party_review_status':'APPROVED_BY_PROJECT_OWNER',
+        'scope':'Project-authored files only; vendor/external-rdf/T04-2026 excluded',
+        'owl_time_cc_by_4_reconciled':True,
+        'prov_o_exact_artifact_rights_confirmed':True,
+    }
+    write(tmp_path,'docs/governance/DEC-P04-07-rights-approval.json',json.dumps(approval))
     assert r.license_notices(tmp_path)['status']=='PASS'
+    approval['third_party_notices_sha256']='0'*64
+    write(tmp_path,'docs/governance/DEC-P04-07-rights-approval.json',json.dumps(approval))
+    assert r.license_notices(tmp_path)['status']=='FAIL'
+    approval['third_party_notices_sha256']=r.h(tmp_path/'THIRD_PARTY_NOTICES.md')
+    approval['owl_time_cc_by_4_reconciled']=False
+    write(tmp_path,'docs/governance/DEC-P04-07-rights-approval.json',json.dumps(approval))
+    assert r.license_notices(tmp_path)['status']=='BLOCKED'
 
 
 def test_release_notes_require_boundaries(tmp_path):

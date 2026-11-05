@@ -1,0 +1,20 @@
+{
+  "schema_version": "P04-07-rights-approval-v1",
+  "decision": "PENDING_OWNER_REVIEW",
+  "approved_by": "TBD",
+  "approval_date": "TBD",
+  "project_license_spdx": "TBD",
+  "project_rights_holder": "TBD",
+  "project_license_sha256": "TBD",
+  "third_party_notices_sha256": "TBD",
+  "third_party_review_status": "PENDING",
+  "scope": "Project-authored ontology, scripts, documentation and original synthetic examples only; eight vendor/external-rdf/T04-2026 snapshots excluded",
+  "owl_time_cc_by_4_reconciled": false,
+  "prov_o_exact_artifact_rights_confirmed": false,
+  "source_documents": [
+    "docs/standards/T04-external-rdf-lock.json",
+    "docs/standards/T04-source-and-license-review.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "notes": "TEMPLATE: enter actual rights owner, approval and byte hashes only after reviewing original external RDF notices. Do not rename or copy this template to the approved path unless all fields have been verified."
+}

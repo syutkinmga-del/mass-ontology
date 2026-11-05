@@ -175,17 +175,51 @@ def changelog(root:Path)->dict:
 
 
 def license_notices(root:Path)->dict:
-    lic=root/'LICENSE';third=root/'THIRD_PARTY_NOTICES.md'
-    missing=[]
+    """RR-04/05: owner permission is a separate record, never inferred from a file name.
+
+    The decision binds the *actual* reviewed LICENSE and notices bytes. The gate
+    intentionally does not authenticate a signatory's legal authority; that
+    requires the project's governance review of the rights holder.
+    """
+    lic=root/'LICENSE'; third=root/'THIRD_PARTY_NOTICES.md'
     if not lic.is_file() or len(lic.read_bytes().strip())<80:
-        missing.append('nonempty project LICENSE and an approved license choice')
-    if not third.is_file():missing.append('THIRD_PARTY_NOTICES.md with vetted upstream notices')
-    else:
-        s=third.read_text(encoding='utf-8').upper()
-        if not all(x in s for x in ('QUDT','W3C','OGC','CC BY')):
-            missing.append('THIRD_PARTY_NOTICES.md incomplete (QUDT, W3C, OGC, CC BY)')
-    if missing:return result(False,'Required rights/attribution controls missing: '+', '.join(missing))
-    return result(True,'Project licensing decision and external vocabulary attribution notes present')
+        return result(False,'RR-04: project LICENSE absent or empty; explicit rights-holder license decision required',blocked=True)
+    if not third.is_file():
+        return result(False,'RR-05: THIRD_PARTY_NOTICES.md absent',blocked=True)
+    notice=third.read_text(encoding='utf-8')
+    expected=('sosa-2017.ttl','ssn-2017.ttl','qudt-schema-3.5.3.ttl',
+              'qudt-unit-3.5.3.ttl','qudt-quantitykind-3.5.3.ttl',
+              'qudt-dimensionvector-3.5.3.ttl','owl-time.ttl','prov-o.ttl')
+    if any(x not in notice for x in expected) or not all(x in notice.upper() for x in ('QUDT','W3C','OGC','CC BY')):
+        return result(False,'RR-05: incomplete per-artifact external vocabulary notices')
+    record=root/'docs/governance/DEC-P04-07-rights-approval.json'
+    if not record.is_file():
+        return result(False,'RR-04/05: no separately recorded rights-holder approval for LICENSE and notices',blocked=True)
+    try:
+        a=json.loads(record.read_text(encoding='utf-8'))
+    except (ValueError,OSError) as e:
+        return result(False,'RR-04/05: invalid rights-approval JSON: '+str(e))
+    if a.get('schema_version')!='P04-07-rights-approval-v1' or a.get('decision')!='APPROVED':
+        return result(False,'RR-04/05: owner decision has not approved redistribution',blocked=True)
+    if a.get('third_party_review_status')!='APPROVED_BY_PROJECT_OWNER':
+        return result(False,'RR-05: external RDF notice review still pending',blocked=True)
+    name=a.get('approved_by',''); holder=a.get('project_rights_holder','')
+    if not isinstance(name,str) or not isinstance(holder,str) or any(not x.strip() or x.strip().upper() in ('TBD','UNKNOWN','NONE','PLACEHOLDER') for x in (name,holder)):
+        return result(False,'RR-04/05: actual approver and rights-holder identity required',blocked=True)
+    date=a.get('approval_date','')
+    if not isinstance(date,str) or not re.fullmatch(r'20\d\d-\d\d-\d\d',date):
+        return result(False,'RR-04/05: dated approval required',blocked=True)
+    spdx=a.get('project_license_spdx','')
+    if not isinstance(spdx,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9.\-+]{1,64}',spdx) or spdx.upper() in ('TBD','UNKNOWN'):
+        return result(False,'RR-04: approved project license identifier required')
+    scope=a.get('scope','')
+    if not isinstance(scope,str) or 'vendor/external-rdf/T04-2026' not in scope or 'excluded' not in scope.lower():
+        return result(False,'RR-04/05: approved project license must explicitly exclude third-party RDF')
+    if a.get('owl_time_cc_by_4_reconciled') is not True or a.get('prov_o_exact_artifact_rights_confirmed') is not True:
+        return result(False,'RR-05: OWL-Time in-RDF CC BY 4.0 / PROV-O artifact rights remain unverified',blocked=True)
+    if a.get('project_license_sha256') != h(lic) or a.get('third_party_notices_sha256') != h(third):
+        return result(False,'RR-04/05: rights approval hashes do not match reviewed LICENSE/THIRD_PARTY_NOTICES bytes')
+    return result(True,'Rights-holder approved license/8 vendor notices; exact reviewed SHA-256 bytes and T-04 license exceptions recorded')
 
 
 def release_notes(root:Path)->dict:

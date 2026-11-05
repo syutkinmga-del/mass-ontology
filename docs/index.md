@@ -1,217 +1,51 @@
-# MASS Ontology
+# MASS Ontology — Research Documentation
 
-**MASS Ontology** is a lightweight modular ontology stack for Maritime Autonomous Surface Ships 
-considered as Systems of Systems.
+**Release status: v0.4.0 — RELEASE CANDIDATE, NOT RELEASED.**
+**Active validated profile:** BH-P04, Observation Core.
+**Methodology:** MASS-OEF; [approved Integrated Roadmap v1.1](roadmap.md).
 
-The current repository is an early research MVP. It demonstrates how RDF/OWL, SHACL and SPARQL can 
-be used to represent and check basic MASS concepts, navigation encounter scenarios, COLREG-related 
-references and verification-oriented model data.
+## Current implemented scope
 
-## Development line: v0.3.0-dev
+The ontology models generic maritime vessels and their synthetic AIS-like observation histories using `bh:Trajectory`, `bh:TemporalUnit`, OWL-Time intervals, concurrent physical state descriptions, SOSA/SSN observations, QUDT 3.5.3 speed/course values and PROV-O source evidence. Its `TemporalUnit` is an **information segment**, not a `time:ProperInterval` or ship motion process.
 
-After the `v0.2.0` competency questions release, the project entered the `v0.3.0-dev` development line.
+The synthetic profile uses six source records, 18 observations, three temporal units, a two-minute coverage gap and a versioned QUDT-corrected 370-triple fixture. The historical P04-03 fixture is retained unchanged.
 
-The purpose of this development line is to introduce foundation alignment.
-
-The current draft foundation layer includes:
-
-```text
-00-foundation/foundation-alignment.ttl
-01-common/common-core.ttl
-
-
-
-```
-
-## Foundation alignment competency questions
-
-The foundation alignment layer is checked by CQ-09 ... CQ-12.
-
-These competency questions answer:
-
-- which local ontology entities have foundation alignment decisions;
-- which foundation target is proposed for `mass:MASSVessel`;
-- which alignment decisions currently have draft status;
-- which navigation classes already have foundation alignment decisions.
-
-The corresponding SPARQL queries are stored in:
-
-```text
-queries/cq/
-
-```
-
-## Current scope
-
-The current MVP includes:
-
-- core MASS ontology module;
-- navigation encounter ontology module;
-- example encounter scenario;
-- SHACL validation rules;
-- SPARQL query for retrieving encounter scenarios;
-- local Fuseki demonstration workflow;
-- Git-based source of truth.
-
-## Repository structure
-
-```text
-mass-ontology/
-├── 03-mass-core/
-│   └── mass-core.ttl
-├── 04-navigation/
-│   └── navigation-situation.ttl
-├── examples/
-│   └── example-encounter-scenario.ttl
-├── shapes/
-│   └── mass-core.shacl.ttl
-├── queries/
-│   └── list-encounter-scenarios.rq
-├── scripts/
-│   └── run_shacl.py
-├── docs/
-│   └── index.md
-└── Makefile
-
-```
-
-## MVP v0.2.0
-
-The current MVP demonstrates a minimal ontology engineering pipeline for MASS-oriented MBSE and 
-digital engineering workflows.
-
-The pipeline includes:
-
-```text
-MASS Core ontology
-→ Navigation ontology
-→ example encounter scenario
-→ SHACL validation
-→ competency questions
-→ SPARQL queries
-→ automated expected-result checks
-→ GitHub Actions
-
-
-```
-
-## Competency Questions
-
-The MVP uses competency questions to define what the ontology should be able to answer.
-
-The current competency questions cover:
-
-- operational modes of a MASS vessel;
-- communication links of a MASS vessel;
-- own ship and target ship in an encounter;
-- CPA and TCPA values;
-- applicable COLREG rule;
-- required maneuver;
-- safety requirement verification evidence;
-- retrieval of represented encounter scenarios.
-
-The CQ definitions are stored in:
-
-```text
-competency-questions/mass-cq-v0.1.md
-
-```
-
-## Local validation
-
-Run structural validation:
+### Verification
 
 ```bash
+make catalog
 make validate
-
+make cq
+make test
+make behavior-test
 ```
 
----
+On the published P04-06 evidence baseline the CI recorded 115 tests without errors, failures or skips; BH-V01/02/03/05/06/11/12 PASS and BH-CQ-01/02/03 exact bindings PASS. The release candidate must be retested after any changes.
 
-## Domain Concept Completeness Reviews
+- [P04-06 CI evidence](evidence/P04-06/README.md)
+- [P04-07 release readiness review](reviews/P04-07-release-readiness-review.md)
+- [P04-07 remediation](implementation/P04-07-remediation-implementation.md)
+- [v0.4.0 candidate notes](releases/v0.4.0-release-notes.md)
 
-### DCCR-01 — Xiong Ship Behavior Review
+## Design authority and traceability
 
-**Status:** APPROVED
+| Reference | Role |
+|---|---|
+| [DCCR-01](reviews/DCCR-01-xiong-ship-behavior-review.md) | Domain concept inventory and release allocation |
+| [DCCR-02](reviews/DCCR-02-semantic-design-review.md) | Information-vs-physical semantics, Trajectory/TemporalUnit/PhysicalBehavior |
+| [DCCR-03](reviews/DCCR-03-ontology-alignment-specification.md) | Project IRI, local modules and external vocabulary strategy |
+| [DCCR-04](reviews/DCCR-04-validation-contract.md) | Validation profiles, BH-V01…12, BH-CQ-01…10 and acceptance rules |
+| [MASS-OEF](architecture/mass-oef-methodology.md) | Development framework |
+| [Roadmap v1.1](roadmap.md) | Versioned staged scope and gates |
 
-**Source:** Xiong et al. (2026)
+DCCR decisions remain historical approvals of **design contracts**, not retrospective declarations of test success. Executed test evidence is recorded separately. No BFO/CCO external equivalence or complete import alignment has been asserted.
 
-**Scope:**
-- 13 core ontology classes
-- 9 ontology relations
-- 5 experimental behavior classes
-- semantic properties and constraints
+## Future scope — not included in BH-P04
 
-**Next:** DCCR-02 — Semantic Design Review
+BH-P05 spatial relations and interpretation/graph-segregation tests and BH-P09 recognition tests remain **DEFERRED**. The present implementation does not perform live AIS decoding, collision-risk assessment, navigation safety certification, ROC/VTS operational control or fresh SysML v2 parser validation. Only MASS-SK-1.0 **source bytes and manifest integrity** are checked.
 
-**Document:**
-[Open DCCR-01](reviews/DCCR-01-xiong-ship-behavior-review.md)
+## Distribution status
 
-### DCCR-02 — Semantic Design Review
+Public release requires explicit project-owner approval of a license for project-authored files, external RDF notices and final release scope. See the root `THIRD_PARTY_NOTICES.md` and the governance decision templates. The `VERSION`/`pyproject.toml` candidate number is **not** itself an issued GitHub tag or Release.
 
-**Status:** APPROVED
-
-**Approval date:** 2026-10-26
-
-**Scope:**
-- Trajectory
-- TemporalUnit
-- PhysicalBehavior
-- InteractionBehavior
-- SemanticBehavior
-- Semantic boundaries and validation principles
-
-**Next:** DCCR-03 — Ontology Alignment Specification
-
-**Document:**
-[Open DCCR-02](reviews/DCCR-02-semantic-design-review.md)
-
-### DCCR-03 — Ontology Alignment Specification
-
-**Status:** APPROVED
-
-**Approval date:** 2026-10-27
-
-**Scope:**
-- OWL class and property specifications
-- IRI and namespace policy
-- SOSA/SSN, QUDT, OWL-Time, GeoSPARQL and PROV-O alignment
-- BFO/CCO candidate mappings
-- Semantic constraints and validation requirements
-
-**Next:** DCCR-04 — Validation Contract
-
-**Document:**
-[Open DCCR-03](reviews/DCCR-03-ontology-alignment-specification.md)
-
-### DCCR-04 — Validation Contract
-
-**Status:** APPROVED
-
-**Approval date:** 2026-10-27
-
-**Scope:**
-- 12 validation rules (BH-V01–BH-V12)
-- 10 competency questions (BH-CQ-01–BH-CQ-10)
-- SHACL and semantic validation
-- Positive and negative RDF test fixtures
-- Regression tests and CI acceptance gates
-
-**Next:** BH-P04 — Observation Core Implementation
-
-**Document:**
-[Open DCCR-04](reviews/DCCR-04-validation-contract.md)
-
-## Project Methodology and Roadmap
-
-**Methodology:** MASS-OEF — ADOPTED (2026-10-27)
-
-[Open MASS-OEF](architecture/mass-oef-methodology.md)
-
-**Roadmap:** MASS Ontology v1.1 — APPROVED (2026-10-27)
-
-[Open Roadmap v1.1](roadmap.md)
-
-**Governance decision:**
-
-[Open Approval Record](governance/DEC-2026-10-27-mass-oef-roadmap-v1.1.md)
+Earlier project releases `v0.1.0` and `v0.2.0` remain separate historical milestones; see [CHANGELOG](../CHANGELOG.md).

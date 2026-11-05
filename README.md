@@ -1,117 +1,61 @@
 # MASS Ontology Stack
 
-Modular ontology stack for Maritime Autonomous Surface Ships (MASS) as System of Systems.
+Modular RDF/OWL research ontology for **Maritime Autonomous Surface Ships (MASS)** as systems of systems.
 
-## Purpose
+**Current release status: v0.4.0 — RELEASE CANDIDATE, NOT RELEASED.**
+The last published version tag may be older; this label names the P04-07 candidate and does **not** assert that a GitHub Release or tag has been issued. Release remains subject to rights review and an explicit project-owner decision.
 
-This repository is the source of truth for a research ontology stack supporting:
+## BH-P04 Observation Core (v0.4.0 candidate)
 
-- MASS architecture modeling
-- semantic interoperability
-- MBSE / Digital Thread integration
-- COLREGs-aware navigation scenarios
-- ROC / VTS interaction modeling
-- safety, risk, V&V and assurance traceability
+The implemented and tested *observation* profile represents:
 
-## Current development status: v0.3.0-dev
+- Generic `maritime:Vessel`, with a controlled compatibility bridge to `mass:MASSVessel` and `nav:TargetShip` without equating target ships with autonomous vessels.
+- `bh:Trajectory` and `bh:TemporalUnit` **information records**; each unit's `time:ProperInterval` is a separate temporal object.
+- Concurrent `bh:PositionState`, `bh:SpeedState`, and `bh:CourseState` descriptions; temporal ordering and explicit coverage gaps.
+- SOSA/SSN observations, source and process provenance through PROV-O, and QUDT 3.5.3 speed/course quantity values using `qudt:hasUnit`.
+- Deterministic **synthetic AIS-like** input with six source records, 18 SOSA observations, three temporal units, and a deliberate two-minute gap. This is not a raw AIS decoder and is not real-world navigation validation.
 
-The current development line extends the MASS Ontology MVP beyond the `v0.2.0` competency questions 
-release.
+The P04-04 versioned fixture is `examples/p04-04-synthetic-ais-qudt353.ttl`; the earlier P04-03 fixture remains frozen as a historical source baseline.
 
-The main focus of `v0.3.0-dev` is foundation alignment.
+## Verification
 
-This means that the project now includes an explicit draft layer for connecting MASS ontology modules 
-with upper and common ontologies such as BFO and CCO.
-
-Current `v0.3.0-dev` additions include:
-
-- `01-common/common-core.ttl` — lightweight MASS common vocabulary;
-- `00-foundation/foundation-alignment.ttl` — draft alignment decisions;
-- foundation alignment links from MASS Core to the common layer;
-- foundation alignment links from Navigation to the common layer;
-- CQ-09 ... CQ-12 for checking foundation alignment decisions;
-- expected result checks for the new foundation alignment competency questions.
-
-The project still does not claim to be fully aligned with BFO or CCO. The current layer records draft 
-alignment decisions and prepares the ontology for controlled future imports.
-
-The project is not yet a complete MASS ontology stack. It is a working research sandbox for 
-developing and validating a modular ontology architecture for Maritime Autonomous Surface Ships.
-
-## Structure
-
-```text
-00-foundation/          Upper and mid-level ontology imports
-01-common/              QUDT, PROV-O, GeoSPARQL, SOSA/SSN imports
-02-maritime/            IMO / vessel / port / voyage alignment
-03-mass-core/           MASS core concepts
-04-navigation/          COLREGs, encounter situations, CPA/TCPA
-05-safety-assurance/    hazards, STPA, risk controls, V&V evidence
-06-project/             example project datasets
-shapes/                 SHACL validation rules
-competency-questions/   ontology requirements as questions
-queries/                SPARQL queries
-examples/               example RDF datasets
-scripts/                validation and documentation scripts
-tests/                  automated tests
-docs/                   documentation
-
-```
-## Architecture direction
-
-The intended ontology stack is:
-
-```text
-BFO / CCO
-→ MASS Common
-→ MASS Core
-→ Navigation
-→ Sensor observations
-→ Quantities and units
-→ Geospatial representation
-→ COLREGs extension
-→ Safety / V&V evidence
-
-## Validation workflow
-
-The repository supports two local validation commands.
-
-Run SHACL validation:
+Requires Python **3.12**, a repository `.venv`, Java **21** and ROBOT/HermiT **1.9.11** in `PATH`. See `ci/requirements-behavior-ci.txt` for the direct Python dependency pins.
 
 ```bash
-make validatpytest
+make catalog
+make validate
+make cq
+make test
+make behavior-test
 ```
 
-## Working rule
+`make behavior-test` is the common fail-closed local/GitHub Actions profile gate. It enforces 7 BH-V rules, 3 BH-CQ questions with **exact RDF bindings**, 14 historical competency questions, all pytest cases with **zero skipped**, T-04 RDF integrity and immutable MASS-SK-1.0 byte integrity.
 
-Git is the source of truth. Protégé is an ontology editor. VS Code is used for TTL, SHACL, SPARQL and code. pySHACL validates constraints. Fuseki demonstrates SPARQL queries.
+The previously published P04-06 GitHub Actions results on commit `11491acb0685e69c0aed6ec749eea4d138162b30` were successful; that evidence does not itself replace fresh testing of the release candidate.
 
-## Competency Questions
+## Architecture and controlled resources
 
-The ontology is checked through competency questions and SPARQL queries.
+| Path | Content |
+|---|---|
+| `00-foundation/`, `01-common/` | Draft common/foundation alignment; **not** verified BFO/CCO equivalence |
+| `02-maritime/`, `03-mass-core/`, `04-navigation/` | Maritime and existing MASS/navigation concepts |
+| `05-observation/`, `06-quantities/`, `07-behavior/` | BH-P04 observations, quantities and ship-behavior descriptions |
+| `vendor/external-rdf/T04-2026/` | Eight fixed external RDF snapshots controlled by T-04 |
+| `shapes/`, `queries/cq/`, `queries/behavior/` | Validation shapes and legacy/behavior competency questions |
+| `docs/reviews/`, `docs/evidence/` | Approved DCCR contracts and published acceptance evidence |
+| `baselines/sysml/MASS-SK-1.0/` | Immutable SysML v2 kernel **source** and integrity manifests |
 
-Current competency question groups:
+## Release and research boundaries
 
-```text
-CQ-01 ... CQ-08
-→ MASS Core and navigation encounter scenario
+**BH-P05** (GeoSPARQL spatial/semantic behavior) and **BH-P09** (recognition prototype) are **DEFERRED**. The current research ontology does not certify vessel safety, enforce COLREG compliance, execute ROC/VTS controls, validate live AIS prediction, import BFO/CCO axioms or prove SysML v2 parser semantics. The `https://w3id.org/mass-ontology/` redirect/dereferencing is not independently verified by the current test suite.
 
-CQ-09 ... CQ-12
-→ foundation alignment decisions
+The project license is **pending explicit rights-holder selection and approval**. Third-party vocabularies remain governed by their own licenses. Do not interpret public source availability as permission to redistribute project-authored material under a license not yet selected. See `THIRD_PARTY_NOTICES.md`, `docs/implementation/P04-07-remediation-implementation.md` and the P04-07 governance templates.
 
-## Releases
+## Documentation
 
-### v0.2.0 — Competency Questions MVP
-
-This release adds competency questions, SPARQL CQ queries, the automated CQ runner, expected CQ 
-result checks, and CI execution of CQ queries.
-
-### v0.1.0 — Initial MASS Ontology MVP
-
-This release established the initial MASS Core draft, Navigation draft, example encounter 
-scenario, SHACL validation, basic SPARQL query and GitHub Actions SHACL validation.
-
-See:
-
-```text
-CHANGELOG.md
+- [Integrated Roadmap v1.1](docs/roadmap.md)
+- [MASS-OEF methodology](docs/architecture/mass-oef-methodology.md)
+- [DCCR-04 validation contract](docs/reviews/DCCR-04-validation-contract.md)
+- [P04-07 release readiness review](docs/reviews/P04-07-release-readiness-review.md)
+- [Release candidate notes](docs/releases/v0.4.0-release-notes.md)
+- [Changelog](CHANGELOG.md)

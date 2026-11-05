@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.4.0 — Observation Core (RELEASE CANDIDATE; NOT RELEASED)
+
+Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. No tag/GitHub Release has been published; release authorization and project license remain pending.
+
+### Added
+
+- Generic `maritime:Vessel` and compatibility with existing `mass:MASSVessel`, `nav:TargetShip`.
+- `bh:Trajectory`, `bh:TemporalUnit`, distinct `time:ProperInterval` extents and concurrent position/speed/course descriptions.
+- SOSA/SSN observations, PROV-O provenance, OWL-Time and QUDT 3.5.3 speed/course measurements.
+- Deterministic 370-triple **synthetic AIS-like** demonstration, three time segments and documented coverage gap.
+- SHACL/Python/ROBOT-HermiT positive/negative checks (BH-V01/02/03/05/06/11/12); BH-CQ-01/02/03 with exact IRI/typed-literal bindings.
+- `make behavior-test`, separate fail-closed GitHub Actions workflow, locked T-04 external RDF references and published P04-06 evidence.
+
+### Changed
+
+- Introduced versioned fixture `examples/p04-04-synthetic-ais-qudt353.ttl` with QUDT 3.5.3 `qudt:hasUnit`; original P04-03 fixture remains frozen and unchanged.
+- Retained historical 14 CQ checks, all DCCR-01…04 contracts, Roadmap v1.1 and immutable MASS-SK-1.0 source bytes.
+- Updated release-candidate public documentation and external vocabulary notices as P04-07 remediation.
+
+### Verification and boundaries
+
+- Source P04-06 GitHub CI: 11/11 mandatory gates; 115 tests without failures/errors/skips; 7 BH-V PASS, 3 BH-CQ exact-binding PASS. A fresh run on this release candidate is still required.
+- BH-P05 spatial/semantic classification and BH-P09 recognition are **DEFERRED**.
+- No real AIS decoder/accuracy, navigation safety certification, BFO/CCO formal import alignment or new SysML v2 parser proof is claimed.
+- Project-wide LICENSE selection and review of eight third-party RDF notices **remain pending actual owner approval**.
+
+
 ## Unreleased — v0.3.0-dev
 
 ### Added
@@ -79,3 +106,4 @@ The release is expected to pass:
 ```bash
 make validate
 make cq
+```

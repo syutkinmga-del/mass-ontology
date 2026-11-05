@@ -1,0 +1,5 @@
+# P04-06; versions verified against published P04-05 execution environment.
+# Direct dependencies pinned. Transitive dependency hashes are not yet locked.
+rdflib==7.6.0
+pyshacl==0.40.1
+pytest==9.1.1

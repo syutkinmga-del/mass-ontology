@@ -19,3 +19,8 @@ cq:
 
 catalog:
 	$(PYTHON) scripts/check_catalog.py
+
+.PHONY: behavior-test
+
+behavior-test:
+	$(PYTHON) scripts/run_behavior_ci.py --profile p04 --report-dir run/behavior-ci

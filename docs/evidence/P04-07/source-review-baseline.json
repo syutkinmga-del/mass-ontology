@@ -1,0 +1,67 @@
+{
+  "schema_version": "P04-07-observed-source-review-v1",
+  "review_date": "2026-11-05",
+  "repository": "syutkinmga-del/mass-ontology",
+  "observed_branch": "main",
+  "source_commit": "11491acb0685e69c0aed6ec749eea4d138162b30",
+  "implementation_commit": "68e1c4f454caf85958806d761b3a671b51c7803c",
+  "target_release": "v0.4.0",
+  "validation_profile": "BH-P04",
+  "technical_readiness": "PASS",
+  "release_recommendation": "NO_GO_PENDING_RELEASE_PACKAGING_AND_OWNER_APPROVAL",
+  "fresh_github_ci": [
+    {
+      "name": "BH-P04 Behavior Validation",
+      "run_id": 41998316090,
+      "url": "https://github.com/syutkinmga-del/mass-ontology/actions/runs/41998316090",
+      "head_sha": "11491acb0685e69c0aed6ec749eea4d138162b30",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate MASS Ontology",
+      "run_id": 41998315794,
+      "url": "https://github.com/syutkinmga-del/mass-ontology/actions/runs/41998315794",
+      "head_sha": "11491acb0685e69c0aed6ec749eea4d138162b30",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "published_evidence": {
+    "path": "docs/evidence/P04-06/",
+    "implementation_run": 41996276523,
+    "archived_original_zip_sha256": "84ad7fa2fce3f7d9d4817229040e018698ed1fb6bd7262035ec908bd76020649",
+    "ci_gates_passed": 11,
+    "pytest_tests_passed": 115,
+    "pytest_failed": 0,
+    "pytest_skipped": 0,
+    "BH_V_P04_PASS": ["BH-V01", "BH-V02", "BH-V03", "BH-V05", "BH-V06", "BH-V11", "BH-V12"],
+    "BH_CQ_P04_PASS": {"BH-CQ-01": 18, "BH-CQ-02": 9, "BH-CQ-03": 18},
+    "legacy_cq_01_14": "PASS"
+  },
+  "integrity_sha256": {
+    "MASS_SK_1_0_source": "1701bbb86e24588660ef717f2ff7f276b63c938d8569d4511dc19c42033aa788",
+    "T04_source_lock": "ebacb2bd81ed836df52fb2915a386fb54daef07d479b9f6bbfd9d84f5278f4af",
+    "p04_04_fixture": "2f73990cd4dc88fd4e21c4694d35c6628d0afac613080434d33deed3f41cf301"
+  },
+  "observed_release_gaps": {
+    "VERSION": "0.1.0",
+    "pyproject_project_version": "0.1.0",
+    "README_current_status": "v0.3.0-dev",
+    "docs_index_development_line": "v0.3.0-dev",
+    "changelog_v0_4_section": false,
+    "README_markdown_code_fences_balanced": false,
+    "README_invalid_make_command": "make validatpytest",
+    "root_LICENSE_bytes": 0,
+    "root_THIRD_PARTY_NOTICES_present": false,
+    "final_v0_4_0_release_notes_present": false,
+    "owner_v0_4_0_approval_record_present": false
+  },
+  "constraints": [
+    "Release-review status is advisory; it is not owner approval.",
+    "T-04 upstream licensing checks remain PASS; empty root LICENSE is distinct project-authored distribution issue.",
+    "GitHub CI is verified for the source SHA; current release-review has not run new ontology tests.",
+    "BH-P05 and BH-P09 remain DEFERRED.",
+    "No SysML semantic parser or navigation safety certification is claimed."
+  ]
+}

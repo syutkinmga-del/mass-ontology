@@ -1,0 +1,53 @@
+{
+  "schema_version": "P04-07-release-review-v1",
+  "profile": "BH-P04",
+  "release_candidate": "v0.4.0",
+  "source_baseline_commit": "11491acb0685e69c0aed6ec749eea4d138162b30",
+  "reviewed_utc": "2026-11-05T09:57:48+00:00",
+  "decision": "NO_GO",
+  "checks": {
+    "R01_SOURCE_BASELINE": {
+      "status": "PASS",
+      "detail": "HEAD=11491acb0685e69c0aed6ec749eea4d138162b30; P04-06 evidence ancestor verified"
+    },
+    "R02_DESIGN_SCOPE": {
+      "status": "PASS",
+      "detail": "Four approved DCCR reviews and Roadmap v1.1 present, unchanged from P04-06 evidence commit"
+    },
+    "R03_CI_EVIDENCE": {
+      "status": "PASS",
+      "detail": "GitHub Actions implementation run success, 11 gates, 115 tests/zero skips, 7 BH-V and 3 BH-CQ PASS"
+    },
+    "R04_INTEGRITY": {
+      "status": "PASS",
+      "detail": "MASS-SK-1.0, T-04, fixture pinned SHA-256; P04-06 ZIP and original logs verified"
+    },
+    "R05_VERSION": {
+      "status": "FAIL",
+      "detail": "Expected both VERSION and pyproject.toml 0.4.0; found '0.1.0', '0.1.0'"
+    },
+    "R06_DOCS": {
+      "status": "FAIL",
+      "detail": "README.md unclosed code fence; README.md contains invalid make command; README.md current release status is not v0.4.0; docs/index.md current release status is not v0.4.0; README.md lacks BH-P04 validation instructions"
+    },
+    "R07_CHANGELOG": {
+      "status": "FAIL",
+      "detail": "CHANGELOG.md unclosed Markdown code fence"
+    },
+    "R08_LICENSE_NOTICES": {
+      "status": "FAIL",
+      "detail": "Required rights/attribution controls missing: nonempty project LICENSE and an approved license choice, THIRD_PARTY_NOTICES.md with vetted upstream notices"
+    },
+    "R09_RELEASE_NOTES": {
+      "status": "FAIL",
+      "detail": "Final v0.4.0 release notes absent; draft is not a release record"
+    },
+    "R10_OWNER_APPROVAL": {
+      "status": "BLOCKED",
+      "detail": "Release owner approval absent; cannot infer it from passing CI"
+    }
+  },
+  "future_profiles": "DEFERRED: BH-P05/BH-P09",
+  "scope_boundary": "Research/synthetic AIS observation ontology; no real AIS performance, SysML parsing or navigation certification",
+  "release_tag_created": false
+}

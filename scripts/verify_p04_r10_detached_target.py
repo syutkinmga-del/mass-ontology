@@ -105,6 +105,34 @@ def result(root: Path) -> dict:
     if method == "EXPLICIT_OWNER_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE" and doc.get("signed_pdf_sha256"):
         approval_ok = False
         findings.append("Chat approval must not impersonate a signed PDF")
+    registered_path = "docs/governance/DEC-P04-07-R10-2026-02-chat-approval.md"
+    if doc.get("registration_note") != registered_path:
+        approval_ok = False
+        findings.append("R10 registration record reference missing or changed")
+    registered = root / registered_path
+    if not registered.is_file():
+        approval_ok = False
+        findings.append("R10 explicit owner statement is absent")
+    else:
+        registered_text = registered.read_text(encoding="utf-8")
+        owner_statement = doc.get("owner_statement")
+        if (not isinstance(owner_statement, str)
+                or not owner_statement.startswith("УТВЕРЖДАЮ выпуск MASS Ontology v0.4.0")
+                or candidate is None or candidate not in owner_statement
+                or owner_statement not in registered_text
+                or "**Decision:** APPROVED FOR RELEASE" not in registered_text
+                or f"**Approved commit SHA:** `{candidate}`" not in registered_text
+                or "**Signed PDF supplied:** NO" not in registered_text):
+            approval_ok = False
+            findings.append("R10 in-chat statement, exact target or evidence type not independently corroborated by registration")
+    tag_permission = doc.get("authorization_for_annotated_tag")
+    if not isinstance(tag_permission, dict) or tag_permission != {
+        "authorized": True, "tag": "v0.4.0",
+        "target_sha": candidate, "contingent_on_independent_checks": True,
+    }:
+        approval_ok = False
+        findings.append("No exact-target conditional annotated tag authorization")
+
 
     source_checks: dict = {}
     rr05_passed = False

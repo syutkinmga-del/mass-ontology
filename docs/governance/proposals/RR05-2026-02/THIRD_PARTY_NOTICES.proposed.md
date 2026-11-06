@@ -1,6 +1,6 @@
 # MASS Ontology — third-party RDF notices (T-04 / BH-P04)
 
-**Status:** RR-05 approved for the original hash-bound notices edition on 2026-11-06; this corrected proposed edition is PENDING renewed owner approval.  
+**Status:** RR-05 original notices edition approved on 2026-11-06. This corrected edition is governed by a separate exact-SHA-256 rights-holder approval (RR-05-2026-02).  
 **Review baseline:** `ebd0d54756bd32876ab1aad031170e4278f83580` (P04-07 signed author-license registration).  
 **Distribution policy:** the project-authored material is licensed separately under Apache-2.0; the eight upstream RDF snapshots below are **excluded** from that author-granted license. Each continues under the applicable provider terms.
 
@@ -52,6 +52,6 @@ The author-license decision `P04-07-RIGHTS-2026-01` approved an earlier notices 
 
 The **separate signed RR-05 decision `P04-07-RR05-2026-01` (2026-11-06)** approved the reviewed external RDF notices with SHA-256 `fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4`. The controlling records are `docs/governance/DEC-P04-07-RR05-third-party-notices-approval.md` and `docs/governance/DEC-P04-07-rights-approval.json`. The external T-04 snapshots remain excluded from the project-authored Apache-2.0 grant.
 
-**This corrected edition is only a proposed editorial amendment (RR-05-2026-02).** It corrects the stale pre-approval language but does not change publisher attributions, source URLs, license conditions, notice texts or frozen RDF hashes. The signed 2026-11-06 RR-05 approval remains valid **only for its exact originally approved bytes**. This proposed new edition has a different SHA-256 and **must not replace the approved file** until the project rights holder gives a separate explicit, dated approval binding its exact new SHA-256.
+**Corrected edition (RR-05-2026-02):** This edition changes historical pre-approval governance text only. Publisher attributions, source URLs, license conditions, notice texts and frozen RDF hashes are unchanged. The signed 2026-11-06 RR-05-2026-01 approval remains valid **only for its exact originally approved bytes**. The right to distribute this corrected edition depends on a separate, dated, explicit project-owner decision approving the SHA-256 of its exact bytes; this notices document itself does not confer such approval. The approval record must be retained separately from this file.
 
 R10 release authorization is independent of RR-05 and remains bound only to candidate commit `81b33951cbed446ebff5192099125f56ff474fb0`. This editorial proposal does not expand R10 authorization to a newer SHA or establish a published GitHub Release.

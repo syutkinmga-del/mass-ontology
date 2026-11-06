@@ -20,7 +20,7 @@ make test
 make behavior-test
 ```
 
-On the published P04-06 evidence baseline the CI recorded 115 tests without errors, failures or skips; BH-V01/02/03/05/06/11/12 PASS and BH-CQ-01/02/03 exact bindings PASS. The release candidate must be retested after any changes.
+On the published P04-06 evidence baseline the CI recorded 115 tests without errors, failures or skips; BH-V01/02/03/05/06/11/12 PASS and BH-CQ-01/02/03 exact bindings PASS. Both candidate workflows also succeeded on `bf024c1698787d22979bb61289d57200f8220a59` (2026-11-06). Final CI must be repeated after this documentation-only refresh.
 
 - [P04-06 CI evidence](evidence/P04-06/README.md)
 - [P04-07 release readiness review](reviews/P04-07-release-readiness-review.md)
@@ -46,6 +46,6 @@ BH-P05 spatial relations and interpretation/graph-segregation tests and BH-P09 r
 
 ## Distribution status
 
-Public release requires explicit project-owner approval of a license for project-authored files, external RDF notices and final release scope. See the root `THIRD_PARTY_NOTICES.md` and the governance decision templates. The `VERSION`/`pyproject.toml` candidate number is **not** itself an issued GitHub tag or Release.
+The project owner approved Apache-2.0 for original author-owned work and the eight external RDF notices in separate RR-04/RR-05 decisions (2026-11-06). See `LICENSE`, `THIRD_PARTY_NOTICES.md` and `docs/governance/DEC-P04-07-rights-approval.json`. Final R10 authorization remains mandatory; `VERSION`/`pyproject.toml` alone are **not** a GitHub tag or Release.
 
 Earlier project releases `v0.1.0` and `v0.2.0` remain separate historical milestones; see [CHANGELOG](../CHANGELOG.md).

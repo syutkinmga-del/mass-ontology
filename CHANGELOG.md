@@ -2,7 +2,7 @@
 
 ## v0.4.0 — Observation Core (RELEASE CANDIDATE; NOT RELEASED)
 
-Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. No tag/GitHub Release has been published; release authorization and project license remain pending.
+Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. The project-owned Apache-2.0 license and eight third-party RDF notices were approved under RR-04/RR-05. No v0.4.0 tag/GitHub Release has been published; only final R10 release authorization is pending.
 
 ### Added
 
@@ -21,10 +21,10 @@ Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. No ta
 
 ### Verification and boundaries
 
-- Source P04-06 GitHub CI: 11/11 mandatory gates; 115 tests without failures/errors/skips; 7 BH-V PASS, 3 BH-CQ exact-binding PASS. A fresh run on this release candidate is still required.
+- Source P04-06 GitHub CI: 11/11 mandatory gates; 115 tests without failures/errors/skips; 7 BH-V PASS, 3 BH-CQ exact-binding PASS. Both GitHub Actions workflows subsequently succeeded on commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017); a final run is required after this documentation refresh.
 - BH-P05 spatial/semantic classification and BH-P09 recognition are **DEFERRED**.
 - No real AIS decoder/accuracy, navigation safety certification, BFO/CCO formal import alignment or new SysML v2 parser proof is claimed.
-- Project-wide LICENSE selection and review of eight third-party RDF notices **remain pending actual owner approval**.
+- RR-04 Apache-2.0 author-owned license decision and RR-05 eight third-party RDF notices are **approved and recorded**; final R10 release authorization remains pending.
 
 
 ## Unreleased — v0.3.0-dev

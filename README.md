@@ -3,7 +3,7 @@
 Modular RDF/OWL research ontology for **Maritime Autonomous Surface Ships (MASS)** as systems of systems.
 
 **Current release status: v0.4.0 — RELEASE CANDIDATE, NOT RELEASED.**
-The last published version tag may be older; this label names the P04-07 candidate and does **not** assert that a GitHub Release or tag has been issued. Release remains subject to rights review and an explicit project-owner decision.
+The last published version tag may be older; this label names the P04-07 candidate and does **not** assert that a GitHub Release or tag has been issued. RR-04/RR-05 rights approvals are recorded; final release remains subject to an explicit R10 project-owner decision.
 
 ## BH-P04 Observation Core (v0.4.0 candidate)
 
@@ -31,7 +31,7 @@ make behavior-test
 
 `make behavior-test` is the common fail-closed local/GitHub Actions profile gate. It enforces 7 BH-V rules, 3 BH-CQ questions with **exact RDF bindings**, 14 historical competency questions, all pytest cases with **zero skipped**, T-04 RDF integrity and immutable MASS-SK-1.0 byte integrity.
 
-The previously published P04-06 GitHub Actions results on commit `11491acb0685e69c0aed6ec749eea4d138162b30` were successful; that evidence does not itself replace fresh testing of the release candidate.
+The P04-06 evidence commit `11491acb0685e69c0aed6ec749eea4d138162b30` passed its acceptance gates. Both GitHub Actions workflows also succeeded on rights-approved candidate commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017). Re-run both workflows after this documentation-only update before final R10 sign-off.
 
 ## Architecture and controlled resources
 
@@ -49,7 +49,7 @@ The previously published P04-06 GitHub Actions results on commit `11491acb0685e6
 
 **BH-P05** (GeoSPARQL spatial/semantic behavior) and **BH-P09** (recognition prototype) are **DEFERRED**. The current research ontology does not certify vessel safety, enforce COLREG compliance, execute ROC/VTS controls, validate live AIS prediction, import BFO/CCO axioms or prove SysML v2 parser semantics. The `https://w3id.org/mass-ontology/` redirect/dereferencing is not independently verified by the current test suite.
 
-The project license is **pending explicit rights-holder selection and approval**. Third-party vocabularies remain governed by their own licenses. Do not interpret public source availability as permission to redistribute project-authored material under a license not yet selected. See `THIRD_PARTY_NOTICES.md`, `docs/implementation/P04-07-remediation-implementation.md` and the P04-07 governance templates.
+The rights holder approved **Apache-2.0 for author-owned original work** (RR-04) and separately approved the reviewed eight third-party RDF notices (RR-05; 2026-11-06). Publisher-owned T-04 RDF snapshots remain outside the author's Apache-2.0 grant and retain their own conditions. See `LICENSE`, `THIRD_PARTY_NOTICES.md` and `docs/governance/DEC-P04-07-rights-approval.json`. Release remains unissued pending R10.
 
 ## Documentation
 

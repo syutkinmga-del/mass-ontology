@@ -4,7 +4,9 @@ from __future__ import annotations
 from pathlib import Path
 import argparse,hashlib,json,sys
 HERE=Path(__file__).resolve().parents[1]
-EXPECTED_NOTICE='fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4'
+EXPECTED_NOTICE='7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5'
+PREVIOUS_APPROVED_NOTICE='fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4'
+CORRIGENDUM_RECORD='docs/governance/DEC-P04-07-RR05-2026-02-approval.json'
 EXPECTED_LICENSE='cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'
 EXPECTED={
     'sosa-2017.ttl':'c70b0d1c843c0047e4c98e0a89392e46a05752ff6365bda7f7f55303905a0392',
@@ -67,6 +69,39 @@ def verify(root:Path,*,require_approval=False)->dict:
                 }.items():check(j.get(k)==v,'Approved rights record has wrong '+k)
                 for k in ('approved_by','project_rights_holder','approval_date'):
                     check(isinstance(j.get(k),str) and len(j[k])>=8 and 'TBD' not in j[k], 'Unapproved identity/date '+k)
+                # New exact-byte corrigendum approval must be independent of the 2026-11-06 signed RR-05 original.
+                # An explicit owner chat text approval is not an electronic or verified signature.
+                try:
+                    corrigendum=json.loads((root/CORRIGENDUM_RECORD).read_text(encoding='utf8'))
+                except (OSError,ValueError) as e:
+                    findings.append('Missing/invalid RR05-2026-02 text approval record: '+str(e))
+                    corrigendum={}
+                for k,v in {
+                    'schema_version':'P04-07-RR05-corrigendum-approval-v1',
+                    'decision_number':'P04-07-RR05-2026-02',
+                    'decision':'APPROVED',
+                    'approved_notices_sha256':EXPECTED_NOTICE,
+                    'previous_notices_sha256':PREVIOUS_APPROVED_NOTICE,
+                    'approval_date':'2026-11-06',
+                    'approval_evidence_type':'EXPLICIT_OWNER_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE',
+                    'signed_pdf_supplied':False,
+                    'signature_authentication_independently_verified':False,
+                }.items():check(corrigendum.get(k)==v,'Corrigendum approval mismatch '+k)
+                check(corrigendum.get('approved_by')==j.get('approved_by'),
+                      'Corrigendum approver does not match project rights holder')
+                amendment=j.get('rr05_corrigendum_2026_02',{})
+                for k,v in {
+                    'decision_number':'P04-07-RR05-2026-02',
+                    'newly_approved_notices_sha256':EXPECTED_NOTICE,
+                    'previous_approved_notices_sha256':PREVIOUS_APPROVED_NOTICE,
+                    'approval_record':CORRIGENDUM_RECORD,
+                    'approval_evidence_type':'EXPLICIT_OWNER_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE',
+                    'signature_authentication_independently_verified':False,
+                }.items():check(amendment.get(k)==v,'Rights-register amendment mismatch '+k)
+                check(j.get('signed_rr05_owner_decision',{}).get('decision_number')=='P04-07-RR05-2026-01',
+                      'Historical signed RR-05 decision changed or missing')
+                check((root/'docs/governance/DEC-P04-07-RR05-2026-02-chat-approval.md').is_file(),
+                      'Public text approval registration missing')
             except Exception as e:findings.append('Invalid approval record: '+str(e))
     return {'status':'PASS' if not findings else 'BLOCKED' if require_approval and findings==['Owner rights approval JSON not yet present'] else 'FAIL',
             'findings':findings,'notice_sha256':EXPECTED_NOTICE,'vendor_files_checked':len(EXPECTED),'owner_approval_required':require_approval}

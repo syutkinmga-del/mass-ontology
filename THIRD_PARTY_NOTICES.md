@@ -1,6 +1,6 @@
 # MASS Ontology — third-party RDF notices (T-04 / BH-P04)
 
-**Status:** RR-05 SOURCE/NOTICE REVIEW PREPARED; **OWNER SIGN-OFF PENDING**.  
+**Status:** RR-05 original notices edition approved on 2026-11-06. This corrected edition is governed by a separate exact-SHA-256 rights-holder approval (RR-05-2026-02).  
 **Review baseline:** `ebd0d54756bd32876ab1aad031170e4278f83580` (P04-07 signed author-license registration).  
 **Distribution policy:** the project-authored material is licensed separately under Apache-2.0; the eight upstream RDF snapshots below are **excluded** from that author-granted license. Each continues under the applicable provider terms.
 
@@ -48,6 +48,10 @@ Each upstream file listed below must retain the SHA-256 established by T-04:
 
 ## Governance and sign-off boundary
 
-The signed author decision `P04-07-RIGHTS-2026-01` binds the **previous** `THIRD_PARTY_NOTICES.md` SHA-256 (`c908a4adedc9a1fbe70f9df27dfcbdf361d82a2795658f7c08089da62d384d6f`). This revised notice has **different bytes** and therefore requires a **new and explicitly dated author/owner approval**. No current evidence authorizes silently carrying the old signed notice hash to this revision.
+The author-license decision `P04-07-RIGHTS-2026-01` approved an earlier notices digest `c908a4adedc9a1fbe70f9df27dfcbdf361d82a2795658f7c08089da62d384d6f` for author-owned Apache-2.0 licensing only. That authorization did **not** cover the eight independently licensed publisher RDF files.
 
-The repository's `DEC-P04-07-rights-approval.json` must not be created with `APPROVED` or the `owl_time_cc_by_4_reconciled` / `prov_o_exact_artifact_rights_confirmed` flags set to `true` until the owner has reviewed the accompanying PROV-O evidence, confirmed the complete license notices and signed a new hash-bound approval. The local package provides an approval draft but **does not** issue that approval. This notice alone does **not** authorize release `v0.4.0`; R10 remains separate.
+The **separate signed RR-05 decision `P04-07-RR05-2026-01` (2026-11-06)** approved the reviewed external RDF notices with SHA-256 `fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4`. The controlling records are `docs/governance/DEC-P04-07-RR05-third-party-notices-approval.md` and `docs/governance/DEC-P04-07-rights-approval.json`. The external T-04 snapshots remain excluded from the project-authored Apache-2.0 grant.
+
+**Corrected edition (RR-05-2026-02):** This edition changes historical pre-approval governance text only. Publisher attributions, source URLs, license conditions, notice texts and frozen RDF hashes are unchanged. The signed 2026-11-06 RR-05-2026-01 approval remains valid **only for its exact originally approved bytes**. The right to distribute this corrected edition depends on a separate, dated, explicit project-owner decision approving the SHA-256 of its exact bytes; this notices document itself does not confer such approval. The approval record must be retained separately from this file.
+
+R10 release authorization is independent of RR-05 and remains bound only to candidate commit `81b33951cbed446ebff5192099125f56ff474fb0`. This editorial proposal does not expand R10 authorization to a newer SHA or establish a published GitHub Release.

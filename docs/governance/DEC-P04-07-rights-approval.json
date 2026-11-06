@@ -6,7 +6,7 @@
   "project_license_spdx": "Apache-2.0",
   "project_rights_holder": "Сюткин Андрей Вениаминович",
   "project_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-  "third_party_notices_sha256": "fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4",
+  "third_party_notices_sha256": "7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5",
   "third_party_review_status": "APPROVED_BY_PROJECT_OWNER",
   "scope": "Original project-authored materials only; vendor/external-rdf/T04-2026 excluded from Apache-2.0",
   "owl_time_cc_by_4_reconciled": true,
@@ -18,7 +18,9 @@
     "docs/evidence/P04-07/rights-review/RR05-vocabulary-rights-matrix.json",
     "docs/governance/DEC-P04-07-author-license-approval.json",
     "docs/governance/DEC-P04-07-RR05-third-party-notices-approval.md",
-    "THIRD_PARTY_NOTICES.md"
+    "THIRD_PARTY_NOTICES.md",
+    "docs/governance/DEC-P04-07-RR05-2026-02-chat-approval.md",
+    "docs/governance/DEC-P04-07-RR05-2026-02-approval.json"
   ],
   "signed_rr05_owner_decision": {
     "decision_number": "P04-07-RR05-2026-01",
@@ -28,5 +30,18 @@
     "stored_in_repository": false,
     "signature_authentication_independently_verified": false
   },
-  "notes": "RR-05: owner has signed and accepted the published W3C policy-based PROV-O assessment for the unchanged pinned artifact; no in-RDF license triple is asserted. CC BY 4.0 for OWL-Time reconciled. No v0.4.0 release authorization (R10) granted."
+  "notes": "RR-04 author-owned Apache-2.0 license and eight external T-04 RDF notices remain separately licensed. RR-05-2026-01 is the earlier signed approval; RR-05-2026-02 is a separate explicit owner in-chat text approval for the precise corrected notices digest, not an electronic signature. The frozen RDF artifacts are unchanged. The distinct R10 permission authorizes only the historical candidate commit 81b33951cbed446ebff5192099125f56ff474fb0; no new release authorization is inferred.",
+  "rr05_corrigendum_2026_02": {
+    "decision_number": "P04-07-RR05-2026-02",
+    "approval_date": "2026-11-06",
+    "approved_by": "Сюткин Андрей Вениаминович",
+    "approval_evidence_type": "EXPLICIT_OWNER_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE",
+    "signed_pdf_supplied": false,
+    "signature_authentication_independently_verified": false,
+    "previous_approved_notices_sha256": "fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4",
+    "newly_approved_notices_sha256": "7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5",
+    "approval_record": "docs/governance/DEC-P04-07-RR05-2026-02-approval.json",
+    "registration_note": "docs/governance/DEC-P04-07-RR05-2026-02-chat-approval.md",
+    "scope": "editorial change to RR-05 status/governance text only"
+  }
 }

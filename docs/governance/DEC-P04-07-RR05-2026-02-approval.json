@@ -1,0 +1,17 @@
+{
+  "schema_version": "P04-07-RR05-corrigendum-approval-v1",
+  "decision_number": "P04-07-RR05-2026-02",
+  "decision": "APPROVED",
+  "approval_date": "2026-11-06",
+  "approved_by": "Сюткин Андрей Вениаминович",
+  "approval_evidence_type": "EXPLICIT_OWNER_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE",
+  "signed_pdf_supplied": false,
+  "signature_authentication_independently_verified": false,
+  "previous_notices_sha256": "fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4",
+  "approved_notices_sha256": "7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5",
+  "source_proposed_file": "docs/governance/proposals/RR05-2026-02/THIRD_PARTY_NOTICES.proposed.md",
+  "source_proposal_commit": "3b1073a5c7263733d568178abf9bbb10799dc700",
+  "scope": "Editorial correction of the RR-05 status and governance wording; no change to third-party license obligations, publisher attributions, the eight pinned RDF snapshots or their T-04 checksums.",
+  "release_scope": "Does not extend signed R10 approval beyond exact SHA 81b33951cbed446ebff5192099125f56ff474fb0; does not authorize a tag, GitHub Release or automatic merge.",
+  "registration_record": "docs/governance/DEC-P04-07-RR05-2026-02-chat-approval.md"
+}

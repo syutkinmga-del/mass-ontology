@@ -12,7 +12,7 @@
 
 ## Exact owner authorization
 
-> УТВЕРЖДАЮ выпуск MASS Ontology v0.4.0 / BH-P04 Observation Core по решению P04-07-R10-2026-02 на точном Git commit SHA `d0f2368df4268cfe3c6079a1681502cad0b867fb`. Разрешаю зарегистрировать это явное текстовое решение в отдельном governance-коммите и после успешной независимой проверки создать аннотированный тег v0.4.0 именно на указанном SHA. Понимаю, что это текстовое подтверждение, а не электронная подпись; разрешение не распространяется на последующие коммиты и BH-P05/BH-P09.
+> УТВЕРЖДАЮ выпуск MASS Ontology v0.4.0 / BH-P04 Observation Core по решению P04-07-R10-2026-02 на точном Git commit SHA d0f2368df4268cfe3c6079a1681502cad0b867fb. Разрешаю зарегистрировать это явное текстовое решение в отдельном governance-коммите и после успешной независимой проверки создать аннотированный тег v0.4.0 именно на указанном SHA. Понимаю, что это текстовое подтверждение, а не электронная подпись; разрешение не распространяется на последующие коммиты и BH-P05/BH-P09.
 
 This is a record of explicit owner's **text** statement as provided in the project conversation; it is not a verified PDF or cryptographically authenticated legal signature. The owner is responsible for their governance/legal authority. No signed PDF is claimed.
 

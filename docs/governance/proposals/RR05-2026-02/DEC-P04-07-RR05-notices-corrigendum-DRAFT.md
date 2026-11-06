@@ -8,7 +8,7 @@
 ## Exact reviewed bytes and control
 
 - **Originally signed RR-05 edition SHA-256:** `fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4`.
-- **Proposed corrected edition SHA-256:** `0d21cb67c2d908269a4896b4b7ee9364394fb8bbafd5e54c14ef7834dbf51d30`.
+- **Proposed corrected edition SHA-256:** `7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5`.
 - **Scope of proposed change:** Correct pre-approval RR-05 status text and governance/sign-off language **only**.
 - **Excluded from this change:** The eight T-04 frozen RDF bytes, publisher identity/attribution, license rules, LICENSE, ontology semantic modules, BH-P04 validation baselines and R10 target SHA.
 
@@ -16,7 +16,7 @@ The proposed edition is not the currently approved `THIRD_PARTY_NOTICES.md` and 
 
 ## Decision for the rights holder to issue separately
 
-> I have reviewed the exact proposed corrected `THIRD_PARTY_NOTICES.md` edition with SHA-256 `0d21cb67c2d908269a4896b4b7ee9364394fb8bbafd5e54c14ef7834dbf51d30`. I approve its replacement of the previously signed RR-05 edition with SHA-256 `fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4`, limited to the stated editorial corrections. This approval does not authorize changes to upstream RDF or extend R10 to a new release candidate.
+> I have reviewed the exact proposed corrected `THIRD_PARTY_NOTICES.md` edition with SHA-256 `7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5`. I approve its replacement of the previously signed RR-05 edition with SHA-256 `fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4`, limited to the stated editorial corrections. This approval does not authorize changes to upstream RDF or extend R10 to a new release candidate.
 
 **Owner's decision:** PENDING  
 **Approval date:** PENDING  

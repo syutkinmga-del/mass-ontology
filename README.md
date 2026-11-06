@@ -49,13 +49,14 @@ The P04-06 evidence commit `11491acb0685e69c0aed6ec749eea4d138162b30` passed its
 
 **BH-P05** (GeoSPARQL spatial/semantic behavior) and **BH-P09** (recognition prototype) are **DEFERRED**. The current research ontology does not certify vessel safety, enforce COLREG compliance, execute ROC/VTS controls, validate live AIS prediction, import BFO/CCO axioms or prove SysML v2 parser semantics. The `https://w3id.org/mass-ontology/` redirect/dereferencing is not independently verified by the current test suite.
 
-The rights holder approved **Apache-2.0 for author-owned original work** (RR-04) and separately approved the reviewed eight third-party RDF notices (RR-05; 2026-11-06). Publisher-owned T-04 RDF snapshots remain outside the author's Apache-2.0 grant and retain their own conditions. See `LICENSE`, `THIRD_PARTY_NOTICES.md` and `docs/governance/DEC-P04-07-rights-approval.json`. R10 is now registered for its exact approved SHA; publication is not recorded. The stale pending header in the hash-protected notices is documented in [RR-05 status clarification](docs/governance/P04-07-RR05-notice-status-clarification.md); a corrected edition requires separate rights-holder approval.
+The rights holder approved **Apache-2.0 for author-owned original work** (RR-04) and separately approved the reviewed eight third-party RDF notices (RR-05; 2026-11-06). Publisher-owned T-04 RDF snapshots remain outside the author's Apache-2.0 grant and retain their own conditions. See `LICENSE`, `THIRD_PARTY_NOTICES.md` and `docs/governance/DEC-P04-07-rights-approval.json`. R10 is now registered for its exact approved SHA; publication is not recorded. The corrected notices edition was explicitly approved by owner text decision [RR-05-2026-02](docs/governance/DEC-P04-07-RR05-2026-02-chat-approval.md) and merged through [PR #3](https://github.com/syutkinmga-del/mass-ontology/pull/3). The actual `THIRD_PARTY_NOTICES.md` SHA-256 is `7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5`; the preceding signed RR-05-2026-01 approval remains preserved for its original bytes. The 2026-02 approval was an explicit in-chat text statement, **not an electronic signature**. A new R10 decision is required before tagging any commit other than the exact previously approved `81b33951cbed446ebff5192099125f56ff474fb0`.
 
 ## Documentation
 
 - [Integrated Roadmap v1.1](docs/roadmap.md)
 - [MASS-OEF methodology](docs/architecture/mass-oef-methodology.md)
 - [DCCR-04 validation contract](docs/reviews/DCCR-04-validation-contract.md)
-- [P04-07 release readiness review](docs/reviews/P04-07-release-readiness-review.md)
+- [Original P04-07 release readiness review (2026-11-05)](docs/reviews/P04-07-release-readiness-review.md)
+- [Follow-up P04-07 release readiness review (2026-11-06)](docs/reviews/P04-07-release-readiness-follow-up-2026-11-06.md)
 - [Release candidate notes](docs/releases/v0.4.0-release-notes.md)
 - [Changelog](CHANGELOG.md)

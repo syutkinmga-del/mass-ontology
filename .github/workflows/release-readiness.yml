@@ -1,0 +1,44 @@
+name: P04-07 Release Readiness Review
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  final-release-gate:
+    name: R01-R10 plus exact-SHA authorization
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact candidate HEAD and full ancestry
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Run formal R01-R10 review and strict release SHA binding
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/review_release_p04_candidate.py --report run/release-review/p04-07-follow-up.json
+
+      - name: Upload formal review evidence including NO-GO
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: p04-07-release-readiness-${{ github.run_id }}-${{ github.run_attempt }}
+          path: run/release-review/p04-07-follow-up.json
+          if-no-files-found: error
+          retention-days: 30

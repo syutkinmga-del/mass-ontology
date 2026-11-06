@@ -24,8 +24,15 @@ Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. The p
 - Source P04-06 GitHub CI: 11/11 mandatory gates; 115 tests without failures/errors/skips; 7 BH-V PASS, 3 BH-CQ exact-binding PASS. Both GitHub Actions workflows subsequently succeeded on commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017); the owner reports R10 candidate runs 42194345291 and 42194345375 as SUCCESS on `81b33951cbed446ebff5192099125f56ff474fb0`. Registration-branch validation is separate.
 - BH-P05 spatial/semantic classification and BH-P09 recognition are **DEFERRED**.
 - No real AIS decoder/accuracy, navigation safety certification, BFO/CCO formal import alignment or new SysML v2 parser proof is claimed.
-- RR-04 Apache-2.0 author-owned license decision and RR-05 eight third-party RDF notices are **approved and recorded**; [signed R10 is registered](docs/governance/DEC-P04-07-v0.4.0-release.md) for its exact approved SHA. The [stale RR-05 pending header](docs/governance/P04-07-RR05-notice-status-clarification.md) is documented separately; notices bytes and approval hash remain unchanged pending separate approval of a corrected edition.
+- RR-04 Apache-2.0 author-owned license decision and RR-05 eight third-party RDF notices are **approved and recorded**; [signed R10 is registered](docs/governance/DEC-P04-07-v0.4.0-release.md) for its exact approved SHA. The historical [RR-05 status discrepancy](docs/governance/P04-07-RR05-notice-status-clarification.md) was resolved by the separate [RR-05-2026-02 owner text approval](docs/governance/DEC-P04-07-RR05-2026-02-chat-approval.md) and merged PR #3. The corrected root notices SHA-256 is `7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5`; original signed RR-05-2026-01 evidence remains intact. The new owner approval is an in-chat text decision, not a signed PDF. Current `main` is not automatically authorized as the R10 release target.
 
+
+### Post-R10 governance follow-up (2026-11-06)
+
+- PR #1 registered the historical signed R10 authorization without changing the signed target SHA.
+- PR #3 installed the owner text-approved RR-05-2026-02 corrected notices edition and strengthened fail-closed CI verification; the eight upstream RDF snapshots were unchanged.
+- The post-merge `main` CI runs [42209855912](https://github.com/syutkinmga-del/mass-ontology/actions/runs/42209855912) and [42209855875](https://github.com/syutkinmga-del/mass-ontology/actions/runs/42209855875) succeeded on `2dbd3e849e5dc2807d7df2786fb905ac17089722`.
+- A follow-up formal R01–R10 review and a new exact-SHA R10 authorization are required before tagging a newer release candidate.
 
 ## Unreleased — v0.3.0-dev
 

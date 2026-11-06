@@ -58,6 +58,14 @@ python3 scripts/review_release_p04_candidate.py --report run/release-review/p04-
 
 The dedicated [P04-07 Release Readiness Review](../../.github/workflows/release-readiness.yml) workflow runs against the **PR head SHA** (rather than GitHub's temporary PR merge ref), uploads the JSON even on `NO_GO`, and intentionally returns a failed gate when R10 is not matched. That expected red release gate is an **authorization BLOCK**, not evidence that BH-P04 functional CI is broken. The existing BH-P04 and SHACL workflows must still be checked separately on the same PR head.
 
+## D.1. First executed formal review — 2026-11-06
+
+At tested PR #4 SHA `8e01972176c59c69e117607fe99946971a500383`, the [formal GitHub Actions review 42215893450](https://github.com/syutkinmga-del/mass-ontology/actions/runs/42215893450) executed `scripts/review_release_p04_candidate.py` and archived report artifact `p04-07-release-readiness-42215893450-1` (GitHub artifact ID `13501555660`).
+
+**Machine-executed evidence:** `R01…R09 = PASS`; `R10_OWNER_APPROVAL = BLOCKED` because the signed R10 target is `81b33951cbed446ebff5192099125f56ff474fb0` rather than the tested `8e01972176c59c69e117607fe99946971a500383`; `RR-05 exact notices verifier = PASS`; overall `decision = NO_GO`. The nonzero exit code is an intentional policy gate, not an environment or parser error.
+
+The paired regular [Validate MASS Ontology run 42215893348](https://github.com/syutkinmga-del/mass-ontology/actions/runs/42215893348) and [BH-P04 Behavior Validation run 42215893353](https://github.com/syutkinmga-del/mass-ontology/actions/runs/42215893353) returned `success`. The actual PR HEAD may move after this note; the newest formal report and CI results on the final PR HEAD take precedence. This initial execution remains immutable historical evidence, not a claim of approval for a later SHA.
+
 ## E. Dispositions required before an actual v0.4.0 tag
 
 - Review and merge PR #4 only after its content changes pass the normal workflows; **do not treat a green engineering CI as authorization to tag**.

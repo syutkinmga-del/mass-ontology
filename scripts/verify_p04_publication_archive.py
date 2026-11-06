@@ -71,6 +71,10 @@ def blob_sha1(payload: bytes) -> str:
 
 
 def safe_name(full: str, prefix: str) -> str | None:
+    # GitHub TAR archives may contain a directory entry named precisely
+    # after the root prefix, without a trailing slash.
+    if full == prefix or full == prefix + "/":
+        return None
     if not full.startswith(prefix + "/"):
         raise ValueError("Archive contains unexpected top-level prefix: " + full)
     name = full[len(prefix) + 1:]

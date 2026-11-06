@@ -32,7 +32,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/review_release_p04_candidate.py --report run/release-review/p04-07-follow-up.json
+          if [ -f docs/governance/P04-07-R10-2026-02-release-target.json ]; then
+            # This revision has separate owner text approval for an earlier
+            # immutable candidate. Evaluate that candidate in a detached tree.
+            python scripts/verify_p04_r10_detached_target.py               --report run/release-review/p04-07-follow-up.json
+          else
+            # Historical pre-approval candidate: exact SHA must match in-tree R10.
+            python scripts/review_release_p04_candidate.py --report run/release-review/p04-07-follow-up.json
+          fi
 
       - name: Upload formal review evidence including NO-GO
         if: always()

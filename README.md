@@ -2,8 +2,8 @@
 
 Modular RDF/OWL research ontology for **Maritime Autonomous Surface Ships (MASS)** as systems of systems.
 
-**Current release status: v0.4.0 — RELEASE CANDIDATE, NOT RELEASED.**
-The last published version tag may be older; this label names the P04-07 candidate and does **not** assert that a GitHub Release or tag has been issued. RR-04/RR-05 rights approvals are recorded; final release remains subject to an explicit R10 project-owner decision.
+**Current release status: v0.4.0 — APPROVED FOR RELEASE; PUBLICATION NOT RECORDED.**
+Signed R10 P04-07-R10-2026-01 (2026-11-06) approves exactly `81b33951cbed446ebff5192099125f56ff474fb0`. See [R10 registration](docs/governance/DEC-P04-07-v0.4.0-release.md); this later registration commit is not the approved SHA. This status does **not** assert publication of a GitHub Release or tag.
 
 ## BH-P04 Observation Core (v0.4.0 candidate)
 
@@ -31,7 +31,7 @@ make behavior-test
 
 `make behavior-test` is the common fail-closed local/GitHub Actions profile gate. It enforces 7 BH-V rules, 3 BH-CQ questions with **exact RDF bindings**, 14 historical competency questions, all pytest cases with **zero skipped**, T-04 RDF integrity and immutable MASS-SK-1.0 byte integrity.
 
-The P04-06 evidence commit `11491acb0685e69c0aed6ec749eea4d138162b30` passed its acceptance gates. Both GitHub Actions workflows also succeeded on rights-approved candidate commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017). Re-run both workflows after this documentation-only update before final R10 sign-off.
+The P04-06 evidence commit `11491acb0685e69c0aed6ec749eea4d138162b30` passed its acceptance gates. Both GitHub Actions workflows also succeeded on rights-approved candidate commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017). For the R10-approved SHA `81b33951cbed446ebff5192099125f56ff474fb0`, the owner reports runs 42194345291 and 42194345375 as SUCCESS. Registration-branch checks are separate evidence.
 
 ## Architecture and controlled resources
 
@@ -49,7 +49,7 @@ The P04-06 evidence commit `11491acb0685e69c0aed6ec749eea4d138162b30` passed its
 
 **BH-P05** (GeoSPARQL spatial/semantic behavior) and **BH-P09** (recognition prototype) are **DEFERRED**. The current research ontology does not certify vessel safety, enforce COLREG compliance, execute ROC/VTS controls, validate live AIS prediction, import BFO/CCO axioms or prove SysML v2 parser semantics. The `https://w3id.org/mass-ontology/` redirect/dereferencing is not independently verified by the current test suite.
 
-The rights holder approved **Apache-2.0 for author-owned original work** (RR-04) and separately approved the reviewed eight third-party RDF notices (RR-05; 2026-11-06). Publisher-owned T-04 RDF snapshots remain outside the author's Apache-2.0 grant and retain their own conditions. See `LICENSE`, `THIRD_PARTY_NOTICES.md` and `docs/governance/DEC-P04-07-rights-approval.json`. Release remains unissued pending R10.
+The rights holder approved **Apache-2.0 for author-owned original work** (RR-04) and separately approved the reviewed eight third-party RDF notices (RR-05; 2026-11-06). Publisher-owned T-04 RDF snapshots remain outside the author's Apache-2.0 grant and retain their own conditions. See `LICENSE`, `THIRD_PARTY_NOTICES.md` and `docs/governance/DEC-P04-07-rights-approval.json`. R10 is now registered for its exact approved SHA; publication is not recorded. The stale pending header in the hash-protected notices is documented in [RR-05 status clarification](docs/governance/P04-07-RR05-notice-status-clarification.md); a corrected edition requires separate rights-holder approval.
 
 ## Documentation
 

@@ -1,8 +1,8 @@
 # Changelog
 
-## v0.4.0 — Observation Core (RELEASE CANDIDATE; NOT RELEASED)
+## v0.4.0 — Observation Core (APPROVED FOR RELEASE; PUBLICATION NOT RECORDED)
 
-Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. The project-owned Apache-2.0 license and eight third-party RDF notices were approved under RR-04/RR-05. No v0.4.0 tag/GitHub Release has been published; only final R10 release authorization is pending.
+Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. The project-owned Apache-2.0 license and eight third-party RDF notices were approved under RR-04/RR-05. Signed R10 P04-07-R10-2026-01 dated 2026-11-06 approves exactly `81b33951cbed446ebff5192099125f56ff474fb0`. This later registration commit is not the approved SHA. No v0.4.0 tag/GitHub Release publication is claimed.
 
 ### Added
 
@@ -21,10 +21,10 @@ Candidate prepared under MASS-OEF Roadmap v1.1, BH-P04 validation profile. The p
 
 ### Verification and boundaries
 
-- Source P04-06 GitHub CI: 11/11 mandatory gates; 115 tests without failures/errors/skips; 7 BH-V PASS, 3 BH-CQ exact-binding PASS. Both GitHub Actions workflows subsequently succeeded on commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017); a final run is required after this documentation refresh.
+- Source P04-06 GitHub CI: 11/11 mandatory gates; 115 tests without failures/errors/skips; 7 BH-V PASS, 3 BH-CQ exact-binding PASS. Both GitHub Actions workflows subsequently succeeded on commit `bf024c1698787d22979bb61289d57200f8220a59` (runs 42190651882 and 42190652017); the owner reports R10 candidate runs 42194345291 and 42194345375 as SUCCESS on `81b33951cbed446ebff5192099125f56ff474fb0`. Registration-branch validation is separate.
 - BH-P05 spatial/semantic classification and BH-P09 recognition are **DEFERRED**.
 - No real AIS decoder/accuracy, navigation safety certification, BFO/CCO formal import alignment or new SysML v2 parser proof is claimed.
-- RR-04 Apache-2.0 author-owned license decision and RR-05 eight third-party RDF notices are **approved and recorded**; final R10 release authorization remains pending.
+- RR-04 Apache-2.0 author-owned license decision and RR-05 eight third-party RDF notices are **approved and recorded**; [signed R10 is registered](docs/governance/DEC-P04-07-v0.4.0-release.md) for its exact approved SHA. The [stale RR-05 pending header](docs/governance/P04-07-RR05-notice-status-clarification.md) is documented separately; notices bytes and approval hash remain unchanged pending separate approval of a corrected edition.
 
 
 ## Unreleased — v0.3.0-dev

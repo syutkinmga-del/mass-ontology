@@ -1,0 +1,40 @@
+{
+  "schema_version": "P04-07-R10-exact-release-target-v1",
+  "decision_number": "P04-07-R10-2026-02",
+  "decision": "PENDING_EXPLICIT_EXACT_SHA_OWNER_APPROVAL",
+  "owner": "Сюткин Андрей Вениаминович",
+  "target_release": "v0.4.0",
+  "target_profile": "BH-P04",
+  "approved_commit_sha": null,
+  "proposed_commit_sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+  "source_pr": 4,
+  "prior_signed_r10_commit_sha": "81b33951cbed446ebff5192099125f56ff474fb0",
+  "release_target_is_registration_commit": false,
+  "evidence": {
+    "validate": {
+      "id": 42217787701,
+      "sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+      "conclusion": "success"
+    },
+    "behavior": {
+      "id": 42217787880,
+      "sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+      "conclusion": "success"
+    },
+    "formal": {
+      "id": 42217787700,
+      "sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+      "decision": "NO_GO",
+      "R01_to_R09": "PASS",
+      "R10": "BLOCKED_HISTORICAL_SHA_MISMATCH"
+    },
+    "rr05_notices_sha256": "7387ce9b98911917bb02ea9f3228fad2942fe65c8c7974d2f9890e01620f8ce5"
+  },
+  "approval_date": null,
+  "approval_evidence_type": null,
+  "owner_exact_sha_confirmation_received": false,
+  "signed_pdf_sha256": null,
+  "tag_published": false,
+  "release_published": false,
+  "registration_note": "docs/governance/DEC-P04-07-R10-2026-02-DRAFT.md"
+}

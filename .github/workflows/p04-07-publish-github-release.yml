@@ -1,0 +1,112 @@
+name: P04-07 Verify Archives and Publish GitHub Release
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/p04-07-publish-github-release.yml'
+      - 'scripts/verify_p04_publication_archive.py'
+      - 'scripts/publish_p04_github_release.py'
+      - 'docs/releases/v0.4.0-github-release-body.md'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/p04-07-publish-github-release.yml'
+      - 'scripts/verify_p04_publication_archive.py'
+      - 'scripts/publish_p04_github_release.py'
+      - 'docs/releases/v0.4.0-github-release-body.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: p04-07-release-publication
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    name: Verify exact v0.4.0 ZIP/TAR and create Release on main only
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout full governance history and existing annotated tags
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Check publisher and archive-verifier syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/verify_p04_publication_archive.py
+          python -m py_compile scripts/publish_p04_github_release.py
+
+      - name: Verify external R10-2026-02 authorization against frozen release SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_p04_r10_detached_target.py \
+            --report run/release-review/p04-07-release-publication-r10.json
+
+      - name: Download actual public GitHub-generated ZIP and TAR.GZ archives
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p run/release-publication
+          curl --fail --location --retry 4 --retry-delay 2 \
+            --connect-timeout 20 --max-time 240 \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'Accept: application/vnd.github+json' \
+            --silent --show-error \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/zipball/v0.4.0" \
+            --output run/release-publication/v0.4.0-github-source.zip
+          curl --fail --location --retry 4 --retry-delay 2 \
+            --connect-timeout 20 --max-time 240 \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'Accept: application/vnd.github+json' \
+            --silent --show-error \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/tarball/v0.4.0" \
+            --output run/release-publication/v0.4.0-github-source.tar.gz
+          ls -lh run/release-publication/v0.4.0-github-source.*
+
+      - name: Verify both archive inventories, each Git blob and eight T-04 SHA-256 values
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_p04_publication_archive.py \
+            --zip run/release-publication/v0.4.0-github-source.zip \
+            --tar run/release-publication/v0.4.0-github-source.tar.gz \
+            --report run/release-publication/v0.4.0-archive-audit.json
+
+      - name: Publish or verify GitHub Release only on approved main
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python scripts/publish_p04_github_release.py \
+            --notes docs/releases/v0.4.0-github-release-body.md \
+            --audit run/release-publication/v0.4.0-archive-audit.json
+
+      - name: Save formal publication audit including failed checks
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: p04-07-release-publication-audit-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            run/release-publication/v0.4.0-archive-audit.json
+            run/release-review/p04-07-release-publication-r10.json
+          if-no-files-found: warn
+          retention-days: 90

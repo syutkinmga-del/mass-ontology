@@ -1,0 +1,32 @@
+{
+  "schema_version": "P04-07-rights-approval-v1",
+  "decision": "APPROVED",
+  "approved_by": "Сюткин Андрей Вениаминович",
+  "approval_date": "2026-11-06",
+  "project_license_spdx": "Apache-2.0",
+  "project_rights_holder": "Сюткин Андрей Вениаминович",
+  "project_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "third_party_notices_sha256": "fdcdcaaa2c4e47914f575b26ed6aef0513324957b09e1286ca6012b532022fc4",
+  "third_party_review_status": "APPROVED_BY_PROJECT_OWNER",
+  "scope": "Original project-authored materials only; vendor/external-rdf/T04-2026 excluded from Apache-2.0",
+  "owl_time_cc_by_4_reconciled": true,
+  "prov_o_exact_artifact_rights_confirmed": true,
+  "source_documents": [
+    "docs/standards/T04-external-rdf-lock.json",
+    "docs/standards/T04-source-and-license-review.md",
+    "docs/evidence/P04-07/rights-review/RR05-PROV-O-EVIDENCE.md",
+    "docs/evidence/P04-07/rights-review/RR05-vocabulary-rights-matrix.json",
+    "docs/governance/DEC-P04-07-author-license-approval.json",
+    "docs/governance/DEC-P04-07-RR05-third-party-notices-approval.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "signed_rr05_owner_decision": {
+    "decision_number": "P04-07-RR05-2026-01",
+    "signed_on": "2026-11-06",
+    "private_signed_pdf_sha256": "2602788cb52240dda7044c49f0c3bfe0dff828dcbfd5ec992a0518d1dd5e1242",
+    "pdf_file_name_in_private_archive": "P04-07-RR05-signed.pdf",
+    "stored_in_repository": false,
+    "signature_authentication_independently_verified": false
+  },
+  "notes": "RR-05: owner has signed and accepted the published W3C policy-based PROV-O assessment for the unchanged pinned artifact; no in-RDF license triple is asserted. CC BY 4.0 for OWL-Time reconciled. No v0.4.0 release authorization (R10) granted."
+}

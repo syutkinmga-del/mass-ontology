@@ -1,0 +1,90 @@
+{
+  "schema_version": "P05-00-owner-design-approval-v1",
+  "decision_id": "DEC-P05-00-2026-11-09-01",
+  "date": "2026-11-09",
+  "stage": "P05-00",
+  "profile": "BH-P05",
+  "target_release": "v0.5.0",
+  "decision": "APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS",
+  "approved_design_source_commit_sha": "a73a7c8c5bc5f11a789405abd6d94da870d295b3",
+  "source_files_blobs": {
+    "docs/reviews/P05-00-design-baseline.md": "2075b3c4cb9d805c92951cd12ff641bed2f92bcf",
+    "docs/architecture/p05-00-spatial-graph-crs-policy.md": "0a66b7b784502e2adf4cf0bea6057cf9a1ecd2f6",
+    "docs/standards/P05-00-bh-p05-design-contract.json": "ca4783ca49a8c6981cde37800ca396314e2b2a05",
+    "docs/standards/P05-00-external-spatial-source-register.json": "6b3b4013b01f58c1b3569b44c05f752398d6d7e3"
+  },
+  "registered_evidence": "docs/governance/DEC-P05-00-2026-11-09-design-approval.md",
+  "owner_direction_verbatim": "переходим к регистрации отдельного решения владельца об утверждении проектного контракта P05-00 с перечнем открытых ADR",
+  "evidence_kind": "OWNER_DIRECTED_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE",
+  "authenticated_electronic_signature": false,
+  "signed_pdf_supplied": false,
+  "independent_identity_verification": false,
+  "approved_design_directions": [
+    "P05-D01",
+    "P05-D02",
+    "P05-D03"
+  ],
+  "approved_directions_scope": "ACCEPTED_FOR_DESIGN_CONTRACT_NOT_PRODUCTION_AXIOMS",
+  "open_adrs": [
+    {
+      "id": "P05-D04",
+      "status": "OPEN",
+      "gate": "GeoSPARQL source RDF artifact/version/IRI SHA256 license and engine proof before P05-02 runtime import"
+    },
+    {
+      "id": "P05-D05",
+      "status": "OPEN",
+      "gate": "Resolve EnvironmentSpace feature/geometry semantics and other-vessel role before P05-01 production TTL"
+    },
+    {
+      "id": "P05-D06",
+      "status": "OPEN",
+      "gate": "SKOS vs OWL vs reviewed dual classification model before P05-04 taxonomy"
+    },
+    {
+      "id": "P05-D07",
+      "status": "OPEN",
+      "gate": "BehaviorInterpretation status vocabulary confidence semantics and alternative hypotheses before P05-04"
+    },
+    {
+      "id": "P05-D08",
+      "status": "OPEN",
+      "gate": "Geometry/time validity synchronization bearing distance units and computation before P05-02/03 calculated relations"
+    },
+    {
+      "id": "P05-D09",
+      "status": "OPEN",
+      "gate": "P05 standalone validation runner CQs SHACL reasoner and negative cases before P05-06 PASS"
+    }
+  ],
+  "allowed_next_step": "P05-01_ENVIRONMENTSPACE_DESIGN_ADR_ONLY_UNTIL_P05_D05_RESOLVED",
+  "forbidden_claims": [
+    "BH_P05_RUNTIME_PASS",
+    "GEOSPARQL_VENDOR_IMPORT_APPROVED",
+    "EXTERNAL_RDF_LICENSE_APPROVED",
+    "P05_D04_TO_D09_RESOLVED",
+    "V050_RELEASE_AUTHORIZED",
+    "OWNER_ELECTRONIC_SIGNATURE_OBTAINED"
+  ],
+  "runtime_p05_tests": "DEFERRED_NOT_EXECUTED",
+  "v050_release_authorization": false,
+  "baseline_v040_sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+  "baseline_ci_evidence": {
+    "p05_design_contract": {
+      "workflow_run_id": 42596892643,
+      "conclusion": "success",
+      "design_lint": "PASS",
+      "failures": 0
+    },
+    "p04_behavior_validation": {
+      "workflow_run_id": 42596892696,
+      "conclusion": "success"
+    },
+    "legacy_validate_mass": {
+      "workflow_run_id": 42596892684,
+      "conclusion": "success"
+    }
+  },
+  "approval_registration_is_source_baseline": false,
+  "approval_does_not_extend_to_later_design_changes": true
+}

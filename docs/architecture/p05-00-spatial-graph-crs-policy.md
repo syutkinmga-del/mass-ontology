@@ -1,7 +1,7 @@
-# P05-00 — Spatial / CRS / RDF Named-Graph Data Contract (DRAFT)
+# P05-00 — Spatial / CRS / RDF Named-Graph Data Contract (Approved design baseline; open ADRs)
 
 **Date:** 2026-11-09  
-**Status:** PROPOSED; not a production data pipeline, approved external import or claim of executed GeoSPARQL conformance.  
+**Status:** ACCEPTED AS A P05-00 DESIGN CONTRACT under [DEC-P05-00-2026-11-09-01](../governance/DEC-P05-00-2026-11-09-design-approval.md), while individual GeoSPARQL/EnvironmentSpace/metric/taxonomy choices explicitly remain **PROPOSED / OPEN ADR**, not production OWL/imports or executed GeoSPARQL conformance. Original approved source is commit `a73a7c8c5bc5f11a789405abd6d94da870d295b3`; this explanatory update is a later governance revision.  
 **Authority inputs:** Roadmap v1.1, DCCR-01 C08–C13, DCCR-02 D04/D05 and interval semantics, DCCR-03 external-alignment design, DCCR-04 BH-V04/V07/V08/V09/V10, approved P04-00 time policy.  
 **Related review:** [P05-00 design baseline](../reviews/P05-00-design-baseline.md).
 

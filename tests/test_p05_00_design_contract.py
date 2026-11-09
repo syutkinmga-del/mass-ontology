@@ -75,10 +75,3 @@ def test_p0500_contract_fail_closed_on_claim_or_scope_mutation(mutation):
         raise AssertionError(mutation)
     assert v.review(a,b,ROOT), f"Contract mutation escaped guardrails: {mutation}"
 
-
-def test_p0500_no_p05_ontology_modules_produced_by_design_only_pr():
-    # Design baseline: first production P05 OWL/SHACL/queries/fixtures require later,
-    # separately reviewed implementation PRs.
-    assert not (ROOT/"07-behavior/p05-spatial-semantic.ttl").exists()
-    assert not (ROOT/"shapes/ship-behavior-p05.shacl.ttl").exists()
-    assert not (ROOT/"queries/behavior/bh-cq-04.rq").exists()

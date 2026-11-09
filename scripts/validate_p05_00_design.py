@@ -135,6 +135,84 @@ def review(contract: dict, source: dict, repo: Path = ROOT) -> list[str]:
             and geo.get("redistribution_licence_verified") is False,
             "GeoSPARQL version/rights/IRI/engine status incorrectly asserted")
 
+
+    # The owner approval is registered AFTER the immutable design source SHA.
+    # Check both the precise chat-text provenance and original Git blob IDs.
+    registration_path = repo / APPROVAL
+    decision_path = repo / APPROVAL_DOC
+    if not registration_path.is_file() or not decision_path.is_file():
+        errors.append("Missing separate P05-00 governance decision/approval registry")
+    else:
+        try:
+            registration = json.loads(registration_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            registration = {}
+            errors.append("P05-00 approval registration JSON malformed")
+        decision_text = decision_path.read_text(encoding="utf-8")
+        require(registration.get("schema_version") == "P05-00-owner-design-approval-v1"
+                and registration.get("decision_id") == "DEC-P05-00-2026-11-09-01"
+                and registration.get("date") == "2026-11-09"
+                and registration.get("stage") == "P05-00"
+                and registration.get("profile") == "BH-P05"
+                and registration.get("target_release") == "v0.5.0"
+                and registration.get("decision") == "APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS",
+                "Owner approval registration ID, release scope or status mismatch")
+        require(registration.get("approved_design_source_commit_sha") == APPROVED_DESIGN_SOURCE
+                and approval.get("approved_design_source_commit_sha") == APPROVED_DESIGN_SOURCE
+                and registration.get("approval_registration_is_source_baseline") is False
+                and registration.get("approval_does_not_extend_to_later_design_changes") is True,
+                "Approved design baseline SHA or separate-registration boundary invalid")
+        require(registration.get("registered_evidence") == APPROVAL_DOC
+                and registration.get("owner_direction_verbatim") == EXACT_OWNER_INSTRUCTION
+                and ("> " + EXACT_OWNER_INSTRUCTION) in decision_text
+                and APPROVED_DESIGN_SOURCE in decision_text,
+                "Exact chat instruction or approved SHA not recorded in decision")
+        require(registration.get("evidence_kind") ==
+                    "OWNER_DIRECTED_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE"
+                and registration.get("signed_pdf_supplied") is False
+                and registration.get("authenticated_electronic_signature") is False
+                and registration.get("independent_identity_verification") is False
+                and registration.get("v050_release_authorization") is False
+                and registration.get("runtime_p05_tests") == "DEFERRED_NOT_EXECUTED"
+                and "not an electronic signature" in decision_text.lower(),
+                "Evidence falsely claims a signed approval, P05 validation or release permission")
+        require(registration.get("approved_design_directions") ==
+                    ["P05-D01","P05-D02","P05-D03"]
+                and registration.get("allowed_next_step") ==
+                    "P05-01_ENVIRONMENTSPACE_DESIGN_ADR_ONLY_UNTIL_P05_D05_RESOLVED",
+                "Approval scope wrongly extends to unresolved production P05 decisions")
+        adrs = registration.get("open_adrs", [])
+        require(isinstance(adrs, list) and len(adrs) == 6
+                and {item.get("id") for item in adrs} == EXPECTED_OPEN_ADRS
+                and all(item.get("status") == "OPEN" and item.get("gate") for item in adrs),
+                "The six P05-D04..09 ADRs must remain OPEN with explicit resolution gates")
+        archive = registration.get("source_files_blobs", {})
+        required = {
+            "docs/reviews/P05-00-design-baseline.md",
+            "docs/architecture/p05-00-spatial-graph-crs-policy.md",
+            CONTRACT, REGISTRY,
+        }
+        if not isinstance(archive, dict) or set(archive) != required:
+            errors.append("Immutable approved design source blob inventory incomplete")
+        else:
+            for rel, digest in archive.items():
+                try:
+                    result = subprocess.run(
+                        ["git", "ls-tree", APPROVED_DESIGN_SOURCE, "--", rel],
+                        cwd=repo, capture_output=True, text=True, timeout=30, check=False
+                    )
+                except (OSError, subprocess.TimeoutExpired):
+                    errors.append("Cannot verify frozen design source Git blob " + rel)
+                    continue
+                if result.returncode or not result.stdout.strip():
+                    errors.append("Missing frozen design source Git blob " + rel)
+                    continue
+                parts = result.stdout.split("\t", 1)[0].split()
+                require(len(parts) == 3 and parts[1] == "blob"
+                        and bool(re.fullmatch(r"[0-9a-f]{40}", digest))
+                        and parts[2] == digest,
+                        "Frozen approved design source blob SHA changed: " + rel)
+
     for key in ("authority","review_documents"):
         for rel in contract.get(key,[]):
             require((repo / rel).is_file(), f"Missing referenced {key} file: {rel}")

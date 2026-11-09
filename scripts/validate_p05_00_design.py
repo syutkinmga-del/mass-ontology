@@ -11,7 +11,6 @@ import json
 from pathlib import Path
 import re
 import subprocess
-import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = "docs/standards/P05-00-bh-p05-design-contract.json"

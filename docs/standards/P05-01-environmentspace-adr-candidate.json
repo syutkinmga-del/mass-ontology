@@ -1,0 +1,178 @@
+{
+  "schema_version": "P05-01-environmentspace-adr-v1",
+  "stage": "P05-01",
+  "profile": "BH-P05",
+  "target_release": "v0.5.0",
+  "created_date": "2026-11-09",
+  "status": "PROPOSED_FOR_OWNER_DECISION",
+  "parent_design_decision": "DEC-P05-00-2026-11-09-01",
+  "parent_design_baseline_sha": "a73a7c8c5bc5f11a789405abd6d94da870d295b3",
+  "branch_baseline_sha": "b43b9423cc24075bc67010d5b04f47f58161260f",
+  "decision_id": "P05-D05",
+  "decision_status": "OPEN",
+  "selected_candidate": "B_FEATURE_SUBCLASS_DISTINCT_GEOMETRY",
+  "candidate_not_approved": true,
+  "recommendation": {
+    "term": "bh:EnvironmentSpace",
+    "kind": "GEOSPATIAL_FEATURE_REFERENCE",
+    "candidate_subclass_axiom": {
+      "subject": "bh:EnvironmentSpace",
+      "predicate": "rdfs:subClassOf",
+      "object": "geo:Feature",
+      "status": "PROPOSED_NOT_PRODUCTION"
+    },
+    "geometry": {
+      "class": "geo:Geometry",
+      "link": "geo:hasGeometry",
+      "distinct_feature_and_geometry": true,
+      "allow_multiple_versioned_representations": true,
+      "default_geometry": "NO_UNQUALIFIED_DEFAULT_IN_PILOT",
+      "crs_policy": "CRS84_EXPLICIT_LON_LAT",
+      "source_edition_and_valid_time": "REQUIRED_WHEN_IMPLEMENTED_BUT_P05_D08_PENDING"
+    },
+    "non_equivalences": [
+      "bh:EnvironmentSpace != geo:Geometry",
+      "bh:EnvironmentSpace != ODD_or_OperationalEnvelope",
+      "bh:EnvironmentSpace != maritime:Vessel",
+      "bh:EnvironmentSpace != nav:EncounterSituation"
+    ],
+    "identity_rules": [
+      "Persistent referent IRI distinct from edition-specific geometry IRI",
+      "Geometry edits never silently overwrite evidence from previous publisher editions",
+      "Distinct zones may have equal coordinates without owl:sameAs",
+      "Synthetic research geometries are not official navigation charts or regulated zones"
+    ],
+    "vessel_reference_role": {
+      "proposed_property": "bh:referencesVessel",
+      "relation_class": "bh:InteractionBehavior",
+      "range": "maritime:Vessel",
+      "environment_property": "bh:referencesSpace",
+      "environment_range": "bh:EnvironmentSpace",
+      "shape_rule": "XOR_ONE_REFERENCE_ROLE_ONE_REFERENCE_OBJECT_ONE_SUBJECT",
+      "disallow_subject_equals_reference": true,
+      "model_vessel_as_environmentspace": false,
+      "production_status": "DEFERRED_UNTIL_ADR_APPROVAL_AND_P05_03"
+    },
+    "no_global_axiom": "maritime:Vessel rdfs:subClassOf geo:Feature",
+    "source_ontology_import": false
+  },
+  "alternatives": [
+    {
+      "id": "A_GEOMETRY_SUBCLASS",
+      "status": "REJECT_PROPOSED",
+      "reason": "Feature/Geometry identity error"
+    },
+    {
+      "id": "B_FEATURE_SUBCLASS_DISTINCT_GEOMETRY",
+      "status": "RECOMMEND_FOR_APPROVAL",
+      "reason": "GeoSPARQL domain reuse + identity separation"
+    },
+    {
+      "id": "C_EQUIVALENCE_TO_FEATURE",
+      "status": "REJECT_PROPOSED",
+      "reason": "Over-generalizes all geo:Feature"
+    },
+    {
+      "id": "D_ODD_OR_ENCOUNTER_IDENTITY",
+      "status": "REJECT_PROPOSED",
+      "reason": "Conflates geographic referent and operational/situation specs"
+    },
+    {
+      "id": "E_SPATIALOBJECT_ONLY",
+      "status": "FALLBACK_REQUIRES_REVIEW",
+      "reason": "Weaker reuse if specific superclass invalidated"
+    }
+  ],
+  "candidate_validation_scenarios": [
+    {
+      "id": "D05-T01",
+      "positive": "Feature and Geometry separate identifiers",
+      "negative": "feature geometry same URI or owl:equivalentClass",
+      "target": "P05-02"
+    },
+    {
+      "id": "D05-T02",
+      "positive": "One feature two provenance-preserved geometries",
+      "negative": "silent replace or owl:sameAs geometry",
+      "target": "P05-02"
+    },
+    {
+      "id": "D05-T03",
+      "positive": "CRS84 explicit lon lat",
+      "negative": "incorrect axes or missing CRS",
+      "target": "P05-02"
+    },
+    {
+      "id": "D05-T04",
+      "positive": "Environmental reference and lineage",
+      "negative": "referencesSpace points vessel or ODD",
+      "target": "P05-03"
+    },
+    {
+      "id": "D05-T05",
+      "positive": "Separate vessel reference role",
+      "negative": "two reference roles or self reference",
+      "target": "P05-03"
+    },
+    {
+      "id": "D05-T06",
+      "positive": "Validity/edition-qualified geometry selection",
+      "negative": "conflicting unqualified default geometry",
+      "target": "P05-02"
+    },
+    {
+      "id": "D05-T07",
+      "positive": "No automatic COLREG/ODD/risk inference",
+      "negative": "improper mode/COLREG inference",
+      "target": "P05-06"
+    }
+  ],
+  "references": {
+    "internal": [
+      "docs/reviews/DCCR-01-xiong-ship-behavior-review.md",
+      "docs/reviews/DCCR-02-semantic-design-review.md",
+      "docs/reviews/DCCR-03-ontology-alignment-specification.md",
+      "docs/reviews/DCCR-04-validation-contract.md",
+      "docs/governance/DEC-P05-00-2026-11-09-design-approval.md",
+      "docs/architecture/p05-00-spatial-graph-crs-policy.md"
+    ],
+    "external": [
+      {
+        "standard": "OGC GeoSPARQL 1.1",
+        "document": "22-047r1",
+        "url": "https://docs.ogc.org/is/22-047r1/22-047r1.html",
+        "sections": [
+          "8.2.2",
+          "8.4.1",
+          "8.4.2",
+          "10.6.1"
+        ],
+        "source_type": "NORMATIVE_DOCUMENT_ONLY_NOT_IMPORTED_RDF"
+      }
+    ]
+  },
+  "owner_approval": {
+    "status": "PENDING_EXPLICIT_D05_DECISION",
+    "date": null,
+    "evidence_type": null,
+    "chosen_alternative": null
+  },
+  "production_ontology_status": "BLOCKED_PENDING_D05",
+  "geo_rdf_publisher_source_status": "PENDING_D04_RIGHTS_HASH_AND_ENGINE",
+  "runtime_BH_P05_tests": "DEFERRED_NOT_EXECUTED",
+  "other_open_adrs": [
+    "P05-D04",
+    "P05-D06",
+    "P05-D07",
+    "P05-D08",
+    "P05-D09"
+  ],
+  "v050_release_authorization": false,
+  "forbidden_actions": [
+    "PRODUCTION_BH_ENVIRONMENTSPACE_TTL_BEFORE_D05",
+    "GEOSPARQL_RDF_OWL_IMPORT_BEFORE_D04",
+    "AUTO_COLREG_ENTAILMENT",
+    "MASS_SK_1_0_MODIFICATION",
+    "P04_RELEASE_TAG_MOVEMENT"
+  ]
+}

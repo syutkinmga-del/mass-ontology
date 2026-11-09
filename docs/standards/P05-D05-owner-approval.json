@@ -1,0 +1,73 @@
+{
+  "schema_version": "P05-D05-owner-approval-v1",
+  "decision_id": "DEC-P05-D05-2026-11-09-01",
+  "decision_date": "2026-11-09",
+  "decision_status": "CLOSED_APPROVED_ALTERNATIVE_B",
+  "stage": "P05-01",
+  "profile": "BH-P05",
+  "target_release": "v0.5.0",
+  "approved_alternative_id": "B_FEATURE_SUBCLASS_DISTINCT_GEOMETRY",
+  "approved_source_commit_sha": "c4e9e7537b625dc5582b9505af232a959309c622",
+  "approved_source_files": {
+    "docs/architecture/ADR-P05-D05-environmentspace-feature-reference.md": "1c3177e15da6e5d0bfd11760dbeea6630bc48910",
+    "docs/standards/P05-01-environmentspace-adr-candidate.json": "1c8269d568689393cdf42d121fb0f42630b72f59"
+  },
+  "owner_instruction_verbatim": "утверждаю  альтернативу B с условиями: `EnvironmentSpace` как `geo:Feature`, отдельные версионируемые `geo:Geometry`, самостоятельная роль `referencesVessel` и отсутствие автоматических COLREG-выводов.",
+  "evidence_type": "EXPLICIT_OWNER_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE",
+  "authenticated_signature": false,
+  "signed_pdf_provided": false,
+  "identity_independently_verified": false,
+  "governance_record": "docs/governance/DEC-P05-D05-2026-11-09-alternative-b-approval.md",
+  "approved_constraints": [
+    {
+      "id": "D05-B01",
+      "subject": "bh:EnvironmentSpace",
+      "relation": "rdfs:subClassOf",
+      "object": "geo:Feature",
+      "excluded_relation": "owl:equivalentClass"
+    },
+    {
+      "id": "D05-B02",
+      "geometry_class": "geo:Geometry",
+      "property": "geo:hasGeometry",
+      "separate_identifiers": true,
+      "versioned": true
+    },
+    {
+      "id": "D05-B03",
+      "vessel_reference_role": "bh:referencesVessel",
+      "environment_reference_role": "bh:referencesSpace",
+      "referent_type": "maritime:Vessel",
+      "role_separation": true,
+      "never_retype_vessel_as_environmentspace": true
+    },
+    {
+      "id": "D05-B04",
+      "automatic_colreg_conclusions_allowed": false,
+      "automatic_control_or_safety_claims_allowed": false
+    }
+  ],
+  "reference_roles_validated_in": "P05-03",
+  "geometry_engine_and_source_validation_in": "P05-02",
+  "provenance_scope": "SOURCE_EDITION_AND_TIME_REQUIRED_WHEN_IMPLEMENTED",
+  "open_adrs": [
+    "P05-D04",
+    "P05-D06",
+    "P05-D07",
+    "P05-D08",
+    "P05-D09"
+  ],
+  "approved_next_step": "P05-01_NARROW_ENVIRONMENTSPACE_OWL_SHACL_FIXTURE_IMPLEMENTATION_SEPARATE_PR",
+  "geo_rdf_owl_import_approved": false,
+  "external_geo_rights_and_sha_verified": false,
+  "geo_engine_conformance_achieved": false,
+  "bh_p05_runtime_tests": "DEFERRED_NOT_EXECUTED",
+  "p05_cq_04_to_10": "DEFERRED",
+  "p05_validation_v04_v07_v08_v09_v10": "DEFERRED",
+  "v050_release_authorized": false,
+  "v040_release_target_sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+  "v040_annotated_tag_object_sha": "9da6a854d663d8c3b455f96521ea87d3579646cc",
+  "candidate_decision_is_historically_open": true,
+  "approval_is_later_separate_git_commit": true,
+  "approval_does_not_extend_to_unreviewed_revisions": true
+}

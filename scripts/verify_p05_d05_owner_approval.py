@@ -101,6 +101,7 @@ def verify(x: dict, text: str, candidate: dict, historic: dict, root: Path) -> l
     must(historic.get("decision") == "APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS"
          and {q.get("id") for q in historic.get("open_adrs", [])} ==
              OPEN | {"P05-D05"}
+         and all(q.get("status") == "OPEN" for q in historic.get("open_adrs", []))
          and historic.get("v050_release_authorization") is False,
          "Historical P05-00 approval must stay intact")
 

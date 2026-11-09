@@ -263,7 +263,11 @@ def main()->int:
         "status":"PASS" if not failures else "FAIL",
         "failures":failures,
         "runtime_BH_P05_tests":"DEFERRED_NOT_EXECUTED",
-        "owner_approval":"PENDING",
+        "owner_approval":"APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS",
+        "approval_decision_id":"DEC-P05-00-2026-11-09-01",
+        "approved_design_source_sha":APPROVED_DESIGN_SOURCE,
+        "open_adrs":sorted(EXPECTED_OPEN_ADRS),
+        "approval_evidence_type":"OWNER_DIRECTED_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE",
         "does_not_authorize_P05_implementation_or_release":True,
     }
     report_path.parent.mkdir(parents=True, exist_ok=True)

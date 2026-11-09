@@ -95,30 +95,35 @@ def test_p0500_owner_design_approval_retains_six_open_adrs_and_no_release():
 
 
 @pytest.mark.parametrize("corruption", [
-    "missing_signed_status",
+    "false_signed_status",
     "false_release_permission",
     "open_adr_inadvertently_closed",
     "owner_instruction_mismatched",
+    "approved_source_sha_changed",
 ])
-def test_registration_check_fails_when_owner_record_is_corrupted(tmp_path,corruption):
-    # Review uses immutable source Git ancestry; copy real source for normal
-    # structure checks rather than forging a signed owner decision.
+def test_registration_fail_closed_on_corruption(monkeypatch, corruption):
     contract, registry = current()
-    approval=json.loads((ROOT/v.APPROVAL).read_text(encoding="utf-8"))
-    if corruption=="missing_signed_status":
-        approval["signed_pdf_supplied"]=True
-    elif corruption=="false_release_permission":
-        approval["v050_release_authorization"]=True
-    elif corruption=="open_adr_inadvertently_closed":
-        approval["open_adrs"][1]["status"]="CLOSED"
-    elif corruption=="owner_instruction_mismatched":
-        approval["owner_direction_verbatim"]="APPROVED ALL P05 AXIOMS"
-    # A structural assert supplements the integration review and proves the
-    # mutated approval would fail the invariant tested by the CI linter.
-    valid=(
-        approval["signed_pdf_supplied"] is False
-        and approval["v050_release_authorization"] is False
-        and approval["owner_direction_verbatim"]==v.EXACT_OWNER_INSTRUCTION
-        and all(a["status"]=="OPEN" for a in approval["open_adrs"])
+    approval_path = (ROOT / v.APPROVAL).resolve()
+    real_read = Path.read_text
+
+    def patched_read(path, *args, **kwargs):
+        text = real_read(path, *args, **kwargs)
+        if path.resolve() != approval_path:
+            return text
+        approval = json.loads(text)
+        if corruption == "false_signed_status":
+            approval["signed_pdf_supplied"] = True
+        elif corruption == "false_release_permission":
+            approval["v050_release_authorization"] = True
+        elif corruption == "open_adr_inadvertently_closed":
+            approval["open_adrs"][1]["status"] = "CLOSED"
+        elif corruption == "owner_instruction_mismatched":
+            approval["owner_direction_verbatim"] = "APPROVED ALL P05 AXIOMS"
+        elif corruption == "approved_source_sha_changed":
+            approval["approved_design_source_commit_sha"] = "deadbeef" * 5
+        return json.dumps(approval)
+
+    monkeypatch.setattr(Path, "read_text", patched_read)
+    assert v.review(contract, registry, ROOT), (
+        f"Owner-approval tampering not rejected by real design lint: {corruption}"
     )
-    assert not valid, "Corrupt approval record escaped gate"

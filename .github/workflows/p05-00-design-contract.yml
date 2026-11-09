@@ -1,0 +1,46 @@
+name: P05-00 Design Contract Lint (Not Ontology Conformance)
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p05-design-contract:
+    name: P05-00 draft design integrity only (BH-P05 runtime DEFERRED)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout P05-00 proposal and historical DCCR inputs
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Validate P05-00 concept/CQ/rule/graph/CRS source control
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/validate_p05_00_design.py
+          python scripts/validate_p05_00_design.py \
+            --report run/p05-00/design-contract-report.json
+
+      - name: Save draft design lint evidence (even if failed)
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: p05-00-design-contract-${{ github.run_id }}-${{ github.run_attempt }}
+          path: run/p05-00/design-contract-report.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,86 @@
+{
+  "schema_version": "P05-00-external-spatial-source-register-v1",
+  "profile": "BH-P05",
+  "stage": "P05-00",
+  "status": "CANDIDATE_DOCUMENTATION_ONLY_NO_OWL_IMPORT_NO_RUNTIME_PASS",
+  "prepared_on": "2026-11-09",
+  "source_policy": "Use official normative references for design; before runtime load pin exact RDF artifact/version/ontology IRI/byte SHA256 and review actual redistribution rights. Do not copy unreviewed publisher RDF into repository.",
+  "registrations": [
+    {
+      "id": "P05-OGC-GEOSPARQL-1.1",
+      "name": "GeoSPARQL 1.1",
+      "authority": "OGC",
+      "specification": "OGC 22-047r1, version 1.1",
+      "official_reference": "https://docs.ogc.org/is/22-047r1/22-047r1.html",
+      "official_landing_page": "https://www.ogc.org/standards/geosparql/",
+      "namespace": "http://www.opengis.net/ont/geosparql#",
+      "purpose": "Feature/Geometry/WKT/spatial relation vocabulary",
+      "decision": "DESIGN_EDITION_CANDIDATE",
+      "rdf_snapshot_selected": false,
+      "ontology_iri_verified_from_artifact": null,
+      "version_iri_verified_from_artifact": null,
+      "publisher_rdf_download_url": null,
+      "redistribution_licence_verified": false,
+      "sha256": null,
+      "engine_capabilities_tested": false,
+      "owl_import_allowed": false,
+      "notes": "GeoSPARQL Next draft is not automatically selected; check official 1.1 ontology file metadata, license and test actual GeoSPARQL queries before imports."
+    },
+    {
+      "id": "P05-OGC-CRS84",
+      "name": "OGC CRS84",
+      "authority": "OGC",
+      "official_reference": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+      "description": "WGS 84 longitude-latitude reference system used as default for GeoSPARQL WKT literals without explicit SRS IRI, OGC 22-047r1 requirement 15",
+      "purpose": "Explicit CRS IRI in pilot WKT; lon lat coordinate order",
+      "decision": "DESIGN_CRS_CANDIDATE",
+      "rdf_snapshot_selected": false,
+      "sha256": null,
+      "licence_review": "NOT_APPLICABLE_TO_IRI_REFERENCE_ONLY",
+      "owl_import_allowed": false,
+      "notes": "Do not conflate EPSG:4326 axis order with CRS84. CRS URI is a reference, not a vendored ontology artifact."
+    },
+    {
+      "id": "P05-W3C-RDF-DATASET",
+      "name": "RDF 1.1 Concepts / Dataset",
+      "authority": "W3C",
+      "official_reference": "https://www.w3.org/TR/rdf11-concepts/",
+      "related_reference": "https://www.w3.org/TR/rdf11-datasets/",
+      "purpose": "Distinguish named graphs from default graph; no graph epistemic authorization inferred",
+      "decision": "REFERENCE_ONLY",
+      "rdf_snapshot_selected": false,
+      "sha256": null,
+      "owl_import_allowed": false
+    },
+    {
+      "id": "P05-W3C-SPARQL-1.1",
+      "name": "SPARQL 1.1 Query",
+      "authority": "W3C",
+      "official_reference": "https://www.w3.org/TR/sparql11-query/",
+      "purpose": "GRAPH keyword, explicit active graph selection for leakage oracles",
+      "decision": "REFERENCE_ONLY",
+      "rdf_snapshot_selected": false,
+      "sha256": null,
+      "owl_import_allowed": false
+    },
+    {
+      "id": "P05-P04-FROZEN-T04",
+      "name": "P04 T-04 eight pinned RDF snapshots",
+      "authority": "P04 controlled publisher snapshot registry",
+      "source_lock_path": "docs/standards/T04-external-rdf-lock.json",
+      "purpose": "Reuse existing SOSA/SSN/QUDT/OWL-Time/PROV-O source controls; do not update their bytes in P05-00",
+      "decision": "REUSE_EXISTING_FROZEN_SNAPSHOT_REFERENCE",
+      "new_external_artifacts_added": false,
+      "sha256_pinned_via_existing_registry": true,
+      "owl_import_allowed": false,
+      "notes": "Do not infer that P05 GeoSPARQL is included in the P04 T-04 set."
+    }
+  ],
+  "preimplementation_gates": [
+    "Choose exact OGC GeoSPARQL ontology artifact and ontology/version IRIs from the file; preserve reviewed publisher license and SHA-256.",
+    "Determine whether GeoSPARQL conformance class and required sfWithin/sfIntersects/geof:distance functions are actually supported by the selected query engine.",
+    "Specify canonical CRS, geometry lexical rules and reprojection provenance, with positive and negative tests.",
+    "Make source-profile loading explicit and deterministic; no network calls or implicit RDF imports during CI.",
+    "Record a separate owner-reviewed P05 source/redistribution decision before committing new vendor snapshots."
+  ]
+}

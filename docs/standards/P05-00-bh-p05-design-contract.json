@@ -1,0 +1,330 @@
+{
+  "schema_version": "P05-00-design-and-validation-contract-v1",
+  "profile": "BH-P05",
+  "target_release": "v0.5.0",
+  "stage": "P05-00",
+  "status": "DRAFT_REVIEW_REQUIRED_NOT_IMPLEMENTED",
+  "contract_date": "2026-11-09",
+  "source_baseline": {
+    "published_release": "v0.4.0",
+    "published_tag_target_sha": "d0f2368df4268cfe3c6079a1681502cad0b867fb",
+    "starting_main_sha": "d45607432c313a566c7b50d385779391cf48fa1c"
+  },
+  "authority": [
+    "docs/roadmap.md",
+    "docs/reviews/DCCR-01-xiong-ship-behavior-review.md",
+    "docs/reviews/DCCR-02-semantic-design-review.md",
+    "docs/reviews/DCCR-03-ontology-alignment-specification.md",
+    "docs/reviews/DCCR-04-validation-contract.md",
+    "docs/architecture/P04-00-terminology-time-policy.md"
+  ],
+  "review_documents": [
+    "docs/reviews/P05-00-design-baseline.md",
+    "docs/architecture/p05-00-spatial-graph-crs-policy.md",
+    "docs/standards/P05-00-external-spatial-source-register.json"
+  ],
+  "graph_policy": {
+    "status": "PROPOSED",
+    "default_union": false,
+    "graphs": {
+      "observed": "https://w3id.org/mass-ontology/graph/p05/observed",
+      "context": "https://w3id.org/mass-ontology/graph/p05/context",
+      "derived_interaction": "https://w3id.org/mass-ontology/graph/p05/derived-interaction",
+      "inferred_semantic": "https://w3id.org/mass-ontology/graph/p05/inferred-semantic",
+      "provenance": "https://w3id.org/mass-ontology/graph/p05/provenance"
+    },
+    "inference_input_graphs": [
+      "observed",
+      "context",
+      "derived_interaction"
+    ],
+    "inference_output_graphs": [
+      "inferred_semantic"
+    ],
+    "label_leakage_policy": "FORBID_OUTPUT_LABELS_IN_ANY_PREINFERENCE_INSTANCE_GRAPH"
+  },
+  "spatial_policy": {
+    "status": "PROPOSED",
+    "standard_candidate": "OGC GeoSPARQL 1.1 / 22-047r1",
+    "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+    "wkt_axis_order": "longitude latitude",
+    "crs_iri_explicit_in_fixture": true,
+    "geo_vendor_snapshot_sha256": null,
+    "geo_owl_import_approved": false,
+    "geo_runtime_engine_conformance": "NOT_TESTED"
+  },
+  "concepts": [
+    {
+      "id": "C08",
+      "term": "bh:InteractionBehavior",
+      "primary_cq": "BH-CQ-04",
+      "source": "DCCR-02-D04",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    },
+    {
+      "id": "C09",
+      "term": "bh:DirectionRelation",
+      "primary_cq": "BH-CQ-04",
+      "source": "DCCR-01-C09",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    },
+    {
+      "id": "C10",
+      "term": "bh:DistanceRelation",
+      "primary_cq": "BH-CQ-04",
+      "source": "DCCR-01-C10",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    },
+    {
+      "id": "C11",
+      "term": "bh:TopologyRelation",
+      "primary_cq": "BH-CQ-04",
+      "source": "DCCR-01-C11",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    },
+    {
+      "id": "C12",
+      "term": "bh:SemanticBehavior",
+      "primary_cq": "BH-CQ-06",
+      "source": "DCCR-02-D05",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    },
+    {
+      "id": "C13",
+      "term": "bh:EnvironmentSpace",
+      "primary_cq": "BH-CQ-04",
+      "source": "DCCR-01-C13",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    },
+    {
+      "id": "M01",
+      "term": "bh:BehaviorInterpretation",
+      "primary_cq": "BH-CQ-06",
+      "source": "DCCR-03-D05",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "design_status": "PROPOSED",
+      "owner": "MASS-P05-domain",
+      "release": "v0.5.0"
+    }
+  ],
+  "validation_rules": [
+    {
+      "id": "BH-V04",
+      "target": "interval semantics on ProperIntervals with true meets boundary",
+      "mechanism": "Python UTC datetime + SHACL/SPARQL",
+      "positive": "p05-valid (planned)",
+      "negative": [
+        "N04-false-meets-gap",
+        "N04-wrong-domain"
+      ],
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-V07",
+      "target": "interaction subject/reference/time/provenance and not COLREG",
+      "mechanism": "SHACL Core + cross-link checks",
+      "positive": "p05-valid (planned)",
+      "negative": [
+        "N07-no-reference",
+        "N07-no-time-context"
+      ],
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-V08",
+      "target": "no target behavior label leakage in ANY inference-input named instance graph",
+      "mechanism": "rdflib.Dataset(default_union=False), scoped GRAPH checks",
+      "positive": "p05-pre-valid (planned)",
+      "negative": [
+        "N08-label-leakage"
+      ],
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-V09",
+      "target": "post-inference evidence, prov:Activity, score/status constraints",
+      "mechanism": "SHACL + provenance lineage",
+      "positive": "p05-post-valid (planned)",
+      "negative": [
+        "N09-no-evidence",
+        "N09-no-activity",
+        "N09-score-out-of-range"
+      ],
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-V10",
+      "target": "no automatic behavioral to mode/COLREG inference",
+      "mechanism": "OWL reasoner + mutant tests",
+      "positive": "p05-valid (planned)",
+      "negative": [
+        "N10-equivalence-mutant",
+        "N10-property-chain-mutant"
+      ],
+      "status": "DEFERRED"
+    }
+  ],
+  "competency_questions": [
+    {
+      "id": "BH-CQ-04",
+      "question": "What spatial context and direction/distance/topology descriptions characterize a TemporalUnit?",
+      "variables": [
+        "unit",
+        "relation",
+        "relationKind",
+        "reference",
+        "frameOrCrs",
+        "time",
+        "evidence"
+      ],
+      "rules": [
+        "BH-V07"
+      ],
+      "oracle": "EXACT_BINDINGS_DATATYPES_AND_IRIS",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-CQ-05",
+      "question": "Which TemporalUnits are adjacent, and which distinct ProperIntervals genuinely meet rather than having a gap?",
+      "variables": [
+        "unit1",
+        "unit2",
+        "interval1",
+        "interval2",
+        "end1",
+        "start2",
+        "meets"
+      ],
+      "rules": [
+        "BH-V04"
+      ],
+      "oracle": "EXACT_BINDINGS_AND_UTC_BOUNDARIES",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-CQ-06",
+      "question": "What post-inference semantic interpretation has which source evidence and activity/version/status?",
+      "variables": [
+        "unit",
+        "interpretation",
+        "behavior",
+        "evidence",
+        "activity",
+        "status"
+      ],
+      "rules": [
+        "BH-V09"
+      ],
+      "oracle": "EXACT_BINDINGS_DATATYPES_AND_PROVENANCE",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-CQ-07",
+      "question": "Are forbidden classifier result labels absent from input named instance graphs?",
+      "variables": [
+        "noLabelLeakage"
+      ],
+      "rules": [
+        "BH-V08"
+      ],
+      "oracle": "SCOPED_ASK_ASSERTS_NO_PROHIBITED_TRIPLES",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-CQ-08",
+      "question": "Can identical physical description coexist with independently asserted differing operational modes?",
+      "variables": [
+        "unit",
+        "physicalDescription",
+        "mode",
+        "modeEvidence"
+      ],
+      "rules": [
+        "BH-V10"
+      ],
+      "oracle": "EXACT_BINDINGS_AND_NEGATIVE_ENTAILMENT_MUTANT",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-CQ-09",
+      "question": "Which independent evidence (if any) supports COLREGSituation rather than label-only entailment?",
+      "variables": [
+        "situation",
+        "navigationEvidence",
+        "source"
+      ],
+      "rules": [
+        "BH-V10"
+      ],
+      "oracle": "NO_UNSUPPORTED_ENTAILMENT_AND_EXPLICIT_EVIDENCE",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "BH-CQ-10",
+      "question": "What alternative inferred hypotheses, status and optional scores can be retrieved?",
+      "variables": [
+        "interpretation",
+        "candidate",
+        "status",
+        "confidence",
+        "evidence"
+      ],
+      "rules": [
+        "BH-V09"
+      ],
+      "oracle": "EXACT_BINDINGS_WITH_OPTIONAL_CONFIDENCE",
+      "status": "DEFERRED"
+    }
+  ],
+  "preserved_profiles": {
+    "BH_P04": "PRESERVE_WITH_EXECUTED_REGRESSION_IN_FUTURE_P05",
+    "legacy_CQ_01_to_14": "PRESERVE",
+    "BH_P09": "DEFERRED"
+  },
+  "open_decisions": [
+    "P05-D04_GEOSPARQL_ONTOLOGY_SNAPSHOT_LICENSE_HASH_AND_ENGINE",
+    "P05-D05_ENVIRONMENTSPACE_FEATURE_AND_REFERENCE_VESSEL_ROLE",
+    "P05-D06_SEMANTICBEHAVIOR_OWL_VS_SKOS_CATEGORY",
+    "P05-D07_BEHAVIORINTERPRETATION_STATUS_CONFIDENCE_AND_COMPETING_HYPOTHESES",
+    "P05-D08_TIME_SYNCHRONIZATION_AND_DISTANCE_BEARING",
+    "P05-D09_P05_CI_RUNNER_AND_FAIL_CLOSED_PROFILE"
+  ],
+  "owner_approval": {
+    "status": "PENDING",
+    "date": null,
+    "evidence_type": null,
+    "release_authorization": false
+  },
+  "completion": {
+    "design_files_present": false,
+    "contract_lint_executed": false,
+    "any_p05_ontology_runtime_gate_passed": false
+  },
+  "forbidden_in_this_stage": [
+    "P05_OWL_PRODUCTION_CLASSES",
+    "GEOSPARQL_VENDOR_IMPORT",
+    "P05_RUNTIME_PASS",
+    "AUTO_COLREG_ENTAILMENT",
+    "V040_TAG_MUTATION",
+    "DCCR_HISTORICAL_EDITS",
+    "MASS_SK_1_0_EDIT"
+  ]
+}

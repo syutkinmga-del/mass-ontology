@@ -1,0 +1,52 @@
+name: P05-01 EnvironmentSpace ADR Design Gate (D05 OPEN)
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p05-01-adr:
+    name: D05 Feature/Geometry/Vessel-role ADR integrity (not BH-P05 runtime)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact reviewed PR head or main and historic v0.4.0 tag
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Check ADR design syntax and provenance, not production ontology
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/validate_p05_01_adr.py tests/test_p05_01_environmentspace_adr.py
+          python scripts/validate_p05_01_adr.py --report run/p05-01/adr-review.json
+
+      - name: Run isolated P05-01 negative design mutation tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pytest==9.1.1
+          python -m pytest -q -ra tests/test_p05_01_environmentspace_adr.py
+
+      - name: Archive ADR review evidence including failures
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: p05-01-adr-design-${{ github.run_id }}-${{ github.run_attempt }}
+          path: run/p05-01/adr-review.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -3,7 +3,7 @@
   "profile": "BH-P05",
   "target_release": "v0.5.0",
   "stage": "P05-00",
-  "status": "DRAFT_REVIEW_REQUIRED_NOT_IMPLEMENTED",
+  "status": "APPROVED_DESIGN_BASELINE_OPEN_ADRS_NOT_IMPLEMENTED",
   "contract_date": "2026-11-09",
   "source_baseline": {
     "published_release": "v0.4.0",
@@ -21,7 +21,9 @@
   "review_documents": [
     "docs/reviews/P05-00-design-baseline.md",
     "docs/architecture/p05-00-spatial-graph-crs-policy.md",
-    "docs/standards/P05-00-external-spatial-source-register.json"
+    "docs/standards/P05-00-external-spatial-source-register.json",
+    "docs/governance/DEC-P05-00-2026-11-09-design-approval.md",
+    "docs/standards/P05-00-design-approval.json"
   ],
   "graph_policy": {
     "status": "PROPOSED",
@@ -308,9 +310,14 @@
     "P05-D09_P05_CI_RUNNER_AND_FAIL_CLOSED_PROFILE"
   ],
   "owner_approval": {
-    "status": "PENDING",
-    "date": null,
-    "evidence_type": null,
+    "status": "APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS",
+    "date": "2026-11-09",
+    "evidence_type": "OWNER_DIRECTED_CHAT_TEXT_NOT_ELECTRONIC_SIGNATURE",
+    "decision_id": "DEC-P05-00-2026-11-09-01",
+    "decision_record": "docs/governance/DEC-P05-00-2026-11-09-design-approval.md",
+    "approval_manifest": "docs/standards/P05-00-design-approval.json",
+    "approved_design_source_commit_sha": "a73a7c8c5bc5f11a789405abd6d94da870d295b3",
+    "open_adrs_accepted_as_open": true,
     "release_authorization": false
   },
   "completion": {
@@ -326,5 +333,11 @@
     "V040_TAG_MUTATION",
     "DCCR_HISTORICAL_EDITS",
     "MASS_SK_1_0_EDIT"
-  ]
+  ],
+  "design_directions_accepted_for_contract": [
+    "P05-D01",
+    "P05-D02",
+    "P05-D03"
+  ],
+  "design_approval_scope": "Design criteria and traceability accepted; open ADRs unresolved; no P05 runtime validation or production ontology approval"
 }

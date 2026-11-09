@@ -23,8 +23,9 @@ def current():
 def test_p0500_proposal_has_complete_contract_without_runtime_claim():
     contract, sources=current()
     assert v.review(contract,sources,ROOT)==[]
-    assert contract["status"]=="DRAFT_REVIEW_REQUIRED_NOT_IMPLEMENTED"
-    assert contract["owner_approval"]["status"]=="PENDING"
+    assert contract["status"]=="APPROVED_DESIGN_BASELINE_OPEN_ADRS_NOT_IMPLEMENTED"
+    assert contract["owner_approval"]["status"]=="APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS"
+    assert contract["owner_approval"]["release_authorization"] is False
     assert contract["completion"]["any_p05_ontology_runtime_gate_passed"] is False
     assert {q["id"] for q in contract["competency_questions"]} == v.EXPECTED_CQS
     assert {r["id"] for r in contract["validation_rules"]} == v.EXPECTED_RULES
@@ -75,3 +76,54 @@ def test_p0500_contract_fail_closed_on_claim_or_scope_mutation(mutation):
         raise AssertionError(mutation)
     assert v.review(a,b,ROOT), f"Contract mutation escaped guardrails: {mutation}"
 
+
+
+def test_p0500_owner_design_approval_retains_six_open_adrs_and_no_release():
+    contract, registry = current()
+    assert v.review(contract, registry, ROOT) == []
+    registration=json.loads((ROOT/v.APPROVAL).read_text(encoding="utf-8"))
+    assert registration["decision"] == "APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS"
+    assert registration["approved_design_source_commit_sha"] == v.APPROVED_DESIGN_SOURCE
+    assert registration["owner_direction_verbatim"] == v.EXACT_OWNER_INSTRUCTION
+    assert registration["signed_pdf_supplied"] is False
+    assert registration["authenticated_electronic_signature"] is False
+    assert registration["v050_release_authorization"] is False
+    assert {x["id"] for x in registration["open_adrs"]} == v.EXPECTED_OPEN_ADRS
+    assert all(x["status"] == "OPEN" for x in registration["open_adrs"])
+    assert all(r["status"] == "DEFERRED" for r in contract["validation_rules"])
+    assert all(q["status"] == "DEFERRED" for q in contract["competency_questions"])
+
+
+@pytest.mark.parametrize("corruption", [
+    "false_signed_status",
+    "false_release_permission",
+    "open_adr_inadvertently_closed",
+    "owner_instruction_mismatched",
+    "approved_source_sha_changed",
+])
+def test_registration_fail_closed_on_corruption(monkeypatch, corruption):
+    contract, registry = current()
+    approval_path = (ROOT / v.APPROVAL).resolve()
+    real_read = Path.read_text
+
+    def patched_read(path, *args, **kwargs):
+        text = real_read(path, *args, **kwargs)
+        if path.resolve() != approval_path:
+            return text
+        approval = json.loads(text)
+        if corruption == "false_signed_status":
+            approval["signed_pdf_supplied"] = True
+        elif corruption == "false_release_permission":
+            approval["v050_release_authorization"] = True
+        elif corruption == "open_adr_inadvertently_closed":
+            approval["open_adrs"][1]["status"] = "CLOSED"
+        elif corruption == "owner_instruction_mismatched":
+            approval["owner_direction_verbatim"] = "APPROVED ALL P05 AXIOMS"
+        elif corruption == "approved_source_sha_changed":
+            approval["approved_design_source_commit_sha"] = "deadbeef" * 5
+        return json.dumps(approval)
+
+    monkeypatch.setattr(Path, "read_text", patched_read)
+    assert v.review(contract, registry, ROOT), (
+        f"Owner-approval tampering not rejected by real design lint: {corruption}"
+    )

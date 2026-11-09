@@ -1,11 +1,11 @@
 # P05-00 — Spatial + Semantic Domain Design Contract (BH-P05 / v0.5.0)
 
-**Status:** DRAFT FOR DESIGN REVIEW — requirements and proposed dispositions only.  
+**Status:** APPROVED DESIGN BASELINE WITH OPEN ADRs — design contract only; production axioms and BH-P05 runtime still unapproved/unimplemented. See [separate owner-directed decision](../governance/DEC-P05-00-2026-11-09-design-approval.md).  
 **Date prepared:** 2026-11-09.  
 **Controlled input:** [Integrated Roadmap v1.1](../roadmap.md), [DCCR-01](DCCR-01-xiong-ship-behavior-review.md), [DCCR-02](DCCR-02-semantic-design-review.md), [DCCR-03](DCCR-03-ontology-alignment-specification.md), [DCCR-04](DCCR-04-validation-contract.md), [P04 terminology/time policy](../architecture/P04-00-terminology-time-policy.md).  
 **Immutable published source baseline:** `v0.4.0` at commit `d0f2368df4268cfe3c6079a1681502cad0b867fb`, governed by separate R10-2026-02.  
 **Development branch baseline at P05-00 start:** `d45607432c313a566c7b50d385779391cf48fa1c`.  
-**Owner decision for P05-00:** PENDING; no approval or implementation verification inferred.
+**Owner decision for P05-00:** APPROVED DESIGN BASELINE WITH OPEN ADRs, 2026-11-09; explicit owner-directed chat instruction, **not an electronic signature**. Exact pre-registration design source commit: `a73a7c8c5bc5f11a789405abd6d94da870d295b3`. All BH-P05 runtime gates remain DEFERRED.
 
 ## 1. Boundary and purpose
 
@@ -110,10 +110,10 @@ No blanket assumption of a future `EnvironmentSpace rdfs:subClassOf geo:Feature`
 - [ ] Spatial CRS/WKT, time-validity and explicit graph partition contracts are reviewed.
 - [ ] GeoSPARQL version candidate, concrete ontology artifact selection and licensing **open tasks** are documented; no fake pinning.
 - [ ] P05-01/P05-02 implementation gates and non-inference of COLREG safety claims reviewed.
-- [ ] Design checker runs on the proposal with recorded evidence; this constitutes **P05-00 design-contract integrity only**, not ontology runtime validation.
-- [ ] Project owner explicitly approves the P05-00 design baseline before marking it APPROVED.
+- [x] Design checker executed and archived: [P05-00 design CI #42596892643](https://github.com/syutkinmga-del/mass-ontology/actions/runs/42596892643), PASS, `failures: []`; this constitutes **P05-00 design-contract integrity only**, not ontology runtime validation.
+- [x] Project-owner instruction registered as a **separate design-only text decision** with six explicitly OPEN ADRs; no digital signature or v0.5.0 release approval claimed.
 
-Until owner approval and completion of contract review, **P05-00 is DRAFT**. Its merge into `main` does not automatically authorize implementation of every open ADR.
+Owner-directed approval was recorded separately on 2026-11-09. **P05-00 is APPROVED AS A DESIGN BASELINE WITH OPEN ADRs, not approved as a working P05 ontology.** Its merge into `main` does not implement or resolve the six open ADRs; P05-D05 blocks production `EnvironmentSpace` axioms until a separate decision.
 
 ## 8. Implementation follow-on (separate PRs)
 
@@ -126,3 +126,14 @@ Until owner approval and completion of contract review, **P05-00 is DRAFT**. Its
 **P05-07:** controlled release review and new exact-SHA owner authorization for v0.5.0.
 
 **Sources:** Roadmap v1.1 §§A–E; DCCR-01 §§A/C/G; DCCR-02 D04/D05; DCCR-03 §§3–6; DCCR-04 §§2/4/6/7; [OGC GeoSPARQL 1.1](https://docs.ogc.org/is/22-047r1/22-047r1.html); [W3C SPARQL 1.1 datasets](https://www.w3.org/TR/sparql11-query/#rdfDataset).
+
+## 9. Owner-directed approval registration addendum — 2026-11-09
+
+**Source document preserved at approved SHA** `a73a7c8c5bc5f11a789405abd6d94da870d295b3`; the status update here belongs to a later governance registration commit and does **not** retroactively change that approved source snapshot.
+
+- Decision: [DEC-P05-00-2026-11-09-01](../governance/DEC-P05-00-2026-11-09-design-approval.md) — `APPROVED_DESIGN_BASELINE_WITH_OPEN_ADRS`.
+- Evidence: owner's exact instruction in the ChatGPT conversation, a **text registration** (not a signed PDF, digital signature or independently authenticated identity).
+- Accepted planning directions: P05-D01 (DCCR terminology reuse), P05-D02 (CRS84/WKT lon-lat convention), P05-D03 (named-graph separation); they are not yet executable P05 ontology axioms.
+- **Unresolved ADRs:** P05-D04 GeoSPARQL artifact/rights/engine; P05-D05 EnvironmentSpace identity and other-vessel role; P05-D06 OWL/SKOS behavior representation; P05-D07 interpretation status/score/hypotheses; P05-D08 temporal synchronization/geodetic calculations/bearing; P05-D09 fail-closed P05 implementation validator. None is made resolved by this approval.
+- **Allowed next action:** initiate P05-01 `EnvironmentSpace` **design/ADR** work in a new PR. P05-D05 must be closed before committing production class axioms that depend on its final semantics.
+- Runtime status: `BH-V04/V07/V08/V09/V10 = DEFERRED`, `BH-CQ-04…10 = DEFERRED`; BH-P04 regression preserved; v0.5.0 release remains unauthorized.

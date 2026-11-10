@@ -1,0 +1,56 @@
+@prefix bh:       <https://w3id.org/mass-ontology/behavior#> .
+@prefix geo:      <http://www.opengis.net/ont/geosparql#> .
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/mass-ontology/environment-space>
+    a owl:Ontology ;
+    rdfs:label "MASS EnvironmentSpace local ontology profile (P05-01)"@en ;
+    rdfs:comment "Exact P05-D05 Alternative B implementation: local feature identity, versioned geometry-source records and independent future reference roles. OGC GeoSPARQL IRIs are referenced, not imported or claimed as engine conformance. No spatial computation, behavior classification, COLREG or safety implication."@en ;
+    owl:imports <https://w3id.org/mass-ontology/behavior> ,
+                <https://w3id.org/mass-ontology/maritime> ;
+    owl:versionInfo "0.5.0-dev/P05-01" .
+
+# Approved D05-B01: a scoped geographic/environmental feature, not a
+# geo:Geometry, ODD/OE, encounter situation or a vessel.
+bh:EnvironmentSpace
+    a owl:Class ;
+    rdfs:subClassOf geo:Feature ;
+    owl:disjointWith geo:Geometry ;
+    rdfs:label "Environment space feature"@en ;
+    rdfs:comment "A stable, identified maritime environmental zone/feature that may have multiple provenance-qualified geometry editions. This is NOT a geometry, OperationalDesignDomain, OperationalEnvelope, vessel, encounter, or safety assertion."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/environment-space> .
+
+# Approved D05-B02: an edition identifier identifies one geometry record
+# for a given source. It is NOT a validity-interval, current-default
+# geometry, geodesic computation or a license for unreviewed external RDF.
+bh:geometryEditionId
+    a owl:DatatypeProperty ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range xsd:string ;
+    rdfs:label "geometry edition identifier"@en ;
+    rdfs:comment "Curated source or chart edition identifier for a versioned geometry representation. Temporal selection and authority remain P05-D08; the referenced upstream RDF is not imported."@en ;
+    rdfs:isDefinedBy <https://w3id.org/mass-ontology/environment-space> .
+
+# Approved D05-B03: these are TWO DISTINCT reference roles. Their
+# InteractionBehavior domain, cardinalities, XOR validation and
+# non-self-reference are reserved for P05-03. No global maritime:Vessel
+# subClassOf geo:Feature (or EnvironmentSpace) is asserted.
+bh:referencesSpace
+    a owl:ObjectProperty ;
+    rdfs:range bh:EnvironmentSpace ;
+    rdfs:label "references environmental space"@en ;
+    rdfs:comment "Proposed environment-reference role for a future qualified InteractionBehavior; this property alone makes no operational, temporal or COLREG inference."@en .
+
+bh:referencesVessel
+    a owl:ObjectProperty ;
+    rdfs:range maritime:Vessel ;
+    rdfs:label "references another vessel"@en ;
+    rdfs:comment "Separate vessel-reference role reserved for P05-03; a referenced Vessel is NOT typed EnvironmentSpace or globally geo:Feature by this property. Subject/reference role cardinality and self-reference checks belong to P05-03."@en .
+
+# GeoSPARQL (geo:Feature, geo:Geometry, geo:hasGeometry, geo:asWKT,
+# geo:wktLiteral) and PROV-O IRIs are reused by reference only. NO
+# owl:imports for publisher RDF, no owl:equivalentClass, no topological
+# property chains, no owl:hasKey, no COLREG axioms.

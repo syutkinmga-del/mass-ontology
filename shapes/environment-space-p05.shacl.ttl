@@ -1,0 +1,66 @@
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix bh:       <https://w3id.org/mass-ontology/behavior#> .
+@prefix geo:      <http://www.opengis.net/ont/geosparql#> .
+@prefix maritime: <https://w3id.org/mass-ontology/maritime#> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# P05-01/D05 LOCAL curated-data scope only. This SHACL profile checks
+# feature/geometry identity, provenance and version records; it DOES NOT
+# check WKT geometry validity/topology, coordinate axes, geodesic distance,
+# actual chart or geometry temporal validity (P05-D04/D08, P05-02).
+bh:P05EnvironmentSpaceShape
+    a sh:NodeShape ;
+    sh:targetClass bh:EnvironmentSpace ;
+    sh:nodeKind sh:IRI ;
+    sh:not [ sh:class geo:Geometry ] ;
+    sh:not [ sh:class maritime:Vessel ] ;
+    sh:property [
+        sh:path geo:hasGeometry ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class geo:Geometry ;
+        sh:node bh:P05GeometryEditionShape ;
+        sh:message "D05-B02: an EnvironmentSpace must identify separately typed geometry representations"@en
+    ] ;
+    sh:property [
+        sh:path geo:hasDefaultGeometry ;
+        sh:maxCount 0 ;
+        sh:message "D05-B02: unqualified default geometry not allowed in the P05-01 pilot"@en
+    ] ;
+    sh:property [
+        sh:path owl:sameAs ;
+        sh:maxCount 0 ;
+        sh:message "D05-B01: no feature-to-geometry identity assertion via owl:sameAs"@en
+    ] .
+
+bh:P05GeometryEditionShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf geo:hasGeometry ;
+    sh:nodeKind sh:IRI ;
+    sh:class geo:Geometry ;
+    sh:not [ sh:class bh:EnvironmentSpace ] ;
+    sh:property [
+        sh:path bh:geometryEditionId ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:message "D05-B02: each geometry requires one nonempty source edition identifier"@en
+    ] ;
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class prov:Entity ;
+        sh:message "D05-B02: each edition requires one independently identified provenance source entity"@en
+    ] ;
+    sh:property [
+        sh:path geo:asWKT ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype geo:wktLiteral ;
+        sh:message "P05-01: require a typed WKT lexical value; geometry topology and CRS conformance are not verified here"@en
+    ] .

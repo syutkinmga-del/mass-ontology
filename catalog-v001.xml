@@ -11,4 +11,5 @@
     <uri name="https://w3id.org/mass-ontology/observation" uri="05-observation/mass-observation.ttl"/>
     <uri name="https://w3id.org/mass-ontology/measurement" uri="06-quantities/mass-measurement-policy.ttl"/>
     <uri name="https://w3id.org/mass-ontology/behavior-observation-bridge" uri="07-behavior/behavior-observation-bridge.ttl"/>
+    <uri name="https://w3id.org/mass-ontology/environment-space" uri="07-behavior/environment-space-p05.ttl"/>
 </catalog>

@@ -1,0 +1,73 @@
+name: P05-01 EnvironmentSpace OWL and SHACL Implementation
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p05-01-local-feature:
+    name: P05-D05 Feature / Geometry OWL+SHACL local acceptance (not BH-P05 PASS)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact HEAD and immutable Git history
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned offline test dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m venv .venv
+          .venv/bin/python -m pip install --disable-pip-version-check -r ci/requirements-behavior-ci.txt
+          .venv/bin/python -m pip check
+
+      - name: Parse local OWL and SHACL and execute all P05-01 fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          .venv/bin/python -m py_compile scripts/validate_p05_01_environmentspace.py
+          .venv/bin/python scripts/validate_p05_01_environmentspace.py \
+            --report run/p05-01/environmentspace-validation.json
+
+      - name: Independently execute P05-01 fixture and schema mutation tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          .venv/bin/python -m pytest -q -ra \
+            tests/test_p05_01_environmentspace_impl.py \
+            --junitxml=run/p05-01/pytest-results.xml
+
+      - name: Publish P05-01 scope statement
+        if: always()
+        shell: bash
+        run: |
+          if [ -f run/p05-01/environmentspace-validation.json ]; then
+            cat run/p05-01/environmentspace-validation.json >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'P05-01 evidence absent; stage not accepted.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo 'The full BH-P05 profile, GeoSPARQL external source/function conformance, temporal/metric geometry and COLREG safety logic remain DEFERRED.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload exact test evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: p05-01-environmentspace-local-${{ github.run_id }}-${{ github.run_attempt }}
+          path: run/p05-01/
+          if-no-files-found: warn
+          retention-days: 60
